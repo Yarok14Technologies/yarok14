@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+    content="Yarok14 Technologies delivers global ASIC design, FPGA prototyping, RTL and UVM verification, embedded systems, and AI/ML-powered green tech solutions. Trusted by industry leaders including Apple, Google, Intel, NVIDIA, Tesla, 
+    and DRDO. Experts in biomethane optimization systems, AI chip design, DFT, edge AI, and remote EDA services from India.">
+
+  <meta name="keywords" content="Yarok14, Yarok14 Technologies, VLSI India, ASIC design, RTL design, SystemVerilog, Verilog, FPGA prototyping, UVM verification, Intel India, NXP Semiconductors India, Qualcomm India, Texas Instruments India, 
+  Synopsys India, STMicroelectronics India, ARM India,
+   Cadence Design Systems India, Broadcom India,
+     Analog Devices India, L&T Technology Services (LTTS), Tata Elxsi, SmartSoC Solutions, eInfochips (An Arrow Company), Cyient, Onward Technologies, Mphasis, Persistent Systems, GoodWorkLabs, SignOff Semiconductors, AIML Services, Eximius Design (Wipro), ACL Digital, TCS (Tata Consultancy Services),
+      Wipro, Infosys, Tech Mahindra, HCL Technologies, Mindtree, Zilogic Systems, Achronix Semiconductor India, Adept Chips, Aizyc Technology, Altera Semiconductor Pvt. Ltd., Ample Communications India Pvt. Ltd., Apache Design Solutions, Apex Semiconductor, Applied Materials India, Arasan Chip Systems Inc., 
+      Exponentia.ai, Super AI, Sarvam AI, KissanAI, Haptik, Uniphore Software Systems, Yellow.ai, Zoho Corporation, Phonon Communications, Mistral Solutions, Birlasoft, Cyient, Asteria Aerospace, Wow Labs (AI Studio), Ignitarium Technology Solutions, MosChip Technologies, Sankalp Semiconductor, Sankhya Technologies, 
+      Sankhya Labs, Sankhya Infotech, Sankhya Technologies Pvt. Ltd., Radiant, Mirafira, United States, Canada, Germany, Netherlands, France, United Kingdom, Middle East, Israel, Taiwan, Singapore, Japan, South Korea, Australia, India,
+       formal verification, DFT, scan insertion, MBIST, JTAG, boundary scan, physical design,
+       synthesis, RTL to GDSII, RTL linting, CDC analysis, SoC integration, RTL verification, IP verification, FPGA validation, EDA automation, Jenkins, Python scripting, log parsing, regression automation, secure VPN access, NDA workflows, remote chip design India, low-cost VLSI, generative AI in EDA, LLM in RTL design,
+        AI ML hardware, edge AI, MLOps, TensorFlow, PyTorch, ONNX, OpenCV, AI model design, AI pipeline optimization, embedded systems, FreeRTOS, Thejas32, ARIES, STM32, firmware development, PCB design, IoT controller, SCADA system, gas flow meter, CO2 CH4 separator, methane sensor, real-time analytics, AWS cloud SCADA, 
+        biomethane optimization, green energy electronics, renewable energy automation, SPM membrane, agitator, slurry controller, organic fertilizer, IoT for agriculture, bioenergy IoT, sustainability automation, data science, data analytics, business analytics, SQL dashboard, Python Flask API, 
+        Flutter app, cross-platform mobile app, AI for defense, AI in healthcare, AI in industrial automation, smart city electronics, remote verification, 24x7 global delivery, IST PST timezone, MSME VLSI startup, open-source EDA, VS Code, Docker, GitHub Actions, C++, HTML CSS JS, TCL scripting, Git, 
+        FastAPI, SQLite, JSON API, AI chip prototyping, RTL freelancer, VLSI freelancer India, low-cost ASIC, VLSI service outsourcing, AI ML service outsourcing, India RTL design company, Kerala chip design startup, semiconductor MSME India, Kottayam-based VLSI, Apple, Google, AMD, Intel, Qualcomm, 
+        MediaTek, Samsung, Broadcom, Marvell, Synopsys, Cadence, Amazon, Flipkart, Microsoft, Nvidia, Huawei, Tesla, DRDO, ISRO, GE, BMW, Ford, Tata, Tech Mahindra, Wipro, Aricent, Altran, Shell, Aramco, Rafael, Raytheon, Tower Semiconductor, STMicroelectronics, Infineon, NXP, Cypress, Renesas, ON Semiconductor, Sondrel, Indian railway automation,
+          AI powered methane control, FPGA AI integration, LLMs in silicon design, cloud-native VLSI, edge analytics, sensor fusion system, Flutter SCADA, SQL analytics engine, GitHub CI for hardware, remote-first VLSI teams, RTL jobs India, AI ML freelancers India, VLSI startups India, student project VLSI India, embedded C, 
+          LinkedIn, Naukri, Indeed, Glassdoor, Monster, SimplyHired, ZipRecruiter, AngelList Talent, CareerBuilder, Hired, Dice, Jobvite, Snagajob, Workable, Lever, Greenhouse, Breezy HR, JazzHR, Jobcase, Freshersworld, TimesJobs, Shine, Glassdoor India, Monster India, Naukri Gulf, Upwork (for freelance jobs), Freelancer (freelance jobs), 
+          FlexJobs, Remote.co, We Work Remotely, Remote OK, JobStreet, Bayt, GulfTalent, Michael Page, Robert Half, Adzuna, Workana, ZipRecruiter, Jooble, Glassdoor UK, Totaljobs, Reed.co.uk, CV-Library, Jobrapido, Careerjet, Ladders, Idealist, Hirect, Internshala, AngelList, WorkIndia 
+          RTL generator LLM, NDA-based ASIC partner, biofertilizer energy product, VLSI contractor India, green chip technology, cloud EDA environment, secure EDA access, biogas automation, decentralized energy, microgrid controller, sustainable hardware AI, global client chip support, Upwork, Freelancer, Fiverr, Toptal, Guru, 
+          PeoplePerHour, SimplyHired, 99designs, FlexJobs, We Work Remotely, SolidGigs, Crowded, TaskRabbit, Bark, Aquent, DesignCrowd, Working Not Working, CloudPeeps, Nexxt, Hirable, Jobspresso, Outsourcely, Hubstaff Talent, Truelancer, Freelance Writing Gigs, Gigster, Envato Studio, Codeable, Catalant, AngelList Talent, Gun.io, 
+          Working Solutions, Remotive, Staff.com, Remote OK, Lemon.io, Moonlighting, FreeUp, Outsource.com, Fiverr Pro, Freelancer.com, PeoplePerHour, Zeerk, Twine, Workana, Malt, Workhoppers, JobRack, Codementor, Codersera 
+          US EU Asia VLSI services ">
+
+  <meta name="keywords"
+    content="Massachusetts Institute of Technology (MIT), Stanford University, California Institute of Technology (Caltech), ETH Zurich (Swiss Federal Institute of Technology), University of Cambridge, National University of Singapore (NUS),
+           Tsinghua University, University of California, Berkeley, Imperial College London, University of Oxford, Carnegie Mellon University, Georgia Institute of Technology, University of Tokyo, Delft University of Technology, University of Illinois Urbana-Champaign, 
+           University of Michigan, University of Toronto, Seoul National University, Technical University of Munich, KTH Royal Institute of Technology, École Polytechnique Fédérale de Lausanne (EPFL), Hong Kong University of Science and Technology (HKUST), University of California, San Diego (UCSD),
+            University of Texas at Austin, Peking University, University of Washington, University of Melbourne, Indian Institute of Technology Bombay (IIT Bombay), Indian Institute of Technology Delhi (IIT Delhi), Indian Institute of Technology Madras (IIT Madras), Tohoku University, Politecnico di Milano, University of Sydney,
+             University of Manchester, McGill University, KAIST (Korea Advanced Institute of Science and Technology), RWTH Aachen University, University of British Columbia, Technical University of Denmark, Tokyo Institute of Technology, University of California, Los Angeles (UCLA), University of Pennsylvania, 
+             Nanyang Technological University (NTU), University of Edinburgh, University of Waterloo, University of California, Santa Barbara,
+           Technical University of Berlin, Chalmers University of Technology, University of Southern California (USC), Data Scientist, Machine Learning Engineer, Cloud Architect, Solutions Architect, DevOps Engineer, Software Engineering Manager, 
+           AI Engineer, Security Engineer, Product Manager (Tech), Blockchain Developer, Full Stack Developer, Site Reliability Engineer (SRE), Mobile Application Developer, Big Data Engineer, Data Engineer, Cybersecurity Analyst, Systems Architect, Database Administrator, 
+           Network Architect, Embedded Systems Engineer, Firmware Engineer, Hardware Design Engineer, Robotics Engineer, Computer Vision Engineer, Natural Language Processing (NLP) Engineer, Quantitative Analyst, Software Architect, Technical Program Manager, IT Director, Cloud Security Engineer,
+            Penetration Tester (Ethical Hacker), UX/UI Designer, Game Developer, Virtual Reality (VR) Developer, Augmented Reality (AR) Developer, Telecommunications Engineer, Network Security Engineer, IoT Solutions Architect, Bioinformatics Scientist, Computer Graphics Programmer, Data Analyst, 
+            IT Security Manager, Business Intelligence Analyst, Technical Lead, Software Developer, Systems Engineer,Computer Hardware Engineer, Platform Engineer, AI Research Scientist, Data Architect, Mobile Security Engineer, Technical Consultant, Elon Musk, Tesla SpaceX X (Twitter), Bernard Arnault, LVMH, 
+            Jeff Bezos, Amazon, Mark Zuckerberg, Meta (Facebook), Larry Ellison, Oracle, Warren Buffett, 
+           Berkshire Hathaway, Bill Gates, Microsoft, Steve Ballmer, Microsoft, Larry Page, Google (Alphabet), Sergey Brin, Google (Alphabet), Mukesh Ambani, Reliance Industries, Carlos Slim Helú, América Móvil, Francoise Bettencourt Meyers, L’Oréal, Amancio Ortega, Zara (Inditex), 
+           Michael Bloomberg, Bloomberg LP, Jim Walton, Walmart, Rob Walton, Walmart, Alice Walton, Walmart, Gautam Adani, Adani Group, Zhang Yiming, ByteDance (TikTok), Ma Huateng, Tencent, Michael Dell, Dell Technologies, Li Ka-shing, CK Hutchison Holdings, Len Blavatnik, Access Industries, 
+           Phil Knight, Nike, Beate Heister Karl Albrecht Jr., Aldi, Gina Rinehart, Hancock Prospecting, Tadashi Yanai, Uniqlo (Fast Retailing), Leonid Mikhelson, Novatek, Gennady Timchenko, Volga Group, Thomas Peterffy, Interactive Brokers, Dietrich Mateschitz, Red Bull, Germán Larrea Mota-Velasco, 
+           Grupo México, Laurene Powell Jobs, Emerson Collective Apple, Stephen Schwarzman, Blackstone Group, Ken Griffin, Citadel, Zhong Shanshan, Nongfu Spring, Ray Dalio, Bridgewater Associates, John Mars, Mars Inc., Jacqueline Mars, Mars Inc., Rodolphe Saadé, CMA CGM, Eric Schmidt, Google (Alphabet), 
+           Changpeng Zhao, Binance, Jensen Huang, NVIDIA, Reed Hastings, Netflix, Mark Cuban, Broadcast.com, Peter Thiel, PayPal Palantir, Dustin Moskovitz, Facebook Asana, Jeff Green, The Trade Desk, David Thomson, Thomson Reuters, HCL tech">
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Yarok14 – VLSI, AI/ML & Biomethane Hardware Experts" />
+  <meta property="og:description"
+    content="Trusted by global tech leaders, Yarok14 delivers ASIC design, AI hardware, and smart biomethane optimization systems from India." />
+  <meta property="og:image" content="https://yourdomain.com/YAROK%2014%20logo%20cover%20Page.png" />
+  <meta property="og:url" content="https://yourdomain.com" />
+  <meta property="og:site_name" content="Yarok14" />
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@BBiji34944">
+  <meta name="twitter:title" content="Yarok14 – VLSI, AI/ML & Embedded Systems Innovators">
+  <meta name="twitter:description"
+    content="Remote-first chip design, AI hardware, and clean energy optimization experts. Trusted by Intel, Apple, DRDO, and more.">
+  <meta name="twitter:image" content="https://yourdomain.com/YAROK%2014%20logo%20cover%20Page.png">
+
+
+  <title>Yarok14</title>
+  <style>
+    /* Global Styles */
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background-color: #ffffff;
+      color: #400303;
+      line-height: 1.6;
+    }
+
+    .container {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .logo-wrapper {
+      display: inline-block;
+    }
+
+    .logo {
+      display: block;
+      margin: 10px auto;
+      height: 50px;
+      /* Adjust as needed */
+    }
+
+    h1,
+    h2 {
+      margin: 10px 0;
+    }
+
+    .h2-logo-container {
+      display: inline-block;
+      text-align: center;
+    }
+
+    .logo-fit {
+      height: 100%;
+      /* Adjust logo height */
+      width: 100%;
+      object-fit: contain;
+    }
+
+    a {
+      color: #041d78;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Announcement Banner */
+    .announcement {
+      background: #025b08;
+      color: #e3ebe4;
+      text-align: center;
+      padding: 10px;
+      font-weight: bold;
+    }
+
+    /* Hero Header Image */
+    .hero-header {
+      background-color: #f2f3f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 50px 20px;
+      box-shadow: 0 4px 10px rgba(0, 255, 200, 0.1);
+    }
+
+    .hero-logo {
+      max-width: 100%;
+      height: auto;
+      width: 500px;
+      border-radius: 10px;
+      animation: fadeIn 1.2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Header Text and Nav */
+    header h1,
+    header h2 {
+      text-align: center;
+      margin: 10px 0;
+    }
+
+
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      background-color: #db7b52;
+      padding: 10px 0;
+    }
+
+    nav a {
+      color: #000;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      padding: 5px 10px;
+      transition: background 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #343a40;
+      color: #fff;
+    }
+
+    /* Section Titles */
+    section h2 {
+      text-align: center;
+      color: #0928f3;
+      font-size: 2em;
+      margin-top: 40px;
+    }
+
+    /* Centered Paragraph */
+    .centered {
+      text-align: center;
+      max-width: 800px;
+      margin: auto;
+      padding: 10px 20px;
+    }
+
+    /* Card */
+    .card {
+      background: hwb(210 95% 5%);
+      border: 1px solid #1e2a3a;
+      border-radius: 12px;
+      padding: 20px;
+      margin: 20px;
+      transform: rotateY(20deg);
+      transition: transform 0.5s;
+      box-shadow: 0 8px 20px rgba(224, 240, 7, 0.1);
+
+    }
+
+    .card:hover {
+      transform: rotateY(0deg);
+    }
+
+
+    /* Grid Layout */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    /* Contact Section */
+    #contact a {
+      color: #000000;
+      font-weight: bold;
+    }
+
+    #contact a:hover {
+      color: #00a6a6;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #e5b509;
+      padding: 20px;
+      text-align: center;
+      border-top: 1px solid #1e2a3a;
+    }
+
+    .white-button {
+      display: inline-block;
+      background-color: white;
+      color: #000;
+      padding: 8px 16px;
+      border: 2px solid #000;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    .white-button:hover {
+      background-color: #000;
+      color: white;
+    }
+
+    footer .social-links a {
+      color: #080000;
+      margin: 0 8px;
+    }
+
+    footer .social-links a:hover {
+      color: #00a6a6;
+    }
+
+    section p {
+      margin: 10px 0;
+      font-size: 1.1rem;
+    }
+
+
+    .carousel-wrapper {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      background: #fff;
+      padding: 20px 0;
+    }
+
+    .carousel-container {
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+
+      /* Hide native scrollbars and overlay arrows */
+      scrollbar-width: none;
+      /* Firefox */
+      -ms-overflow-style: none;
+      /* IE and Edge */
+    }
+
+    .carousel-container::-webkit-scrollbar {
+      display: none;
+      /* Chrome, Safari, Edge */
+    }
+
+    .carousel-track {
+      display: inline-flex;
+      align-items: center;
+      gap: 60px;
+      padding: 10px;
+    }
+
+    .carousel-track img {
+      height: 60px;
+      max-width: 120px;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+    }
+
+    .carousel-track img:hover {
+      transform: scale(1.1);
+    }
+
+    /* Invisible scroll anchor targets */
+    .carousel-track span[id] {
+      display: inline-block;
+      width: 1px;
+      height: 1px;
+    }
+
+    /* Arrows aligned to the bottom */
+    .carousel-btn {
+      position: absolute;
+      bottom: 5px;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      font-size: 24px;
+      padding: 10px 15px;
+      z-index: 10;
+      cursor: pointer;
+      user-select: none;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+
+    .carousel-btn.left {
+      left: 5px;
+    }
+
+    .carousel-btn.right {
+      right: 5px;
+    }
+
+    .carousel-btn:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+
+
+    /* Responsive Text */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 1.8em;
+      }
+
+      header h2 {
+        font-size: 1.2em;
+      }
+
+      nav {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+
+
+  <link rel="icon" type="image/jpg" href="assets/Yarok14-Stamp.jpg">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Yarok14 Technologies",
+  "url": "https://yourdomain.com",
+  "logo": "https://yourdomain.com/Yarok14-Stamp.jpg",
+  "founder": {
+    "@type": "Person",
+    "name": "Bibin N Biji"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/company/yarok14",
+    "https://www.instagram.com/yarok_14",
+    "https://www.github.com/BIBINNBIJI",
+    "https://x.com/BBiji34944",
+    "https://www.youtube.com/channel/UCWmCcm1UlDJJfz0aB9B_a0A"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "contacts.yarok14@gmail.com",
+    "telephone": "+91-9526932961",
+    "contactType": "Customer Service"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Kottayam",
+    "addressRegion": "Kerala",
+    "addressCountry": "India"
+  },
+  "description": "Yarok14 Technologies is a semiconductor, AI/ML, and green energy innovation company offering ASIC design, FPGA prototyping, RTL/UVM verification, and embedded IoT products for biomethane optimization. Trusted globally from India."
+}
+</script>
+
+</head>
+
+<body>
+
+  <div class="announcement">
+    <header>
+      <h1>Welcome to Yarok14 Technologies</h1>
+    </header>
+  </div>
+  <nav>
+    <a href="#about"><strong>About</strong></a>
+    <a href="#Problem_sovling"><strong>How We Solve Your Challenges</strong></a>
+    <a href="#Why_yarok14"><strong>Why Choose Yarok14 Technologies?</strong></a>
+    <a href="#founder"><strong>Meet Our Founder & Team</strong></a>
+    <a href="#Our_Clients"><strong>Trusted by Our Clients</strong></a>
+    <a href="#csp"><strong>Case Studies and Projects</strong></a>
+    <a href="#services"><strong>Our Engineering Services</strong></a>
+    <a href="#product"><strong>Products</strong></a>
+    <a href="#engmnt_models"><strong>Flexible Engagement & Pricing Models</strong></a>
+    <a href="#Tech_stacks"><strong>Our Cutting-Edge Tech Stacks</strong></a>
+    <a href="#contact"><strong>Get in Touch With Us</strong></a>
+  </nav>
+
+  <p><img src="assets/YAROK 14 logo cover Page.png" alt="Logo" class="logo-fit"></p>
+
+  <section id="about">
+    <h2>About Yarok14</h2>
+    <p class="centered">
+      Yarok14 is a next-generation technology company pioneering the convergence of semiconductor design, AI/ML
+      solutions, and intelligent software systems.
+
+      We specialize in delivering end-to-end hardware-software co-design, empowering industries in clean energy, AI,
+      industrial automation, healthcare, defense and embedded systems to solve complex challenges through innovation. At
+      Yarok14, we engineer solutions at the intersection of VLSI design, FPGA/ASIC development, AI/ML integration, data
+      engineering, and software development. Our flagship innovation—the Yarok14 IoT controlled bio-methane optimization
+      Hardware—is
+      a mixed-signal hardware-software combination
+      optimized for biomethane production, blending sensor fusion, real-time analytics, and automated control to drive
+      sustainable energy outcomes.
+
+      We serve a global clientele, from startups to enterprise R&D labs, offering custom hardware design, AI/ML
+      modeling, scalable data solutions, and software development expertise tailored to accelerate product development
+      and digital transformation.
+    </p>
+
+  </section>
+
+<section id="company_overview">
+  <h2 style="text-align: center;">Company at a Glance</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <h3>Team Strength</h3>
+      <p><strong>Number of Employees:</strong></p>
+      <p>20–25 Engineers</p>
+      <p>Across VLSI, AI/ML, Embedded, and Software domains.</p>
+    </div>
+
+    <div class="card">
+      <h3>Clients Served</h3>
+      <p><strong>Total Clients:</strong></p>
+      <p>23+</p>
+      <p>Serving startups, fabless companies, and global engineering teams.</p>
+    </div>
+
+    <div class="card">
+      <h3>Projects Delivered</h3>
+      <p><strong>Total Projects:</strong></p>
+      <p>40+</p>
+      <p>Across ASIC, FPGA, Verification, AI/ML, and Software domains.</p>
+    </div>
+
+    <div class="card">
+      <h3>Industry Experience</h3>
+      <p><strong>Working Experience:</strong></p>
+      <p>7+ Years</p>
+      <p>In semiconductor design, verification, and AI-driven engineering.</p>
+    </div>
+
+  </div>
+</section>
+
+
+  <div class="card" style="margin-top: 30px;">
+    <h3>Global VLSI Services</h3>
+    <p><strong>
+        We proudly serve clients across the United States, Canada, Germany, the Netherlands, France, the United
+        Kingdom,
+        the Middle East, Israel, Taiwan, Singapore, Japan, South Korea, and Australia — alongside our growing
+        portfolio of Indian projects.
+      </strong></p>
+    <h4><strong>How we work:</strong></h4>
+    <ul>
+      <li><strong>Secure global delivery via cloud-based client tools over VPN</strong></li>
+      <li><strong>Integration of open-source EDA tools to reduce cost and accelerate development</strong></li>
+      <li><strong>Flexible models — hourly, fixed-price, or project-based</strong></li>
+      <li><strong>Proven experience on IP, ASIC, FPGA projects</strong></li>
+    </ul>
+  </div>
+  </section>
+
+
+
+
+  <section id="Problem_sovling">
+    <h2>How We Solve Your Challenges</h2>
+    <div class="grid">
+
+      <div class="card">
+        <h3>VLSI Design & Verification (RTL, UVM, DFT, Physical Design PnR-ready)</h3>
+        <p>We provide RTL design, UVM-based verification, DFT insertion, and Physical Design support ready for tape-out.
+        </p>
+
+
+        <h3>Embedded Systems & IoT (Firmware, PCB, Thejas32/ARIES, STM32 boards)</h3>
+        <p>We design low-power firmware, custom PCBs, and real-time applications using ARIES/Thejas32, STM32, and other
+          microcontrollers.</p>
+
+        <h3>AI/ML Development (Model design, MLOps, edge AI)</h3>
+        <p>We build intelligent models, deploy MLOps pipelines, and optimize AI for edge devices.</p>
+
+
+
+        <h3>Custom Web & flutter Applications (Python/Flask, SQL dashboards, automation tools)</h3>
+        <p>We develop efficient Flask-based dashboards, internal tools, and automation systems tailored to your
+          workflows.</p>
+
+        <h3>Sustainable Tech R&D (Biomethane, Green Energy Electronics)</h3>
+        <p>We research and develop electronics and control systems for bio-energy and green energy applications.</p>
+
+        <!-- Carousel Container Only (No Card) -->
+        <div class="carousel-wrapper" style="width: 100%; overflow-x: auto;">
+
+          <div class="carousel-container" style="height: 300px; width: 100%; overflow-x: auto; white-space: nowrap;">
+            <div class="carousel-track"
+              style="display: flex; align-items: center; gap: 1rem; height: 100%; width: max-content;">
+
+              <!-- Left Anchor -->
+              <span id="left"></span>
+
+              <!-- Images -->
+<img src="assets/green_chip.jpg" alt="Solution 1"
+  style="height: 100%; width: auto; max-width: 100%; object-fit: contain; border-radius: 8px;" />
+
+<img src="assets/greentech.jpg" alt="Solution 2"
+  style="height: 100%; width: auto; max-width: 100%; object-fit: contain; border-radius: 8px;" />
+
+<img src="assets/template1.png" alt="Solution 3"
+  style="height: 100%; width: auto; max-width: 100%; object-fit: contain; border-radius: 8px;" />
+
+<img src="assets/template2.png" alt="Solution 4"
+  style="height: 100%; width: auto; max-width: 100%; object-fit: contain; border-radius: 8px;" />
+
+<img src="assets/LLMops.png" alt="Solution 5"
+  style="height: 100%; width: auto; max-width: 100%; object-fit: contain; border-radius: 8px;" />
+
+<img src="assets/MLOps.jpeg" alt="Solution 6"
+  style="height: 100%; width: auto; max-width: 100%; object-fit: contain; border-radius: 8px;" />
+
+<img src="assets/aries_V1.png" alt="Solution 7"
+  style="height: 100%; width: auto; max-width: 100%; object-fit: contain; border-radius: 8px;" />
+
+<img src="assets/asic_design_flow.png" alt="Solution 8"
+  style="height: 100%; width: auto; max-width: 100%; object-fit: contain; border-radius: 8px;" />
+
+<img src="assets/lightelligence.jpg" alt="Solution 9"
+  style="height: 100%; width: auto; max-width: 100%; object-fit: contain; border-radius: 8px;" />
+
+<img src="assets/chip1.png" alt="Solution 10"
+  style="height: 100%; width: auto; max-width: 100%; object-fit: contain; border-radius: 8px;" />
+
+<img src="assets/chip2.webp" alt="Solution 11"
+  style="height: 100%; width: auto; max-width: 100%; object-fit: contain; border-radius: 8px;" />
+
+<img src="assets/chip3.webp" alt="Solution 12"
+  style="height: 100%; width: auto; max-width: 100%; object-fit: contain; border-radius: 8px;" />
+
+              <!-- Right Anchor -->
+              <span id="right"></span>
+            </div>
+          </div>
+        </div>
+
+
+
+  </section>
+
+
+
+
+  <section id="Why_yarok14">
+    <h2>Why Choose Yarok14 Technologies?</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>RTL Design & Integration</h3>
+        <p>Custom Verilog/SystemVerilog RTL blocks, Linting, CDC checks, and synthesis preparation.</p>
+        <p><strong>Specialties:</strong> Fabless semiconductor teams, SoC design houses</p>
+
+        <h3>Design Verification (DV)</h3>
+        <p>UVM-based testbenches, assertions, scoreboards, coverage (FC, SC), and formal verification.</p>
+        <p><strong>Specialties:</strong> IP vendors, verification startups</p>
+
+        <h3>Design for Testability (DFT)</h3>
+        <p>Scan insertion, ATPG, MBIST, JTAG, and boundary scan integration using industry DFT tools.</p>
+        <p><strong>Specialties:</strong> ASIC/SoC test teams</p>
+
+        <h3>Toolchain Automation</h3>
+        <p>Automated Jenkins flows, Python/Perl scripting, regression setup, and log parsing pipelines.</p>
+        <p><strong>Specialties:</strong> QA and DV infrastructure teams</p>
+
+        <h3>AI/ML Modeling</h3>
+        <p>TensorFlow and PyTorch-based pipelines for model training and on-chip inference design.</p>
+        <p><strong>Specialties:</strong> Edge AI, vision, and embedded ML use-cases</p>
+
+        <h3>Client Tool Access</h3>
+        <p>Secure VPN-based access under NDA ensures strict confidentiality and tool license compliance.</p>
+
+      </div>
+    </div>
+  </section>
+
+  <section style="text-align: center; font-family: Arial, sans-serif; max-width: 400px; margin: auto;">
+    <h2>Why Choose Us?</h2>
+    <p>💡 Focused VLSI & AI/ML niche</p>
+    <p>🌐 Remote-first delivery (Git, Zoom, VPN)</p>
+    <p>🚀 Pilot-first, scale-fast approach</p>
+    <p>💰 MSME cost advantage</p>
+    <p>🛡️ NDA-ready workflows</p>
+    <p>🕒 24 × 7 availability — PST & IST timezone coverage</p>
+  </section>
+
+
+  <section id="founder">
+    <h2>Meet Our Founder & Team</h2>
+    <div>
+      <p class="centered">
+        Yarok14 Technologies is a VLSI and AI/ML engineering company delivering high-quality semiconductor design,
+        verification, and physical design solutions to global clients. Built on strong industry experience in RTL
+        design,
+        UVM-based verification, and engineering automation, Yarok14 operates with a startup-driven, delivery-focused
+        approach to meet real-world silicon challenges.
+        <br><br>
+        Our core team includes experts in <strong>Design Verification (UVM/SystemVerilog)</strong>, <strong>RTL/FPGA
+          design</strong>,
+        <strong>Physical Design Engineering & Assistance (Synthesis, Floorplanning, CTS, STA, IR/EM, and
+          Sign-off)</strong>,
+        <strong>Design for Testability (Scan, ATPG, MBIST)</strong>, and <strong>Automation & AI/ML modeling</strong>.
+        Recruited from top-tier Indian colleges, our engineers combine academic excellence with practical
+        problem-solving and industry best practices.
+        <br><br>
+        From our base in Kottayam and Kochi, Kerala, we deliver cost-efficient, secure, and scalable engineering
+        services to
+        semiconductor and AI/ML clients worldwide — powered by remote collaboration, startup agility, and a shared
+        mission
+        to build high-impact technology solutions. Yarok14 is a Government of India-recognized MSME, registered under
+        the
+        Udyam scheme. (UDYAM-KL-07-0047589)
+      </p>
+
+
+      <!-- Hidden LinkedIn link -->
+      <div style="text-align: center;">
+        <a href="https://www.linkedin.com/company/yarok14/" target="_blank" style="text-decoration: none;">
+          <img src="assets/linkedin.png" alt="LinkedIn" width="20" height="20" style="vertical-align: middle;">
+          <span style="font-size: 20px; color: black; vertical-align: middle;">LinkedIn</span>
+        </a>
+      </div>
+
+    </div>
+
+
+  </section>
+
+  <section id="Our_Clients">
+    <h2>Trusted by Our Clients(Targetted & Dream Clients)</h2>
+
+
+    <div class="grid">
+      <div class="card">
+        <h3>
+          <p> Indian startups & research labs in AI, IoT, and clean tech
+          </p>
+          <p> Global chip design & EDA teams needing offshore verification
+          </p>
+          <p> Academia & Innovators working on next-gen systems
+          </p>
+        </h3>
+
+        <div class="carousel-wrapper" style="width: 100%; overflow-x: auto;">
+
+          <div class="carousel-container" style="height: 200px; width: 100%; overflow-x: auto; white-space: nowrap;">
+            <div class="carousel-track"
+              style="display: flex; align-items: center; gap: 1rem; height: 100%; width: max-content;">
+
+              <!-- Left Anchor -->
+              <span id="left"></span>
+
+              <!-- Logos (proportional, object-fit, no fixed width) -->
+              <img src="assets/altran.png" alt="Client 1" style="height: 100%; width: auto; max-width: 100%; object-fit: contain;" />
+<img src="assets/amazon.jpg" alt="Client 2" style="height: 100%; width: auto; max-width: 100%; object-fit: contain;" />
+<img src="assets/amd.png" alt="Client 3" style="height: 100%; width: auto; max-width: 100%; object-fit: contain;" />
+<img src="assets/apple.png" alt="Client 4" style="height: 100%; width: auto; max-width: 100%; object-fit: contain;" />
+<img src="assets/aramco.jpg" alt="Client 5" style="height: 100%; width: auto; max-width: 100%; object-fit: contain;" />
+<img src="assets/aricent.png" alt="Client 6" style="height: 100%; width: auto; max-width: 100%; object-fit: contain;" />
+<img src="assets/bmw.png" alt="Client 7" style="height: 100%; width: auto; max-width: 100%; object-fit: contain;" />
+<img src="assets/broadcom.png" alt="Client 8" style="height: 100%; width: auto; max-width: 100%; object-fit: contain;" />
+<img src="assets/cypress.png" alt="Client 9" style="height: 100%; width: auto; max-width: 100%; object-fit: contain;" />
+<img src="assets/drdo.png" alt="Client 10" style="height: 100%; width: auto; max-width: 100%; object-fit: contain;" />
+<img src="assets/flipkart.jpg" alt="Client 11" style="height: 100%; width: auto; max-width: 100%; object-fit: contain;" />
+<img src="assets/ford.png" alt="Client 12" style="height: 100%; width: auto; max-width: 100%; object-fit: contain;" />
+<img src="assets/ge.png" alt="Client 13" style="height: 100%; width: auto; max-width: 100%; object-fit: contain;" />
+<img src="assets/google.jpg" alt="Client 14" style="height: 100%; width: auto; max-width: 100%; object-fit: contain;" />
+<img src="assets/huawei.png" alt="Client 15" style="height: 100%; width: auto; max-width: 100%; object-fit: contain;" />
+<img src="assets/intel.png" alt="Client 16" style="height: 100%; width: auto; max-width: 100%; object-fit: contain;" />
+<img src="assets/isro.jpg" alt="Client 17" style="height: 100%; width: auto; max-width: 100%; object-fit: contain;" />
+<img src="assets/lattice.png" alt="Client 18" style="height: 100%; width: auto; max-width: 100%; object-fit: contain;" />
+<img src="assets/marvell.jpg" alt="Client 19" style="height: 100%; width: auto; max-width: 100%; object-fit: contain;" />
+<img src="assets/mediaTek.png" alt="Client 20" style="height: 100%; width: auto; max-width: 100%; object-fit: contain;" />
+<img src="assets/ms.jpg" alt="Client 21" style="height: 100%; width: auto; max-width: 100%; object-fit: contain;" />
+<img src="assets/Nvidia.png" alt="Client 22" style="height: 100%; width: auto; max-width: 100%; object-fit: contain;" />
+<img src="assets/on.png" alt="Client 23" style="height: 100%; width: auto; max-width: 100%; object-fit: contain;" />
+<img src="assets/qualcomm.png" alt="Client 24" style="height: 100%; width: auto; max-width: 100%; object-fit: contain;" />
+<img src="assets/railways.jpg" alt="Client 25" style="height: 100%; width: auto; max-width: 100%; object-fit: contain;" />
+<img src="assets/renesas.png" alt="Client 26" style="height: 100%; width: auto; max-width: 100%; object-fit: contain;" />
+<img src="assets/samsung.png" alt="Client 27" style="height: 100%; width: auto; max-width: 100%; object-fit: contain;" />
+<img src="assets/shell.png" alt="Client 28" style="height: 100%; width: auto; max-width: 100%; object-fit: contain;" />
+<img src="assets/sondrel.png" alt="Client 29" style="height: 100%; width: auto; max-width: 100%; object-fit: contain;" />
+<img src="assets/stm.png" alt="Client 30" style="height: 100%; width: auto; max-width: 100%; object-fit: contain;" />
+<img src="assets/synopsys.png" alt="Client 31" style="height: 100%; width: auto; max-width: 100%; object-fit: contain;" />
+<img src="assets/tata.avif" alt="Client 32" style="height: 100%; width: auto; max-width: 100%; object-fit: contain;" />
+<img src="assets/tcs.png" alt="Client 33" style="height: 100%; width: auto; max-width: 100%; object-fit: contain;" />
+<img src="assets/tech_mahindra.png" alt="Client 34" style="height: 100%; width: auto; max-width: 100%; object-fit: contain;" />
+<img src="assets/tesla.jpg" alt="Client 35" style="height: 100%; width: auto; max-width: 100%; object-fit: contain;" />
+<img src="assets/tower_semicon.png" alt="Client 36" style="height: 100%; width: auto; max-width: 100%; object-fit: contain;" />
+<img src="assets/wipro.png" alt="Client 37" style="height: 100%; width: auto; max-width: 100%; object-fit: contain;" />
+<img src="assets/infineon.png" alt="Client 38" style="height: 100%; width: auto; max-width: 100%; object-fit: contain;" />
+<img src="assets/nxp.avif" alt="Client 39" style="height: 100%; width: auto; max-width: 100%; object-fit: contain;" />
+<img src="assets/microchip.png" alt="Client 40" style="height: 100%; width: auto; max-width: 100%; object-fit: contain;" />
+<img src="assets/raytheon.png" alt="Client 41" style="height: 100%; width: auto; max-width: 100%; object-fit: contain;" />
+<img src="assets/rafael.png" alt="Client 42" style="height: 100%; width: auto; max-width: 100%; object-fit: contain;" />
+<img src="assets/bosch.png" alt="Client 43" style="height: 100%; width: auto; max-width: 100%; object-fit: contain;" />
+
+
+              <!-- Right Anchor -->
+              <span id="right"></span>
+            </div>
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+    </div>
+    </div>
+  </section>
+
+
+  <section id="csp">
+    <h2>Case studies and Projects</h2>
+    <div class="grid">
+
+      <div class="card">
+        <h3>RISC-V pipeline</h3>
+        <div>
+          <p>
+            Custom RISC-V pipeline design and verification—delivering scalable, high-performance cores tailored for
+            next-gen embedded and AI applications.
+          </p>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>MAC array Design Verification (DV)</h3>
+        <div>
+          <p>
+            Accelerate silicon success with high-coverage, UVM-based Design Verification for MAC arrays—ensuring
+            accuracy, performance, and seamless integration in compute-intensive SoCs.
+          </p>
+        </div>
+      </div>
+      <div class="card">
+        <h3>LLM & Gen AI in RTL to GDSII Design</h3>
+        <div>
+          <p>
+            Explore the feasibility of integrating Large Language Models and Generative AI across the RTL-to-GDSIII
+            pipeline.
+            From RTL generation to timing analysis and DRC fixing, AI is reshaping silicon design with intelligent
+            automation,
+            accelerating development while reducing manual bottlenecks.
+          </p>
+          <ul>
+            <li><strong>Feasibility:</strong> High in RTL, reporting, and constraint generation</li>
+            <li><strong>Challenges:</strong> Tool integration, IP security, explainability</li>
+            <li><strong>Outlook:</strong> Domain-specific LLMs and RAG systems can bridge the gap</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section id="services">
+    <h2>Our Engineering Services</h2>
+    <div class="grid">
+     <div class="card">
+  <h3>ASIC Design and FPGA Prototyping</h3>
+  <p>Custom digital and analog RTL design solutions for next-generation silicon systems.</p>
+  <p>Rapid hardware–software co-design, prototyping, and real-time validation on FPGA platforms.</p>
+  <p><strong>Specialties:</strong> Fabless semiconductor companies, ASIC/SoC design houses; Automotive, AI, 5G, and defense chip companies.</p>
+</div>
+
+<div class="card">
+  <h3>Physical Design Engineering and Assistance</h3>
+  <p>End-to-end RTL-to-GDSII physical implementation support using industry-standard EDA flows.</p>
+  <p>Design closure services including timing, power, signal integrity, and reliability sign-off with scalable methodologies.</p>
+  <p><strong>Specialties:</strong> RTL-to-GDSII implementation including synthesis, floorplanning, placement, CTS, routing, STA, timing closure, and power integrity (IR/EM) with tape-out support for advanced nodes (28nm and below), high-performance SoCs, AI/ML accelerators, automotive-grade chips, and low-power IoT designs using Synopsys/Cadence/Siemens flows.</p>
+</div>
+
+<div class="card">
+  <h3>Verification</h3>
+  <p>Industry-standard UVM and formal verification methodologies to ensure robust, bug-free silicon implementation.</p>
+  <p>Comprehensive functional verification, assertion-based checking, and coverage-driven validation.</p>
+  <p><strong>Specialties:</strong> IP vendors, fabless startups, ASIC/SoC product companies, and semiconductor R&D teams.</p>
+</div>
+
+<div class="card">
+  <h3>Client Tool Access</h3>
+  <p>Secure VPN-based access to client tools and environments under signed NDAs, ensuring confidentiality and seamless collaboration.</p>
+  <p>Support for remote design workflows, shared repositories, and controlled access environments.</p>
+  <p><strong>Specialties:</strong> Remote design collaboration, secure EDA access, and compliance-driven engineering environments.</p>
+</div>
+
+<div class="card">
+  <h3>DFT (Design for Testability)</h3>
+  <p>End-to-end scan architecture design, memory BIST, boundary scan, and low-overhead test logic insertion.</p>
+  <p>ATPG pattern generation, test coverage optimization, and silicon bring-up support.</p>
+  <p><strong>Specialties:</strong> Scan insertion, MBIST, JTAG/boundary scan, ATPG, test compression, and yield analysis.</p>
+</div>
+
+<div class="card">
+  <h3>AI & Machine Learning</h3>
+  <p>Develop intelligent systems for predictive analytics, automation, and optimization.</p>
+  <p>End-to-end ML pipeline development including data preprocessing, model training, and deployment.</p>
+  <p><strong>Specialties:</strong> Predictive modeling, computer vision, time-series analytics, and industrial AI applications.</p>
+</div>
+
+<div class="card">
+  <h3>Generative AI</h3>
+  <p>Build GenAI solutions for text, image, and structured data generation.</p>
+  <p>Custom AI models, prompt engineering, and enterprise AI integration.</p>
+  <p><strong>Specialties:</strong> LLM integration, prompt engineering, retrieval-augmented generation (RAG), and AI automation.</p>
+</div>
+
+<div class="card">
+  <h3>Data Science</h3>
+  <p>Analyze complex datasets to extract insights, patterns, and actionable business intelligence.</p>
+  <p>Statistical modeling, data visualization, and decision-support analytics.</p>
+  <p><strong>Specialties:</strong> Data analytics, statistical modeling, visualization, and business intelligence reporting.</p>
+</div>
+
+<div class="card">
+  <h3>Business Analysis</h3>
+  <p>Drive data-backed strategies to improve operations, efficiency, and business decisions.</p>
+  <p>Process analysis, KPI tracking, and stakeholder collaboration.</p>
+  <p><strong>Specialties:</strong> Process optimization, requirement analysis, KPI dashboards, and strategic decision support.</p>
+</div>
+
+<div class="card">
+  <h3>Flutter Software Application Development</h3>
+  <p>Build high-performance, cross-platform mobile and web applications using Flutter and Dart.</p>
+  <p>Scalable UI/UX design, API integration, and cloud backend connectivity.</p>
+  <p><strong>Specialties:</strong> Android, iOS, web apps, real-time dashboards, and cloud-connected applications.</p>
+</div>
+
+<div class="card">
+  <h3>Data Analytics & Data Entry</h3>
+  <p>Perform comprehensive data analysis to extract actionable insights and support data-driven decisions.</p>
+  <p>Accurately input, clean, and manage data to ensure database integrity and operational reliability.</p>
+  <p><strong>Specialties:</strong> Data cleaning, ETL processing, database management, and reporting automation.</p>
+</div>
+
+<!-- ===== NEW CARDS WITH SPECIALTIES ===== -->
+
+<div class="card">
+  <h3>Full-Stack Software Development (SDE)</h3>
+  <p>Design and develop scalable, secure, and high-performance web and enterprise applications.</p>
+  <p>Expertise in frontend, backend, APIs, databases, and system architecture.</p>
+  <p><strong>Specialties:</strong> React, Angular, Node.js, Python (Flask/Django), REST APIs, SQL/NoSQL, Docker, and Microservices.</p>
+</div>
+
+<div class="card">
+  <h3>Cloud Services & DevOps</h3>
+  <p>Cloud-native application development, deployment, and infrastructure automation.</p>
+  <p>End-to-end CI/CD pipelines, containerization, and scalable cloud architectures.</p>
+  <p><strong>Specialties:</strong> AWS, Azure, GCP, Kubernetes, Terraform, Docker, CI/CD, and GitOps.</p>
+</div>
+
+<div class="card">
+  <h3>MLOps</h3>
+  <p>Production-grade machine learning lifecycle management from model development to deployment.</p>
+  <p>Automated training pipelines, monitoring, versioning, and scalable inference.</p>
+  <p><strong>Specialties:</strong> MLflow, Kubeflow, TensorFlow, PyTorch, Docker, and CI/CD for ML.</p>
+</div>
+
+<div class="card">
+  <h3>LLMOps</h3>
+  <p>End-to-end deployment and management of Large Language Models (LLMs) in production.</p>
+  <p>Prompt engineering, fine-tuning, retrieval-augmented generation (RAG), and observability.</p>
+  <p><strong>Specialties:</strong> OpenAI APIs, LangChain, Vector Databases, LlamaIndex, and cloud-based AI deployment.</p>
+</div>
+
+
+  </section>
+
+
+  <section id="product">
+    <h2>Products</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>
+          IoT based Biomethane Optimization System, which involves a combination of hardware and software components to
+          monitor
+          and control the production of biomethane.</h3>
+        <div>
+
+
+          <strong>🔧Industrial Grade Hardware Components</strong><br><br>
+          THEJAS32 (ARIES v3.0) - Core microcontroller managing all control logic.<br>
+          ESP8266 - Wi-Fi-enabled module for wireless connectivity with AWS Cloud.<br>
+          Pressure,Temperature & pH Sensors - Real-time monitoring of digester conditions.<br>
+          Heating & pH Controller & Saftey gas valve working based on EM relay - Ensures optimal microbial digestion
+          conditions and Safety.<br>
+          Agitator - Improves microbial action through controlled mixing.<br>
+          SPM, CO₂ & CH₄ Separator - Enables high-purity methane extraction.<br>
+          Gas Flow Meter & Energy Meter - Tracks biomethane yield and system power usage.<br>
+          Kerala Vision WiFi Router - Connects local system to the internet for cloud access.<br><br>
+
+          <strong>💻 Robust and Dynamic Software Components</strong><br><br>
+          Flutter - Builds the SCADA-style mobile/web interface.<br>
+          Python - Manages system logic and backend APIs.<br>
+          SQL - Stores operational data for analytics and historical review.<br>
+          AWS Cloud - Provides reliable cloud infrastructure for remote access and control.<br><br>
+
+          <strong>📊Versatile System Features</strong><br><br>
+          The Biomethane Optimization System appears to be a comprehensive solution for monitoring and controlling
+          biomethane production. The system integrates various hardware and software components to:<br>
+          Intelligent sensing and control to optimize production.<br>
+          Feedback-based automation to reduce energy and process costs.<br>
+          Remote operability through a clean Flutter UI connected via cloud.<br>
+          Integrates with renewable sources and local grid/mini-grid setups.<br><br>
+
+          <strong>🌟High-Impact & Game-Changing Key Benefits</strong><br><br>
+          The Biomethane Optimization System can help:<br>
+          No Costly MAS Sensors: Smart scheduling replaces expensive sensor arrays.<br>
+          Reduced Retention Time: Faster digestion cycles with high yield.<br>
+          Energy-Efficient Operation: Uses less than 10% of net energy of previous day for operations.<br>
+          Eco-Aligned Design: Leverages solar heating and passive warming.<br>
+          Nutrient-Rich Slurry: Output doubles as organic fertilizer.<br>
+          Financially Feasible: Ideal for rural setups with minimal investment.<br>
+          Rural Financial Enhancement: Empowers rural communities with a new income stream from energy production and
+          fertilizer sales.<br>
+          Energy Decentralization: Enables local energy autonomy, reducing dependence on centralized grids.<br>
+          Challenges Monopolies: Disrupts single-entity control (government or corporate) over energy supply,
+          fostering community-owned energy ecosystems.<br>
+          <br><br>
+
+          </p>
+        </div>
+
+
+  </section>
+
+
+
+  <section id="engmnt_models">
+  <h2 style="text-align: center;">Global Engineering Engagement Models</h2>
+  <div class="grid">
+
+    <div class="card">
+      <h3>VLSI Design & Verification</h3>
+      <p>RTL architecture, ASIC/FPGA design, UVM verification, synthesis, STA, DFT.</p>
+      <ul>
+        <li>Hourly: $35 to $60</li>
+        <li>Mini Project (POC): $800 to $1500</li>
+        <li>Small Project: $2000 to $4000</li>
+        <li>Medium Project: $5000 to $12000</li>
+        <li>Large / Full Chip Engagement: $15000+</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>AI / ML Engineering</h3>
+      <p>Model development, optimization, edge deployment, inference acceleration.</p>
+      <ul>
+        <li>Hourly: $30 to $55</li>
+        <li>Mini Project: $700 to $1200</li>
+        <li>Small Project: $1800 to $3500</li>
+        <li>Medium Project: $4500 to $9000</li>
+        <li>Large AI System: $12000+</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Embedded Systems & IoT</h3>
+      <p>Firmware development, board bring-up, edge devices, industrial control systems.</p>
+      <ul>
+        <li>Hourly: $28 to $50</li>
+        <li>Mini Project: $600 to $1000</li>
+        <li>Small Project: $1500 to $3000</li>
+        <li>Medium Project: $4000 to $8000</li>
+        <li>Large Deployment: $10000+</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Software & Backend Engineering</h3>
+      <p>Web applications, APIs, automation tools, secure backend systems.</p>
+      <ul>
+        <li>Hourly: $25 to $45</li>
+        <li>Mini Project: $500 to $900</li>
+        <li>Small Project: $1200 to $2500</li>
+        <li>Medium Project: $3500 to $7000</li>
+        <li>Large System: $9000+</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+<p style="text-align:center; margin-top:20px;">
+Custom retainership and dedicated engineering team models available upon request.
+</p>
+<div style="text-align: center; max-width: 900px; margin: auto;">
+  <p>
+    <strong>Engagement Notes:</strong><br><br>
+    Our pricing reflects early-stage innovation rates while maintaining global engineering standards. 
+    Rates remain 20–30% below Tier-1 consulting firms while delivering senior-level technical depth.<br><br>
+
+    Project sizes are defined as:
+    <br>• Mini (Proof of Concept): ≤ 1 week  
+    <br>• Small: 1–3 weeks  
+    <br>• Medium: 1–2 months  
+    <br>• Large: Multi-month / Full product lifecycle  
+  </p>
+</div>
+
+  <section id="Tech_stacks">
+    <h2>Our Cutting-Edge Tech Stacks</h2>
+    <div class="grid">
+      <div class="card">
+        <h3><br><br>Toos, Skills and Technologies<br><br></h3>
+        <div>
+
+          <strong>Hardware/EDA: SystemVerilog, UVM, Cadence, Synopsys, QuestaSim</strong><br><br>
+
+          <strong>AI/ML: Python, PyTorch, TensorFlow, ONNX, OpenCV</strong><br><br>
+
+          <strong>Embedded: C/C++, ARM, RISC-V, Thejas32, FreeRTOS</strong><br><br>
+
+          <strong>flutter/Web & Backend: Flask, FastAPI, SQLite, HTML/CSS</strong><br><br>
+
+          <strong>Tools: Git, Docker, VS Code, GitHub Actions</strong><br><br>
+
+
+
+          <div class="carousel-wrapper" style="width: 100%; overflow-x: auto;">
+
+            <div class="carousel-container" style="height: 200px; width: 100%; overflow-x: auto; white-space: nowrap;">
+              <div class="carousel-track"
+                style="display: flex; align-items: center; gap: 1rem; height: 100%; width: max-content;">
+
+                <!-- Left Anchor -->
+                <span id="left"></span>
+
+               <!-- Logos -->
+<img src="assets/C++.png" alt="Tool 1" style="height: 100%; width: auto; object-fit: contain;" />
+<img src="assets/cadence_SV.png" alt="Tool 2" style="height: 100%; width: auto; object-fit: contain;" />
+<img src="assets/CSS HTML JS.png" alt="Tool 3" style="height: 100%; width: auto; object-fit: contain;" />
+<img src="assets/docker vs code.png" alt="Tool 4" style="height: 100%; width: auto; object-fit: contain;" />
+<img src="assets/fast API SQLite.jpg" alt="Tool 5" style="height: 100%; width: auto; object-fit: contain;" />
+<img src="assets/flask.png" alt="Tool 6" style="height: 100%; width: auto; object-fit: contain;" />
+<img src="assets/FreeRTOS-RISC-V.jpg" alt="Tool 7" style="height: 100%; width: auto; object-fit: contain;" />
+<img src="assets/git.png" alt="Tool 8" style="height: 100%; width: auto; object-fit: contain;" />
+<img src="assets/intel_FV.jpg" alt="Tool 9" style="height: 100%; width: auto; object-fit: contain;" />
+<img src="assets/Linux.png" alt="Tool 10" style="height: 100%; width: auto; object-fit: contain;" />
+<img src="assets/onnx.png" alt="Tool 11" style="height: 100%; width: auto; object-fit: contain;" />
+<img src="assets/openCV.png" alt="Tool 12" style="height: 100%; width: auto; object-fit: contain;" />
+<img src="assets/Python-Logo.jpg" alt="Tool 13" style="height: 100%; width: auto; object-fit: contain;" />
+<img src="assets/SoC using SV.jpg" alt="Tool 14" style="height: 100%; width: auto; object-fit: contain;" />
+<img src="assets/verilator.png" alt="Tool 15" style="height: 100%; width: auto; object-fit: contain;" />
+<img src="assets/intel_FV_pract.png" alt="Tool 16" style="height: 100%; width: auto; object-fit: contain;" />
+<img src="assets/tensorflow-vs-pytorch.png" alt="Tool 17" style="height: 100%; width: auto; object-fit: contain;" />
+<img src="assets/verilog fpga.png" alt="Tool 18" style="height: 100%; width: auto; object-fit: contain;" />
+<img src="assets/systemverilog.jpg" alt="Tool 19" style="height: 100%; width: auto; object-fit: contain;" />
+<img src="assets/json.jpg" alt="Tool 20" style="height: 100%; width: auto; object-fit: contain;" />
+<img src="assets/flutter dart.jpg" alt="Tool 21" style="height: 100%; width: auto; object-fit: contain;" />
+<img src="assets/aws cloud.png" alt="Tool 22" style="height: 100%; width: auto; object-fit: contain;" />
+<img src="assets/Tcl Tk.gif" alt="Tool 23" style="height: 100%; width: auto; object-fit: contain;" />
+<img src="assets/power BI.jpg" alt="Tool 24" style="height: 100%; width: auto; object-fit: contain;" />
+<img src="assets/all PL.jpg" alt="Tool 25" style="height: 100%; width: auto; object-fit: contain;" />
+<img src="assets/jupyter.jpg" alt="Tool 26" style="height: 100%; width: auto; object-fit: contain;" />
+<img src="assets/bash.jpg" alt="Tool 27" style="height: 100%; width: auto; object-fit: contain;" />
+<img src="assets/bulldozer.png" alt="Tool 28" style="height: 100%; width: auto; object-fit: contain;" />
+<img src="assets/openRoad.jpg" alt="Tool 29" style="height: 100%; width: auto; object-fit: contain;" />
+<img src="assets/c.png" alt="Tool 30" style="height: 100%; width: auto; object-fit: contain;" />
+                <!-- Right Anchor -->
+                <span id="right"></span>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+  </section>
+
+
+
+  <section id="contact">
+    <h2>Get in Touch With Us</h2>
+    <p class="centered">
+      If you're looking to accelerate tapeouts, improve verification coverage, reduce costs with open-source
+      integration, or prototype faster on FPGA, let's connect!
+    </p>
+    <p class="centered">
+      Email: <a href="mailto:contacts.yarok14@gmail.com">contacts.yarok14@gmail.com</a> |
+      Phone: <a href="tel:+919526932961">+91-9526932961</a> |
+      WhatsApp: <a href="https://wa.me/919526932961" target="_blank">Message on WhatsApp</a>
+    </p>
+  </section>
+
+<footer>
+  <p>
+    &copy;
+    <span style="font-size: 20px; color: black;">
+      2026 Yarok14 Technologies. VLSI and AI Hardware Experts. All rights reserved.
+    </span>
+  </p>
+
+  <div class="social-links">
+
+    <a href="https://www.linkedin.com/company/yarok14" 
+       target="_blank" 
+       rel="noopener noreferrer">
+      <img src="assets/linkedin.png" alt="LinkedIn" width="20" height="20">
+      <span style="font-size: 20px; color: black;">LinkedIn</span>
+    </a>
+
+    <a href="https://www.instagram.com/yarok14.technology" 
+       target="_blank" 
+       rel="noopener noreferrer">
+      <img src="assets/instagram.png" alt="Instagram" width="20" height="20">
+      <span style="font-size: 20px; color: black;">Instagram</span>
+    </a>
+
+    <a href="https://github.com/Yarok14Technologies" 
+       target="_blank" 
+       rel="noopener noreferrer">
+      <img src="assets/github.png" alt="GitHub" width="20" height="20">
+      <span style="font-size: 20px; color: black;">GitHub</span>
+    </a>
+
+    <a href="https://x.com/BBiji34944" 
+       target="_blank" 
+       rel="noopener noreferrer">
+      <img src="assets/X.png" alt="X" width="20" height="20">
+      <span style="font-size: 20px; color: black;">X</span>
+    </a>
+
+    <a href="https://www.youtube.com/channel/UCWmCcm1UlDJJfz0aB9B_a0A" 
+       target="_blank" 
+       rel="noopener noreferrer">
+      <img src="assets/youtube.png" alt="YouTube" width="20" height="20">
+      <span style="font-size: 20px; color: black;">YouTube</span>
+    </a>
+
+    <a href="careers.html">
+      <img src="assets/Career-icon.png" alt="Careers" width="20" height="20">
+      <span style="font-size: 20px; color: black;">Careers</span>
+    </a>
+
+  </div>
+</footer>
+</body>
+
+
+</html>
+
+
+
+
+
+

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Careers @ Yarok14</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/jpg" href="Yarok14-Stamp.jpg">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #ffffff;
+            color: #400303;
+            line-height: 1.6;
+        }
+
+        .container {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+        }
+
+        .logo-fit {
+            height: auto;
+            width: 100%;
+            max-width: 400px;
+            object-fit: contain;
+            display: block;
+            margin: 20px auto;
+        }
+
+
+        .announcement {
+            background: #343a40;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            background-color: #e5b509;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: #000;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            padding: 5px 10px;
+            transition: background 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #343a40;
+            color: #fff;
+        }
+
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            max-width: 600px;
+            margin: auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #177604;
+            color: white;
+            text-align: center;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .white-button {
+            display: inline-block;
+            background-color: white;
+            text-align: center;
+            color: #000;
+            padding: 8px 16px;
+            border: 2px solid #000;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .white-button:hover {
+            background-color: #000;
+            color: white;
+            text-align: center;
+        }
+
+
+        .thank-you {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+            color: rgb(0, 7, 0), 0, 0;
+            font-size: 1.2em;
+        }
+
+        h1,
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        footer {
+            background-color: #e5b509;
+            padding: 20px;
+            text-align: center;
+            margin-top: 40px;
+            border-top: 1px solid #1e2a3a;
+        }
+
+        footer .social-links a {
+            color: #080000;
+            margin: 0 8px;
+        }
+
+        footer .social-links a:hover {
+            color: #00a6a6;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+    <link rel="icon" type="image/jpg" href="Yarok14-Stamp.jpg">
+    <p><img src="YAROK 14 logo cover Page.png" alt="Logo" class="logo-fit"></p>
+<body>
+    <div class="container">
+        <h1>Employer Dashboard</h1>
+        <p><a href="/logout">Logout</a></p>
+
+        {% if applications %}
+        {% for app in applications %}
+        <div style="border-bottom: 1px solid #ccc; padding: 10px 0;">
+            <p><strong>Name:</strong> {{ app.name }}</p>
+            <p><strong>Date of Birth:</strong> {{ app.dob }}</p>
+            <p><strong>Experience:</strong> {{ app.experience }} years</p>
+            <p><strong>Gender:</strong> {{ app.gender }}</p>
+            <p><strong>Email:</strong> {{ app.email }}</p>
+            <p><strong>Position Applied:</strong> {{ app.position }}</p>
+            <p><strong>Cover Letter:</strong><br>{{ app.cover_letter }}</p>
+
+            <form method="POST" action="/reject/{{ app.email }}"
+                onsubmit="return confirm('Are you sure you want to reject this applicant?');">
+                <button type="submit">Reject</button>
+            </form>
+        </div>
+        {% endfor %}
+        {% else %}
+        <p>No applications available.</p>
+        {% endif %}
+    </div>
+    <footer>
+    <p>&copy; 2025 Yarok14. VLSI and AI Hardware Experts. All rights reserved.</p>
+  </footer>
+</body>
+
+</html>

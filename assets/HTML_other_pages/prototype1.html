@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yarok14 Technologies | VLSI • AI • Green Hardware</title>
+
+<style>
+/* ========== ENTERPRISE COLOR SYSTEM (CONTROLLED, NOT LOUD) ========== */
+:root {
+  --bg: #0b0f14;
+  --card: #0f141b;
+  --border: #1a2330;
+
+  --white: #ffffff;
+  --blue: #2aa0ff;
+  --green: #00e676;
+  --yellow: #ffd600;
+  --red: #ff5252;
+
+  --text: #e6e9ef;
+  --muted: #9aa0a6;
+}
+
+/* GLOBAL */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Arial;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* NAVIGATION */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(11,15,20,0.95);
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 8%;
+  border-bottom: 1px solid var(--border);
+  z-index: 1000;
+}
+
+nav .logo {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: var(--white);
+}
+
+nav a {
+  color: var(--text);
+  text-decoration: none;
+  margin-left: 22px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+nav a:hover { color: var(--blue); }
+
+/* HERO */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 0 8%;
+  background: radial-gradient(circle at top right, #102033, #0b0f14);
+}
+
+.hero-content { max-width: 650px; }
+
+.hero h1 {
+  font-size: 56px;
+  line-height: 1.1;
+  background: linear-gradient(90deg, var(--blue), var(--green));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+  font-size: 18px;
+  color: var(--muted);
+  margin-top: 15px;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 12px 26px;
+  background: var(--blue);
+  color: #000;
+  font-weight: 700;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+/* SECTIONS */
+section { padding: 90px 8%; }
+
+.section-title {
+  font-size: 36px;
+  margin-bottom: 40px;
+  text-align: center;
+  color: var(--white);
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 22px;
+}
+
+/* CARDS (COLOR AS VISUAL CUE, NOT REPETITION) */
+.card {
+  background: var(--card);
+  padding: 22px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card.blue   { border-left: 4px solid var(--blue); }
+.card.green  { border-left: 4px solid var(--green); }
+.card.yellow { border-left: 4px solid var(--yellow); }
+.card.red    { border-left: 4px solid var(--red); }
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(42,160,255,0.15);
+}
+
+/* STATS STRIP */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.stat-box {
+  background: var(--card);
+  padding: 18px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
+
+.stat-box h3 {
+  font-size: 28px;
+  color: var(--blue);
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 40px 8%;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="logo">YAROK14</div>
+  <div>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#delivery">Delivery Model</a>
+    <a href="#product">Product</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Silicon • AI • Sustainable Hardware</h1>
+    <p>
+      Enterprise-grade VLSI design, AI hardware, and intelligent biomethane systems —  
+      delivered securely through cloud/VPN collaboration and rigorous NDA compliance.
+    </p>
+    <a href="#contact" class="btn">Start a Project</a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <h2 class="section-title">About Yarok14</h2>
+  <p style="max-width: 900px; margin: auto; text-align: center; color: var(--muted);">
+    Yarok14 Technologies delivers end-to-end semiconductor design, AI/ML systems, and
+    industrial IoT solutions. Our flagship innovation is an intelligent biomethane
+    optimization platform combining mixed-signal hardware, real-time analytics, and
+    cloud-driven automation.
+  </p>
+
+  <div class="stats">
+    <div class="stat-box"><h3>7+</h3><p>Years of Experience</p></div>
+    <div class="stat-box"><h3>22+</h3><p>Projects</p></div>
+    <div class="stat-box"><h3>10-50</h3><p>Staffs</p></div>
+    <div class="stat-box"><h3>30+</h3><p>Cleints</p></div>
+  </div>
+</section>
+
+<!-- CORE SERVICES (NO REPETITION) -->
+<section id="services">
+  <h2 class="section-title">Core Capabilities</h2>
+
+  <div class="grid">
+
+    <div class="card blue">
+      <h3>ASIC & RTL Design</h3>
+      <p>SystemVerilog RTL with linting, CDC/RDC checks, and synthesis-ready production code.</p>
+    </div>
+
+    <div class="card green">
+      <h3>Design Verification (UVM)</h3>
+      <p>Constrained-random testing, assertions, coverage, and formal verification.</p>
+    </div>
+
+    <div class="card yellow">
+      <h3>DFT & Test Engineering</h3>
+      <p>Scan, ATPG, MBIST, JTAG, and boundary scan integration.</p>
+    </div>
+
+    <div class="card blue">
+      <h3>FPGA Prototyping</h3>
+      <p>Zynq/UltraScale+ bring-up, ILA debug, and hardware-software co-validation.</p>
+    </div>
+
+    <div class="card green">
+      <h3>AI / ML Systems</h3>
+      <p>Edge AI, MLOps pipelines, and hardware-aware inference.</p>
+    </div>
+
+    <div class="card red">
+      <h3>Physical Design (PDE) Assistance</h3>
+      <p>Floorplan, CTS, STA feedback, ECO, and Power/IR awareness aligned with tapeout flows.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- GENERALIZED DELIVERY MODEL (ONE CLEAR STATEMENT) -->
+<section id="delivery">
+  <h2 class="section-title">Unified Delivery Model</h2>
+
+  <div class="grid">
+
+    <div class="card blue">
+      <h3>Secure, Tool-Assisted Execution</h3>
+      <p>
+        All engineering work is performed using industry-standard tools inside your
+        controlled environment — ensuring technical rigor and seamless integration.
+      </p>
+    </div>
+
+    <div class="card green">
+      <h3>NDA & IP Protection</h3>
+      <p>
+        Every engagement operates under legally binding NDAs with strict access control,
+        auditability, and compliance to semiconductor security practices.
+      </p>
+    </div>
+
+    <div class="card yellow">
+      <h3>Cloud / VPN Collaboration</h3>
+      <p>
+        Remote access via secure cloud or VPN ensures real-time collaboration while
+        maintaining zero data leakage and full client control.
+      </p>
+    </div>
+
+    <div class="card red">
+      <h3>Team-Integrated Delivery</h3>
+      <p>
+        We work as an extension of your engineering team — aligned to your milestones,
+        review cycles, and quality gates across RTL, DV, DFT, FPGA, AI, and PDE.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- PRODUCT -->
+<section id="product">
+  <h2 class="section-title">Flagship Product</h2>
+  <div class="card green" style="max-width: 900px; margin: auto;">
+    <h3>Biomethane Optimization System</h3>
+    <p>
+      Closed-loop digester automation with cloud analytics and Flutter SCADA,
+      designed for rural and industrial biogas installations with minimal operating cost.
+    </p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2 class="section-title">Work With Us</h2>
+  <p style="text-align:center;">
+    📧 contacts.yarok14@gmail.com &nbsp; | &nbsp; 📞 +91 95269 32961
+  </p>
+</section>
+
+<footer>
+  <p style="color:var(--blue); font-size:14px;">
+    Tool-Assisted • NDA-Compliant • Secure Cloud/VPN Collaboration (Applies to all services)
+  </p>
+  © 2026 Yarok14 Technologies — VLSI • AI • Sustainable Hardware
+</footer>
+
+</body>
+</html>
