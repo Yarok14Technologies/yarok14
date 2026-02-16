@@ -1,0 +1,16 @@
+{
+  "name": "Yarok14 Technologies",
+  "short_name": "Yarok14",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f9fafb",
+  "theme_color": "#1565c0",
+  "description": "ASIC Design, AI Hardware, FPGA Engineering & Semiconductor Innovation.",
+  "icons": [
+    {
+      "src": "assets/images/Yarok14-Stamp.jpg",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}
