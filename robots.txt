@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://yarok14.com/sitemap.xml

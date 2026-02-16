@@ -1,0 +1,12 @@
+/* TEAM */
+Company: Yarok14 Technologies
+Location: India
+Industry: Semiconductor, ASIC, AI Hardware, Embedded Systems
+Email: contacts.yarok14@gmail.com
+Website: https://yarok14.com
+
+/* TECHNOLOGY */
+HTML5, CSS3
+SEO Optimized
+Structured Data (Schema.org)
+Open Graph Enabled
