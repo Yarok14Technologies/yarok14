@@ -73,11 +73,30 @@
 
   <!-- ================= HERO ================= -->
 <section style="width:100%; overflow:hidden;">
-  <img src="assets/images/YAROK 14 Hero Image.png"
-       alt="Yarok14 Technologies Logo"
-       loading="eager"
-       style="width:100%; height:auto; display:block;">
+  <img
+    id="yarokHero"
+    src="assets/images/YAROK 14 logo cover Page(4).png"
+    alt="Yarok14 Technologies"
+    style="width:100%; height:auto; display:block;"
+  >
 </section>
+
+<script>
+  const heroImages = [
+    "assets/images/YAROK 14 logo cover Page.png",
+    "assets/images/YAROK 14 logo cover Page German.png",
+    "assets/images/YAROK 14 logo cover Page Hebrew.png",
+    "assets/images/YAROK 14 logo cover Page Taiwan.png"
+  ];
+
+  let currentImage = 0;
+  const hero = document.getElementById("yarokHero");
+
+  setInterval(() => {
+    currentImage = (currentImage + 1) % heroImages.length;
+    hero.src = heroImages[currentImage];
+  }, 3000); // 3 seconds
+</script>
 
     <!-- ================= SECOND HERO ================= -->
     <section class="hero-secondary">
