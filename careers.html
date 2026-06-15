@@ -39,11 +39,44 @@
   </div>
 </section>
 
+<style>
+#yarokHeroImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: opacity 0.8s ease-in-out;
+}
+</style>
+
 <section style="width:100vw; margin-left:calc(50% - 50vw); overflow:hidden;">
-  <img src="assets/images/YAROK 14 logo cover Page.png"
-       alt="Yarok14 Technologies Logo"
-       style="width:100%; height:auto; display:block;">
+  <img
+    id="yarokHeroImage"
+    src="assets/images/YAROK 14 Hero Image English.jpg"
+    alt="Yarok14 Technologies">
 </section>
+
+<script>
+  const heroImages = [
+    "assets/images/YAROK 14 Hero Image English.jpg",
+    "assets/images/YAROK 14 Hero Image German.jpg",
+    "assets/images/YAROK 14 Hero Image Hebrew.jpg",
+    "assets/images/YAROK 14 Hero Image Taiwan.jpg"
+  ];
+
+  let currentImage = 0;
+  const hero = document.getElementById("yarokHeroImage");
+
+  setInterval(() => {
+    hero.style.opacity = "0";
+
+    setTimeout(() => {
+      currentImage = (currentImage + 1) % heroImages.length;
+      hero.src = heroImages[currentImage];
+      hero.style.opacity = "1";
+    }, 400);
+
+  }, 3000);
+</script>
 
   <section class="section">
     <h1>Careers at Yarok14 Technologies</h1>
