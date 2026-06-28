@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memory Chips & High-Speed Protocols 2025–2026 | Yarok14 Technologies</title>
+  <meta name="description" content="Deep technical analysis of the AI memory supercycle — HBM4, DDR5, LPDDR5X, CXL 3.0, PCIe Gen 6, supply shortages, and the future of semiconductor memory for AI accelerators.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://yarok14.com/insights/memory-chips-2025-26.html">
+  <link rel="icon" href="../assets/images/Yarok14-Stamp.jpg">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <script src="../assets/js/main.js"></script>
+
+  <meta property="og:title" content="Memory Chips & Protocols 2025–26 | Yarok14 Technologies">
+  <meta property="og:description" content="The AI memory supercycle, HBM4, DDR5, LPDDR5X, CXL, supply shortages, and the future of computing memory.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://yarok14.com/insights/memory-chips-2025-26.html">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Memory Chips & High-Speed Protocols 2025–2026",
+    "author": {"@type": "Organization", "name": "Yarok14 Technologies"},
+    "datePublished": "2026-06-01",
+    "publisher": {"@type": "Organization", "name": "Yarok14 Technologies", "url": "https://yarok14.com"}
+  }
+  </script>
+</head>
+<body>
+
+<div id="read-progress"></div>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="../index.html" class="nav-brand">YAROK<span>14</span> <span style="color:var(--muted);font-size:0.7rem;font-weight:400;letter-spacing:1px;margin-left:6px;">TECHNOLOGIES</span></a>
+    <button class="nav-mobile-toggle" onclick="toggleNav()">☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="../index.html#services">Services</a>
+      <a href="../index.html#products">Products</a>
+      <a href="../insights.html" class="active">Insights</a>
+      <a href="../index.html#about">About</a>
+      <a href="../careers.html">Careers</a>
+      <a href="../index.html#contact" class="nav-cta">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ARTICLE HERO -->
+<section class="article-hero">
+  <div class="breadcrumb">
+    <a href="../index.html">Home</a>
+    <span>/</span>
+    <a href="../insights.html">Insights</a>
+    <span>/</span>
+    Memory Chips 2025–26
+  </div>
+  <div class="article-meta">
+    <span class="post-tag">Memory & Protocols</span>
+    <span class="post-tag">AI Hardware</span>
+    <span class="post-tag">Semiconductor Industry</span>
+    <span class="post-date text-mono" style="font-size:0.78rem; color:var(--faint);">June 2026 · 25 min read</span>
+  </div>
+  <h1>Memory Chips & High-Speed Protocols 2025–2026: The AI Supercycle</h1>
+  <p style="color:var(--muted); max-width:800px; font-size:1.05rem; line-height:1.8; margin-top:20px;">
+    Comprehensive technical analysis of the AI-driven memory market — HBM4, DDR5, LPDDR5X, CXL 3.0, PCIe Gen 6, supply dynamics, and the standards shaping next-generation compute infrastructure.
+  </p>
+</section>
+
+<!-- STATS BAR -->
+<div style="padding: 0 7% 40px;">
+  <div class="stats-row">
+    <div class="stat-item">
+      <span class="stat-num">$198B</span>
+      <span class="stat-label">Memory Market 2025</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">HBM4</span>
+      <span class="stat-label">Next-Gen Stack (2025+)</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">8.0 GT/s</span>
+      <span class="stat-label">DDR5 Peak Transfer Rate</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">CXL 3.0</span>
+      <span class="stat-label">Memory Pooling Standard</span>
+    </div>
+  </div>
+</div>
+
+<!-- ARTICLE LAYOUT -->
+<div class="article-layout">
+
+  <!-- MAIN CONTENT -->
+  <article class="article-body">
+
+    <h2 id="supercycle">The AI Memory Supercycle</h2>
+    <p>The semiconductor memory market entered a structural supercycle in 2024, driven entirely by AI infrastructure demand. Unlike prior memory cycles fueled by PC refresh or smartphone adoption, this cycle is characterized by a qualitatively different demand profile: AI training and inference workloads require memory bandwidth and capacity at scales that have never been deployed commercially before.</p>
+
+    <p>NVIDIA's H100 and H200 GPUs each require six to eight stacks of HBM3E, consuming a significant fraction of total HBM production capacity. With the AI accelerator market projected to grow at 40%+ CAGR through 2027, memory — not compute — has become the binding constraint for AI infrastructure expansion.</p>
+
+    <div class="callout callout-info">
+      <strong>Key Insight:</strong> The memory bottleneck in AI is not simply a supply issue. It reflects a fundamental architectural challenge: modern transformer models require moving terabytes of weights and activations across the memory hierarchy at every inference step. This drives sustained demand for high-bandwidth, high-capacity memory solutions that conventional DRAM cannot satisfy alone.
+    </div>
+
+    <h2 id="hbm">HBM: The AI Memory Standard</h2>
+    <p>High Bandwidth Memory (HBM) has become the de facto standard for AI accelerator memory. Its 3D-stacked architecture and wide-interface TSV interconnects deliver 10–20× the bandwidth of equivalent GDDR6 capacity at significantly lower power per bit.</p>
+
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr><th>Generation</th><th>Bandwidth/Stack</th><th>Capacity/Stack</th><th>Interface</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="td-hi">HBM2E</td>
+            <td>460 GB/s</td>
+            <td>16 GB</td>
+            <td>1024-bit</td>
+            <td><span class="badge badge-green">Shipping</span></td>
+          </tr>
+          <tr>
+            <td class="td-hi">HBM3</td>
+            <td>819 GB/s</td>
+            <td>24 GB</td>
+            <td>1024-bit</td>
+            <td><span class="badge badge-green">Shipping</span></td>
+          </tr>
+          <tr>
+            <td class="td-hi">HBM3E</td>
+            <td>1.2 TB/s</td>
+            <td>36 GB</td>
+            <td>1024-bit</td>
+            <td><span class="badge badge-green">Production</span></td>
+          </tr>
+          <tr>
+            <td class="td-hi">HBM4</td>
+            <td>~2.0 TB/s</td>
+            <td>64 GB+</td>
+            <td>2048-bit</td>
+            <td><span class="badge badge-warn">Sampling 2025</span></td>
+          </tr>
+          <tr>
+            <td class="td-hi">HBM4E</td>
+            <td>~3.0 TB/s</td>
+            <td>128 GB+</td>
+            <td>2048-bit</td>
+            <td><span class="badge badge-blue">2027+</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>HBM4 introduces a fundamental architectural change: moving from a passive base die (which simply routes signals) to an active base die with integrated logic. This allows the memory controller to be co-packaged with the DRAM stacks, reducing latency and enabling more sophisticated memory management functions at the package level.</p>
+
+    <h2 id="ddr5">DDR5 & LPDDR5X</h2>
+    <p>While HBM dominates the AI accelerator space, DDR5 is displacing DDR4 across server, workstation, and high-performance desktop platforms. DDR5 delivers nearly double the bandwidth of DDR4-3200 at the same channel count, with substantially improved power efficiency from on-module voltage regulation.</p>
+
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr><th>Standard</th><th>Max Data Rate</th><th>Voltage</th><th>Burst Length</th><th>Target Market</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="td-hi">DDR4-3200</td><td>3200 MT/s</td><td>1.2V</td><td>BL8</td><td>Server / Desktop (legacy)</td></tr>
+          <tr><td class="td-hi">DDR5-4800</td><td>4800 MT/s</td><td>1.1V</td><td>BL16</td><td>Server / Desktop (mainstream)</td></tr>
+          <tr><td class="td-hi">DDR5-8000</td><td>8000 MT/s</td><td>1.1V</td><td>BL16</td><td>Enthusiast / HEDT</td></tr>
+          <tr><td class="td-hi">LPDDR5X</td><td>9600 MT/s</td><td>0.5V</td><td>BL16</td><td>Mobile / Edge AI</td></tr>
+          <tr><td class="td-hi">LPDDR6</td><td>14400 MT/s est.</td><td>0.5V</td><td>BL32</td><td>Mobile (2026+)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>LPDDR5X has become the memory standard for flagship mobile SoCs used in on-device AI applications. Apple's M-series, Qualcomm's Snapdragon 8 Gen series, and MediaTek's Dimensity 9000+ all use LPDDR5X to maximize bandwidth for transformer-based inference workloads running in background.</p>
+
+    <h2 id="cxl">CXL: The Memory Disaggregation Protocol</h2>
+    <p>Compute Express Link (CXL) is perhaps the most strategically significant memory technology development since DDR4. Built on the PCIe physical layer, CXL enables cache-coherent, low-latency attachment of memory and compute resources beyond the limits of a single processor socket.</p>
+
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr><th>CXL Version</th><th>Physical Layer</th><th>Bandwidth</th><th>Key Capability</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="td-hi">CXL 1.1</td><td>PCIe 5.0</td><td>~64 GB/s</td><td>Memory expansion (Type 3)</td></tr>
+          <tr><td class="td-hi">CXL 2.0</td><td>PCIe 5.0</td><td>~64 GB/s</td><td>Memory pooling, switching</td></tr>
+          <tr><td class="td-hi">CXL 3.0</td><td>PCIe 6.0</td><td>~256 GB/s</td><td>Fabric, peer-to-peer, multi-host</td></tr>
+          <tr><td class="td-hi">CXL 3.1</td><td>PCIe 6.0</td><td>~256 GB/s</td><td>Enhanced coherency, security</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>For AI data centers, CXL 3.0 enables memory pooling architectures where a shared DRAM pool (potentially hundreds of terabytes) is accessible to multiple accelerators and CPUs simultaneously with cache-coherent semantics. This eliminates the need to duplicate model weights across accelerator nodes, dramatically improving memory efficiency for large language model inference.</p>
+
+    <div class="callout callout-warn">
+      <strong>Design Challenge:</strong> CXL memory attached via PCIe introduces 100–500ns of additional latency compared to directly attached DRAM. For latency-sensitive inference paths (particularly autoregressive token generation), this latency overhead must be carefully characterized and managed at the SoC and firmware level. Yarok14's embedded and SoC teams handle CXL-aware memory controller design as part of our AI hardware services.
+    </div>
+
+    <h2 id="pcie">PCIe Gen 5 & Gen 6</h2>
+    <p>PCIe remains the dominant interconnect between CPUs, GPUs, and peripheral devices in data center systems. Each generation doubles the per-lane bandwidth, maintaining backward compatibility while enabling higher-bandwidth AI accelerator cards and CXL memory devices.</p>
+
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr><th>Generation</th><th>Per-Lane BW</th><th>x16 BW</th><th>Encoding</th><th>Sampling Status</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="td-hi">PCIe 4.0</td><td>2 GB/s</td><td>32 GB/s</td><td>128b/130b</td><td><span class="badge badge-green">Widespread</span></td></tr>
+          <tr><td class="td-hi">PCIe 5.0</td><td>4 GB/s</td><td>64 GB/s</td><td>128b/130b</td><td><span class="badge badge-green">Production</span></td></tr>
+          <tr><td class="td-hi">PCIe 6.0</td><td>8 GB/s</td><td>128 GB/s</td><td>PAM4 + FLIT</td><td><span class="badge badge-warn">Sampling 2025</span></td></tr>
+          <tr><td class="td-hi">PCIe 7.0</td><td>16 GB/s</td><td>256 GB/s</td><td>PAM4</td><td><span class="badge badge-blue">Spec 2025</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>PCIe 6.0 introduces a fundamental change in signal encoding: switching from NRZ to PAM4 modulation (the same technique used in 400G/800G Ethernet optical transceivers). This doubles throughput per lane without increasing the signaling frequency, but introduces significant PHY design complexity — particularly for error correction, equalization, and link training at the physical design level.</p>
+
+    <h2 id="supply">Supply Chain & Market Dynamics</h2>
+    <p>The 2025–2026 memory market is characterized by structural imbalance between HBM supply (extremely tight, controlled by SK Hynix, Samsung, and Micron) and commodity DRAM/NAND (recovering from the 2023 oversupply correction). Three dynamics define the current landscape:</p>
+
+    <div class="grid grid-3" style="margin:28px 0;">
+      <div class="card">
+        <div class="card-icon">🏭</div>
+        <h3>HBM Capacity Constraint</h3>
+        <p>HBM production requires specialized TSV packaging capacity shared between memory and logic chips. SK Hynix has first-mover advantage in HBM3E; Samsung and Micron are ramping capacity aggressively through 2026.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📦</div>
+        <h3>CoWoS Packaging Bottleneck</h3>
+        <p>TSMC's CoWoS advanced packaging, required to integrate HBM with GPU and AI accelerator dies, remains capacity-constrained. This constrains AI accelerator output independent of die manufacturing.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📈</div>
+        <h3>Commodity DRAM Recovery</h3>
+        <p>Commodity DDR5 pricing has stabilized and is rising moderately as server refresh demand for AI training infrastructure and enterprise workloads absorbs excess inventory from the 2023 correction.</p>
+      </div>
+    </div>
+
+    <h2 id="ucxl">UCIe: Chiplet Die-to-Die Interconnect</h2>
+    <p>Universal Chiplet Interconnect Express (UCIe) is becoming the standard die-to-die interface for advanced packaging, enabling different chiplets — including memory controllers and HBM stacks — to be integrated in a single package from multiple vendors with a standard interface.</p>
+
+    <p>UCIe 2.0 supports up to 28.6 Gbps per lane across standard and advanced packaging options, with bandwidth densities of 1.3 TB/s/mm in advanced configurations. For AI SoC designers, UCIe enables disaggregated memory architectures where the memory controller chiplet, compute array, and I/O chiplets are independently sourced from different foundries and assembled in one package.</p>
+
+    <h2 id="standards-bodies">Standards Bodies & Industry Consortia</h2>
+    <p>The memory and interconnect standards landscape is managed by a set of industry consortia that semiconductor companies and IP vendors must track closely. For AI hardware design, the highest-priority bodies are:</p>
+
+    <div class="data-table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr><th>Body</th><th>Key Standards</th><th>Priority for AI/Memory IP</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="td-hi">JEDEC</td><td>DDR5, LPDDR5X, HBM3/4 (JESD238)</td><td><span class="badge badge-red">Tier 1 — Critical</span></td></tr>
+          <tr><td class="td-hi">PCI-SIG</td><td>PCIe Gen 5/6, CXL</td><td><span class="badge badge-red">Tier 1 — Critical</span></td></tr>
+          <tr><td class="td-hi">UCIe Consortium</td><td>UCIe 1.0 / 2.0</td><td><span class="badge badge-warn">Tier 2 — High Value</span></td></tr>
+          <tr><td class="td-hi">Accellera / IEEE</td><td>UVM, SystemVerilog, VHDL</td><td><span class="badge badge-red">Tier 1 — Verification</span></td></tr>
+          <tr><td class="td-hi">MIPI Alliance</td><td>MIPI C-PHY, D-PHY, M-PHY</td><td><span class="badge badge-warn">Tier 2 — Mobile SoC</span></td></tr>
+          <tr><td class="td-hi">RISC-V International</td><td>RV32/RV64, Vector Extension</td><td><span class="badge badge-blue">Tier 3 — Strategic</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout callout-info">
+      <strong>Practical Note:</strong> Full voting membership in JEDEC, PCI-SIG, or UCIe requires annual fees ranging from $3,000 to $30,000+. For early-stage IP companies, bootstrapping using publicly available spec excerpts and open-source reference implementations is acceptable — but alignment with these specs from day one is mandatory. Non-compliant IP will not sell regardless of membership status.
+    </div>
+
+    <h2 id="outlook">2026 Outlook</h2>
+    <p>The memory market will remain supply-constrained at the high end (HBM) and gradually rebalancing at the commodity end (DDR5, NAND) through 2026. Key transitions to watch:</p>
+
+    <ul>
+      <li><strong>HBM4 volume ramp:</strong> SK Hynix leads qualification with NVIDIA for the B200 successor platform; Samsung and Micron follow in 2026.</li>
+      <li><strong>CXL 3.0 adoption:</strong> Intel Granite Rapids and AMD Genoa/Turin already support CXL; expect first CXL memory pooling deployments in hyperscale AI inference clusters.</li>
+      <li><strong>PCIe 6.0 silicon:</strong> First PCIe 6.0 retimers and switch silicon sampling in 2025; host integration in 2026 server platforms.</li>
+      <li><strong>LPDDR6 sampling:</strong> Targeting 14.4 GT/s for next-generation mobile and edge AI platforms; JEDEC specification expected to finalize by end of 2025.</li>
+      <li><strong>3D DRAM beyond HBM:</strong> Samsung and Micron are exploring stacked DRAM configurations beyond HBM for cache-adjacent memory applications in future logic nodes.</li>
+    </ul>
+
+    <div class="callout callout-info">
+      <strong>Yarok14 Services:</strong> We develop memory controller RTL and VIP for DDR5, LPDDR5X, HBM, and CXL interfaces. Our physical design team handles timing closure and signal integrity for high-speed memory interfaces at sub-7nm nodes. <a href="../index.html#contact" style="color:var(--green);">Contact us to discuss your memory IP requirements →</a>
+    </div>
+
+  </article>
+
+  <!-- SIDEBAR -->
+  <aside class="article-sidebar">
+
+    <div class="sidebar-widget">
+      <h4>// Table of Contents</h4>
+      <ul class="toc-list">
+        <li><a href="#supercycle">The AI Memory Supercycle</a></li>
+        <li><a href="#hbm">HBM: The AI Memory Standard</a></li>
+        <li><a href="#ddr5">DDR5 & LPDDR5X</a></li>
+        <li><a href="#cxl">CXL: Memory Disaggregation</a></li>
+        <li><a href="#pcie">PCIe Gen 5 & Gen 6</a></li>
+        <li><a href="#supply">Supply Chain & Market</a></li>
+        <li><a href="#ucxl">UCIe: Chiplet Interconnect</a></li>
+        <li><a href="#standards-bodies">Standards Bodies</a></li>
+        <li><a href="#outlook">2026 Outlook</a></li>
+      </ul>
+    </div>
+
+    <div class="sidebar-widget">
+      <h4>// Key Specs</h4>
+      <div style="display:flex; flex-direction:column; gap:8px;">
+        <div class="spec-row" style="padding:10px 14px;">
+          <span class="spec-key" style="font-size:0.7rem;">HBM3E BW</span>
+          <span class="spec-val" style="font-size:0.75rem;">1.2 TB/s</span>
+        </div>
+        <div class="spec-row" style="padding:10px 14px;">
+          <span class="spec-key" style="font-size:0.7rem;">DDR5 MAX</span>
+          <span class="spec-val" style="font-size:0.75rem;">8.0 GT/s</span>
+        </div>
+        <div class="spec-row" style="padding:10px 14px;">
+          <span class="spec-key" style="font-size:0.7rem;">PCIe 6 x16</span>
+          <span class="spec-val" style="font-size:0.75rem;">128 GB/s</span>
+        </div>
+        <div class="spec-row" style="padding:10px 14px;">
+          <span class="spec-key" style="font-size:0.7rem;">LPDDR5X</span>
+          <span class="spec-val" style="font-size:0.75rem;">9600 MT/s</span>
+        </div>
+        <div class="spec-row" style="padding:10px 14px;">
+          <span class="spec-key" style="font-size:0.7rem;">CXL 3.0 x16</span>
+          <span class="spec-val" style="font-size:0.75rem;">~256 GB/s</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sidebar-widget">
+      <h4>// Article Info</h4>
+      <div style="display:flex; flex-direction:column; gap:8px;">
+        <div class="spec-row" style="padding:10px 14px;">
+          <span class="spec-key" style="font-size:0.72rem;">PUBLISHED</span>
+          <span class="spec-val" style="font-size:0.78rem;">June 2026</span>
+        </div>
+        <div class="spec-row" style="padding:10px 14px;">
+          <span class="spec-key" style="font-size:0.72rem;">READ TIME</span>
+          <span class="spec-val" style="font-size:0.78rem;">25 min</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sidebar-widget">
+      <h4>// Related Articles</h4>
+      <a href="it-ot-integration.html" style="text-decoration:none;">
+        <div class="related-post-item">
+          <div class="rpi-icon">🏭</div>
+          <div class="rpi-text">
+            <h5>IT/OT Integration: The AI-Powered Semiconductor Factory</h5>
+            <span>May 2026 · 12 min</span>
+          </div>
+        </div>
+      </a>
+      <div class="related-post-item" style="opacity:0.5;">
+        <div class="rpi-icon">⚡</div>
+        <div class="rpi-text">
+          <h5>RTL-to-GDSII: Physical Design for Sub-7nm</h5>
+          <span>Coming Soon</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sidebar-widget">
+      <h4>// Memory IP Services</h4>
+      <p style="font-size:0.83rem; color:var(--muted); margin-bottom:14px; line-height:1.7;">DDR5, LPDDR5X, HBM, and CXL controller RTL and verification IP.</p>
+      <a href="../index.html#contact" class="btn-primary" style="display:block; text-align:center; font-size:0.85rem;">Talk to Our Team</a>
+    </div>
+
+  </aside>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-brand-col">
+      <h3>YAROK<span>14</span></h3>
+      <p>Semiconductor and AI hardware engineering — ASIC design, verification, embedded systems, and industrial AI.</p>
+      <div class="footer-social" style="margin-top: 24px; justify-content: flex-start;">
+        <a href="https://www.linkedin.com/company/yarok14" target="_blank"><img src="../assets/images/linkedin.png" alt="LinkedIn"></a>
+        <a href="https://github.com/Yarok14Technologies" target="_blank"><img src="../assets/images/github.png" alt="GitHub"></a>
+        <a href="https://www.youtube.com/channel/UCWmCcm1UlDJJfz0aB9B_a0A" target="_blank"><img src="../assets/images/youtube.png" alt="YouTube"></a>
+        <a href="https://www.instagram.com/yarok14.technology" target="_blank"><img src="../assets/images/instagram.png" alt="Instagram"></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Insights</h4>
+      <ul>
+        <li><a href="memory-chips-2025-26.html">Memory Chips 2025–26</a></li>
+        <li><a href="it-ot-integration.html">IT/OT Integration</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="../index.html#services">ASIC & FPGA</a></li>
+        <li><a href="../index.html#services">Physical Design</a></li>
+        <li><a href="../index.html#services">AI Systems</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../insights.html">All Insights</a></li>
+        <li><a href="../careers.html">Careers</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-divider"></div>
+  <div class="footer-bottom">
+    <p>© 2026 Yarok14 Technologies. All Rights Reserved.</p>
+    <p class="text-mono" style="font-size:0.75rem; color: var(--faint);">ASIC · AI Hardware · Embedded Systems</p>
+  </div>
+</footer>
+
+<!-- toggleNav(), scrollProgress() are in ../assets/js/main.js -->
+</body>
+</html>
