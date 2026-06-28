@@ -1,0 +1,1644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Memory Chips & High-Speed Protocols 2025–2026 | YAROK14</title>
+<meta name="description" content="Deep technical analysis of memory chips and protocols in 2025–2026: AI supercycle, HBM, DDR5, LPDDR5X, supply shortages, engineering challenges, and the future of computing memory.">
+<meta property="og:title" content="Memory Chips & Protocols 2025–2026 | YAROK14 Technologies">
+<meta property="og:description" content="The AI memory supercycle, HBM4, DDR5, LPDDR5X, CXL, shortages, and the future of semiconductor memory.">
+<meta property="og:type" content="article">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Memory Chips & High-Speed Protocols 2025–2026",
+  "author": {"@type": "Organization", "name": "YAROK14 Technologies"},
+  "datePublished": "2026-06-01",
+  "publisher": {"@type": "Organization", "name": "YAROK14 Technologies"}
+}
+</script>
+<style>
+  :root {
+    --navy: #0b1f3a;
+    --blue: #0b4ea2;
+    --blue-light: #1a6fd4;
+    --cyan: #00c8e0;
+    --gold: #f5a623;
+    --bg: #f0f4fb;
+    --surface: #ffffff;
+    --surface2: #eef3fb;
+    --text: #1a1f2e;
+    --text-muted: #5a6278;
+    --border: #d0dcf0;
+    --green: #1db954;
+    --red: #e8344a;
+    --purple: #7c3aed;
+    --radius: 12px;
+    --shadow: 0 4px 24px rgba(11,31,58,0.10);
+  }
+  [data-theme="dark"] {
+    --bg: #0e1422;
+    --surface: #161d2f;
+    --surface2: #1e2840;
+    --text: #e8eef8;
+    --text-muted: #8a98b8;
+    --border: #2a3550;
+    --shadow: 0 4px 24px rgba(0,0,0,0.4);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.75; transition: background 0.3s, color 0.3s; }
+
+  /* Progress Bar */
+  #progress-bar { position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(90deg, var(--cyan), var(--blue)); z-index: 9999; width: 0%; transition: width 0.1s; }
+
+  /* Nav */
+  nav { position: sticky; top: 0; z-index: 100; background: var(--navy); box-shadow: 0 2px 12px rgba(0,0,0,0.25); }
+  .nav-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0 24px; height: 60px; }
+  .nav-logo { color: #fff; font-weight: 800; font-size: 1.15rem; letter-spacing: 1px; text-decoration: none; }
+  .nav-logo span { color: var(--cyan); }
+  .nav-links { display: flex; gap: 24px; list-style: none; }
+  .nav-links a { color: #bcd; font-size: 0.88rem; text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--cyan); }
+  .theme-btn { background: none; border: 1px solid #3a5080; color: #bcd; padding: 5px 12px; border-radius: 20px; cursor: pointer; font-size: 0.82rem; transition: all 0.2s; }
+  .theme-btn:hover { background: var(--blue); color: #fff; }
+
+  /* Hero */
+  .hero { background: linear-gradient(135deg, #0b1f3a 0%, #0d2d5e 50%, #0b3a7a 100%); color: #fff; padding: 100px 24px 80px; text-align: center; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
+  .hero-tag { display: inline-block; background: rgba(0,200,224,0.15); border: 1px solid var(--cyan); color: var(--cyan); font-size: 0.78rem; padding: 4px 14px; border-radius: 20px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 24px; }
+  .hero h1 { font-size: clamp(1.8rem, 5vw, 3.2rem); font-weight: 900; line-height: 1.2; margin-bottom: 20px; position: relative; }
+  .hero h1 span { color: var(--cyan); }
+  .hero-sub { font-size: 1.05rem; color: #9ab; max-width: 780px; margin: 0 auto 36px; line-height: 1.8; position: relative; }
+  .hero-stats { display: flex; gap: 40px; justify-content: center; flex-wrap: wrap; position: relative; }
+  .stat-box { text-align: center; }
+  .stat-num { font-size: 2.2rem; font-weight: 900; color: var(--cyan); display: block; }
+  .stat-label { font-size: 0.8rem; color: #7ab; text-transform: uppercase; letter-spacing: 1px; }
+
+  /* Layout */
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+  section { padding: 70px 0; }
+  section:nth-child(even) .container > .section-inner { /* alternating */ }
+
+  /* Section Headers */
+  .section-head { text-align: center; margin-bottom: 52px; }
+  .section-eyebrow { display: inline-block; background: var(--blue); color: #fff; font-size: 0.72rem; padding: 3px 12px; border-radius: 4px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 14px; }
+  .section-head h2 { font-size: clamp(1.5rem, 3.5vw, 2.2rem); font-weight: 800; color: var(--blue); margin-bottom: 12px; }
+  [data-theme="dark"] .section-head h2 { color: var(--cyan); }
+  .section-head p { color: var(--text-muted); max-width: 680px; margin: 0 auto; font-size: 1rem; }
+
+  /* Cards */
+  .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+  .card { background: var(--surface); border-radius: var(--radius); padding: 28px; box-shadow: var(--shadow); border: 1px solid var(--border); transition: transform 0.2s, box-shadow 0.2s; }
+  .card:hover { transform: translateY(-4px); box-shadow: 0 8px 32px rgba(11,78,162,0.15); }
+  .card-icon { font-size: 2rem; margin-bottom: 14px; }
+  .card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 10px; color: var(--blue); }
+  [data-theme="dark"] .card h3 { color: var(--cyan); }
+  .card p, .card ul { font-size: 0.92rem; color: var(--text-muted); }
+  .card ul { padding-left: 18px; }
+  .card ul li { margin-bottom: 5px; }
+
+  /* Tables */
+  .table-wrap { overflow-x: auto; border-radius: var(--radius); box-shadow: var(--shadow); margin: 28px 0; }
+  table { width: 100%; border-collapse: collapse; background: var(--surface); font-size: 0.9rem; }
+  thead { background: var(--navy); color: #fff; }
+  th { padding: 13px 16px; text-align: left; font-weight: 700; font-size: 0.82rem; letter-spacing: 0.5px; text-transform: uppercase; }
+  td { padding: 12px 16px; border-bottom: 1px solid var(--border); }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: var(--surface2); }
+  .badge { display: inline-block; padding: 2px 9px; border-radius: 10px; font-size: 0.75rem; font-weight: 700; }
+  .badge-green { background: #d4f5e2; color: #1a7a3e; }
+  .badge-blue { background: #dbeafe; color: #1d4ed8; }
+  .badge-orange { background: #fef3c7; color: #b45309; }
+  .badge-red { background: #fee2e2; color: #991b1b; }
+  .badge-purple { background: #ede9fe; color: #5b21b6; }
+  [data-theme="dark"] .badge-green { background: #1a4a2e; color: #5dd88a; }
+  [data-theme="dark"] .badge-blue { background: #1e3460; color: #7db4ff; }
+  [data-theme="dark"] .badge-orange { background: #4a3010; color: #fbbf24; }
+  [data-theme="dark"] .badge-red { background: #4a1a1a; color: #f87171; }
+  [data-theme="dark"] .badge-purple { background: #2e1a5a; color: #c4b5fd; }
+
+  /* SVG Diagrams */
+  .diagram-wrap { background: var(--surface); border-radius: var(--radius); padding: 32px; box-shadow: var(--shadow); margin: 28px 0; display: flex; flex-direction: column; align-items: center; }
+  .diagram-wrap svg { max-width: 100%; height: auto; }
+  .diagram-caption { font-size: 0.82rem; color: var(--text-muted); margin-top: 14px; text-align: center; }
+
+  /* Highlight blocks */
+  .highlight-box { background: linear-gradient(135deg, #eef6ff, #e8f0fe); border-left: 4px solid var(--blue); border-radius: 0 var(--radius) var(--radius) 0; padding: 20px 24px; margin: 24px 0; }
+  [data-theme="dark"] .highlight-box { background: linear-gradient(135deg, #1a2a4a, #1e3060); }
+  .highlight-box strong { color: var(--blue); }
+  [data-theme="dark"] .highlight-box strong { color: var(--cyan); }
+  .warning-box { background: linear-gradient(135deg, #fff7ed, #fef3c7); border-left: 4px solid var(--gold); border-radius: 0 var(--radius) var(--radius) 0; padding: 20px 24px; margin: 24px 0; }
+  [data-theme="dark"] .warning-box { background: linear-gradient(135deg, #3a2500, #4a3010); }
+  .stat-highlight { background: linear-gradient(135deg, var(--navy), #0d2d5e); color: #fff; border-radius: var(--radius); padding: 32px; margin: 28px 0; text-align: center; }
+  .stat-highlight .big-num { font-size: 3.5rem; font-weight: 900; color: var(--cyan); }
+  .stat-highlight .big-label { font-size: 1rem; color: #9ab; margin-top: 6px; }
+
+  /* Timeline */
+  .timeline { position: relative; padding-left: 32px; }
+  .timeline::before { content: ''; position: absolute; left: 10px; top: 0; bottom: 0; width: 2px; background: var(--border); }
+  .timeline-item { position: relative; margin-bottom: 36px; }
+  .timeline-item::before { content: ''; position: absolute; left: -26px; top: 6px; width: 14px; height: 14px; border-radius: 50%; background: var(--blue); border: 2px solid var(--surface); }
+  .timeline-item h4 { font-weight: 700; color: var(--blue); font-size: 0.95rem; margin-bottom: 6px; }
+  [data-theme="dark"] .timeline-item h4 { color: var(--cyan); }
+  .timeline-item p { font-size: 0.9rem; color: var(--text-muted); }
+  .timeline-year { display: inline-block; font-size: 0.75rem; font-weight: 800; background: var(--blue); color: #fff; padding: 2px 8px; border-radius: 4px; margin-bottom: 8px; }
+
+  /* Section images */
+  .img-banner { width: 100%; border-radius: var(--radius); object-fit: cover; margin: 28px 0; box-shadow: var(--shadow); max-height: 420px; }
+  .img-inline { border-radius: var(--radius); box-shadow: var(--shadow); width: 100%; margin: 20px 0; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start; }
+  @media (max-width: 720px) { .two-col { grid-template-columns: 1fr; } }
+
+  /* Challenge/Solution grid */
+  .cs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+  .cs-col { padding: 28px; }
+  .cs-col:first-child { background: #fff1f2; border-right: 1px solid var(--border); }
+  .cs-col:last-child { background: #f0fdf4; }
+  [data-theme="dark"] .cs-col:first-child { background: #2a0a10; }
+  [data-theme="dark"] .cs-col:last-child { background: #0a2a14; }
+  .cs-col h3 { font-size: 1rem; font-weight: 800; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+  .cs-col ul { padding-left: 18px; font-size: 0.9rem; color: var(--text-muted); }
+  .cs-col ul li { margin-bottom: 8px; }
+  @media (max-width: 640px) { .cs-grid { grid-template-columns: 1fr; } .cs-col:first-child { border-right: none; border-bottom: 1px solid var(--border); } }
+
+  /* FAQ */
+  .faq-item { border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 12px; overflow: hidden; }
+  .faq-q { padding: 16px 20px; font-weight: 700; cursor: pointer; display: flex; justify-content: space-between; align-items: center; background: var(--surface); font-size: 0.95rem; transition: background 0.2s; }
+  .faq-q:hover { background: var(--surface2); }
+  .faq-a { padding: 0 20px; max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.3s; font-size: 0.9rem; color: var(--text-muted); }
+  .faq-item.open .faq-a { max-height: 400px; padding: 16px 20px; }
+  .faq-item.open .faq-arrow { transform: rotate(180deg); }
+  .faq-arrow { transition: transform 0.3s; font-size: 0.8rem; }
+
+  /* Protocol comparison */
+  .proto-card { background: var(--surface); border-radius: var(--radius); border: 1px solid var(--border); padding: 22px; box-shadow: var(--shadow); }
+  .proto-name { font-size: 1.1rem; font-weight: 800; color: var(--blue); margin-bottom: 8px; }
+  [data-theme="dark"] .proto-name { color: var(--cyan); }
+  .proto-bw { font-size: 1.5rem; font-weight: 900; color: var(--text); }
+  .proto-bw span { font-size: 0.78rem; color: var(--text-muted); font-weight: 400; }
+  .proto-bar-wrap { background: var(--border); border-radius: 4px; height: 6px; margin: 10px 0; }
+  .proto-bar { height: 6px; border-radius: 4px; background: linear-gradient(90deg, var(--blue), var(--cyan)); }
+  .proto-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+
+  /* Footer */
+  footer { background: var(--navy); color: #9ab; padding: 50px 24px 30px; }
+  .footer-inner { max-width: 1100px; margin: 0 auto; }
+  .footer-brand { font-size: 1.3rem; font-weight: 900; color: #fff; margin-bottom: 6px; }
+  .footer-brand span { color: var(--cyan); }
+  .footer-tagline { font-size: 0.88rem; margin-bottom: 32px; }
+  .footer-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 32px; margin-bottom: 40px; }
+  .footer-col h4 { color: #fff; font-size: 0.85rem; font-weight: 700; margin-bottom: 14px; letter-spacing: 1px; text-transform: uppercase; }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 8px; font-size: 0.85rem; }
+  .footer-bottom { border-top: 1px solid #1e3050; padding-top: 20px; font-size: 0.8rem; text-align: center; }
+
+  /* Back to top */
+  #back-top { position: fixed; bottom: 28px; right: 28px; background: var(--blue); color: #fff; border: none; width: 44px; height: 44px; border-radius: 50%; cursor: pointer; font-size: 1.2rem; box-shadow: 0 4px 16px rgba(11,78,162,0.4); opacity: 0; transition: opacity 0.3s; z-index: 99; }
+  #back-top.visible { opacity: 1; }
+  #back-top:hover { background: var(--blue-light); }
+
+  /* Utility */
+  .text-muted { color: var(--text-muted); }
+  .mt-8 { margin-top: 8px; }
+  .mt-16 { margin-top: 16px; }
+  .mt-24 { margin-top: 24px; }
+  h2.sub { font-size: 1.35rem; font-weight: 800; color: var(--blue); margin: 40px 0 16px; }
+  [data-theme="dark"] h2.sub { color: var(--cyan); }
+  h3.sub { font-size: 1.1rem; font-weight: 700; color: var(--text); margin: 28px 0 12px; }
+  p { margin-bottom: 14px; }
+  p:last-child { margin-bottom: 0; }
+
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hero { padding: 72px 20px 56px; }
+    .hero-stats { gap: 24px; }
+    .stat-num { font-size: 1.7rem; }
+    section { padding: 50px 0; }
+  }
+</style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">YAROK<span>14</span></a>
+    <ul class="nav-links">
+      <li><a href="#why-memory">Why Memory</a></li>
+      <li><a href="#supercycle">Supercycle</a></li>
+      <li><a href="#hbm">HBM</a></li>
+      <li><a href="#protocols">Protocols</a></li>
+      <li><a href="#shortages">Shortages</a></li>
+      <li><a href="#challenges">Challenges</a></li>
+      <li><a href="#future">Future</a></li>
+      <li><a href="#sram-vs-dram">SRAM</a></li>
+      <li><a href="#standards-bodies">Standards</a></li>
+    </ul>
+    <button class="theme-btn" onclick="toggleTheme()">🌙 Dark</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-tag">YAROK14 Deep Tech — 2026</div>
+  <h1>Memory Chips & <span>High-Speed Protocols</span><br>2025–2026</h1>
+  <p class="hero-sub">The AI supercycle transformed memory from a commodity into the semiconductor industry's most strategically valuable resource. From HBM4 to DDR6, from supply shortages to advanced packaging — this is the definitive technical guide.</p>
+  <div class="hero-stats">
+    <div class="stat-box"><span class="stat-num">$594.7B</span><span class="stat-label">Memory Market 2026</span></div>
+    <div class="stat-box"><span class="stat-num">1.18 TB/s</span><span class="stat-label">HBM3E Bandwidth</span></div>
+    <div class="stat-box"><span class="stat-num">130%</span><span class="stat-label">HBM YoY Growth '25</span></div>
+    <div class="stat-box"><span class="stat-num">#1</span><span class="stat-label">Semiconductor Segment</span></div>
+  </div>
+</div>
+
+<!-- WHY MEMORY MATTERS -->
+<section id="why-memory" style="background: var(--bg);">
+<div class="container">
+  <div class="section-head">
+    <span class="section-eyebrow">Foundations</span>
+    <h2>Why Memory Dominates the Semiconductor World</h2>
+    <p>Modern computing has shifted from compute-centric to data-centric. The bottleneck is no longer how fast chips calculate — it is how fast they can move data.</p>
+  </div>
+
+  <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1100&q=80" alt="Circuit board memory chips close-up" class="img-banner">
+
+  <p>For decades, Moore's Law drove the semiconductor industry: transistors shrank, CPUs ran faster, and compute throughput scaled predictably. But today, every dominant workload — large language model inference, real-time video analytics, autonomous driving, cloud-scale databases — is <strong>memory-bandwidth-bound</strong>. These systems exhaust memory throughput before they exhaust processor cores.</p>
+
+  <p>This shift elevated memory chips to the most critically constrained and commercially valuable component in the global supply chain. In 2026, memory accounts for <strong>$594.7 billion</strong> of the projected $1.29 trillion global semiconductor market — nearly half of the entire industry.</p>
+
+  <h2 class="sub">The Structural Reason: One Processor, Many Memory Chips</h2>
+
+  <p>A fundamental asymmetry explains memory's dominance by volume: processors ship one-to-one with systems, while memory chips ship in multiples. Consider a single AI inference server:</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Component</th><th>Count per Server</th><th>Memory Chips Involved</th></tr></thead>
+      <tbody>
+        <tr><td><strong>CPU</strong></td><td>2 sockets</td><td>16–32 DDR5 DIMMs (8 chips per DIMM)</td></tr>
+        <tr><td><strong>GPU/AI Accelerator</strong></td><td>8 cards</td><td>48 HBM3E stacks (6 per card)</td></tr>
+        <tr><td><strong>NVMe SSD</strong></td><td>8–16 drives</td><td>Dozens of NAND dies per drive</td></tr>
+        <tr><td><strong>L1/L2/L3 Cache</strong></td><td>Embedded in CPU/GPU</td><td>SRAM arrays, hundreds of MB total</td></tr>
+        <tr><td><strong>Total silicon dies</strong></td><td colspan="2"><strong style="color: var(--blue);">Hundreds of memory dies per server</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="highlight-box">
+    <strong>The multiplier effect:</strong> One AI GPU contains six HBM3E stacks. One server has eight GPUs. A hyperscale data center deploys hundreds of thousands of servers. Every level of this stack multiplies memory chip demand — and there is no equivalent multiplication for processors.
+  </div>
+
+  <h2 class="sub">The Memory Hierarchy</h2>
+  <p>Every processor relies on a carefully designed hierarchy of memory types, each with different speed, size, and cost characteristics:</p>
+
+  <div class="diagram-wrap">
+    <svg viewBox="0 0 700 520" xmlns="http://www.w3.org/2000/svg" style="max-width:660px;">
+      <defs>
+        <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" style="stop-color:#0b4ea2"/>
+          <stop offset="100%" style="stop-color:#00c8e0"/>
+        </linearGradient>
+      </defs>
+      <!-- Pyramid levels -->
+      <!-- Registers -->
+      <polygon points="350,20 440,65 260,65" fill="url(#g1)" opacity="0.95"/>
+      <text x="350" y="50" text-anchor="middle" fill="white" font-size="11" font-weight="700">REGISTERS</text>
+      <!-- L1 Cache -->
+      <polygon points="350,70 460,120 240,120" fill="#0b4ea2" opacity="0.88"/>
+      <text x="350" y="102" text-anchor="middle" fill="white" font-size="11" font-weight="700">L1 CACHE — 32–128 KB</text>
+      <!-- L2 Cache -->
+      <polygon points="350,125 480,178 220,178" fill="#1a5fb4" opacity="0.85"/>
+      <text x="350" y="159" text-anchor="middle" fill="white" font-size="11" font-weight="700">L2 CACHE — 256 KB – 2 MB</text>
+      <!-- L3 Cache -->
+      <polygon points="350,183 502,240 198,240" fill="#1e6fcc" opacity="0.82"/>
+      <text x="350" y="220" text-anchor="middle" fill="white" font-size="11" font-weight="700">L3 CACHE — 4 MB – 128 MB</text>
+      <!-- HBM -->
+      <polygon points="350,245 525,304 175,304" fill="#007ab8" opacity="0.88"/>
+      <text x="350" y="282" text-anchor="middle" fill="white" font-size="11" font-weight="700">HBM3E / HBM4 — up to 1.18 TB/s</text>
+      <!-- DDR5 -->
+      <polygon points="350,309 548,370 152,370" fill="#006a9e" opacity="0.85"/>
+      <text x="350" y="347" text-anchor="middle" fill="white" font-size="11" font-weight="700">DDR5 / LPDDR5X — Main Memory</text>
+      <!-- SSD -->
+      <polygon points="350,375 572,438 128,438" fill="#00547e" opacity="0.82"/>
+      <text x="350" y="415" text-anchor="middle" fill="white" font-size="11" font-weight="700">NVMe SSD (NAND Flash)</text>
+      <!-- Cloud -->
+      <polygon points="350,443 596,507 104,507" fill="#003d5e"/>
+      <text x="350" y="482" text-anchor="middle" fill="white" font-size="11" font-weight="700">Cloud / Network Storage</text>
+      <!-- Labels right side -->
+      <text x="610" y="44" fill="#0b4ea2" font-size="9" font-weight="700">~1 ns</text>
+      <text x="610" y="100" fill="#0b4ea2" font-size="9" font-weight="700">~3 ns</text>
+      <text x="610" y="158" fill="#0b4ea2" font-size="9" font-weight="700">~8 ns</text>
+      <text x="610" y="218" fill="#0b4ea2" font-size="9" font-weight="700">~30 ns</text>
+      <text x="610" y="278" fill="#0b4ea2" font-size="9" font-weight="700">~100 ns</text>
+      <text x="610" y="348" fill="#0b4ea2" font-size="9" font-weight="700">~100 ns</text>
+      <text x="610" y="410" fill="#0b4ea2" font-size="9" font-weight="700">~100 µs</text>
+      <text x="610" y="480" fill="#0b4ea2" font-size="9" font-weight="700">~10 ms</text>
+      <text x="620" y="15" fill="#555" font-size="8" text-anchor="middle">LATENCY</text>
+      <!-- Arrow -->
+      <line x1="605" y1="20" x2="605" y2="500" stroke="#ddd" stroke-width="1"/>
+      <polygon points="605,505 601,495 609,495" fill="#aaa"/>
+    </svg>
+    <p class="diagram-caption">Memory hierarchy from fastest registers to cloud storage — each level trades speed for capacity. AI workloads are constrained by the HBM and DDR5 layers.</p>
+  </div>
+
+</div>
+</section>
+
+<!-- AI SUPERCYCLE -->
+<section id="supercycle" style="background: var(--surface2);">
+<div class="container">
+  <div class="section-head">
+    <span class="section-eyebrow">Market Analysis</span>
+    <h2>The AI Memory Supercycle: 2025–2026</h2>
+    <p>Analysts coined a new term for this era: a <em>supercycle</em> — not a normal demand peak, but a structural, multi-year repricing of the entire memory market.</p>
+  </div>
+
+  <img src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=1100&q=80" alt="AI data center with server racks glowing blue" class="img-banner">
+
+  <p>The AI infrastructure buildout that began accelerating in 2023 reached a new intensity in 2025–2026. Every major hyperscaler — Microsoft, Google, Amazon, Meta, Oracle — embarked on massive data center expansion programs costing hundreds of billions of dollars. The key constraint in all of them was not land, power, or network bandwidth. It was <strong>memory</strong>.</p>
+
+  <div class="stat-highlight">
+    <div class="big-num">$418.6B</div>
+    <div class="big-label">DRAM revenue projected for 2026 — nearly triple the 2025 figure (IDC April 2026 forecast)</div>
+  </div>
+
+  <h2 class="sub">Why AI Makes Memory So Hungry</h2>
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-icon">🧠</div>
+      <h3>Training LLMs</h3>
+      <p>Training a frontier model like GPT-4 class requires petabytes of memory bandwidth. Parameters, gradients, optimizer states, and activations must all reside in fast memory simultaneously.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">⚡</div>
+      <h3>Inference at Scale</h3>
+      <p>A 70B-parameter model requires ~140 GB of memory just to load. Serving millions of simultaneous requests multiplies this across thousands of accelerators, each with HBM stacks.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🔄</div>
+      <h3>KV Cache Explosion</h3>
+      <p>Long-context AI conversations require storing the key-value attention cache in memory. For a 128K-token context window, the KV cache alone can exceed a full GPU's HBM capacity.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🌐</div>
+      <h3>Hyperscale Multiplier</h3>
+      <p>Each hyperscaler deploys tens of thousands of AI servers. Each server holds hundreds of memory dies. The aggregate demand is unlike anything the memory industry has faced before.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">📱</div>
+      <h3>On-Device AI</h3>
+      <p>AI features in smartphones (camera processing, real-time translation, voice recognition) pushed flagship RAM from 8 GB in 2021 to 16–24 GB in 2026, all using LPDDR5X.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🚗</div>
+      <h3>Automotive AI</h3>
+      <p>ADAS and autonomous driving systems require multiple high-speed memory subsystems for lidar point cloud processing, camera fusion, and real-time decision making.</p>
+    </div>
+  </div>
+
+  <h2 class="sub">Market Revenue by Memory Segment (2026 Estimates)</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Memory Type</th><th>2026 Revenue (Est.)</th><th>YoY Growth</th><th>Primary Driver</th></tr></thead>
+      <tbody>
+        <tr><td><strong>DRAM Total</strong></td><td>$418.6 B</td><td><span class="badge badge-green">~3× YoY</span></td><td>AI HBM demand + DDR5 cloud</td></tr>
+        <tr><td>— HBM (subset)</td><td>~$50–80 B</td><td><span class="badge badge-green">+70% YoY</span></td><td>H200, B200, MI300X GPU systems</td></tr>
+        <tr><td>— DDR5 / LPDDR5X</td><td>Large majority of DRAM</td><td><span class="badge badge-blue">+40% YoY</span></td><td>Server DIMM + smartphone</td></tr>
+        <tr><td><strong>NAND Flash</strong></td><td>$174.1 B</td><td><span class="badge badge-green">+138.5% YoY</span></td><td>AI data center SSD, enterprise</td></tr>
+        <tr><td><strong>Total Memory</strong></td><td><strong>$594.7 B</strong></td><td><span class="badge badge-green">Supercycle</span></td><td>AI infrastructure buildout</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="warning-box">
+    <strong>⚠️ Supply Fact:</strong> SK Hynix had already booked its <strong>entire 2026 HBM production capacity</strong> by late 2025 — before the year began. This is historically unprecedented and illustrates how extreme the supply-demand imbalance has become.
+  </div>
+
+  <h2 class="sub">AI Model Memory Footprint</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Model Class</th><th>Parameters</th><th>FP16 Memory</th><th>KV Cache (128K context)</th><th>Hardware Required</th></tr></thead>
+      <tbody>
+        <tr><td>Small LLM (3B)</td><td>3 billion</td><td>~6 GB</td><td>+8 GB</td><td>1 GPU (24 GB VRAM)</td></tr>
+        <tr><td>Medium LLM (8B)</td><td>8 billion</td><td>~16 GB</td><td>+20 GB</td><td>1–2 GPUs with HBM</td></tr>
+        <tr><td>Large LLM (70B)</td><td>70 billion</td><td>~140 GB</td><td>+40 GB+</td><td>4–8 GPUs (HBM3E)</td></tr>
+        <tr><td>Frontier MoE (400B+)</td><td>400B+ estimated</td><td>~800 GB+</td><td>Hundreds of GB</td><td>Multi-GPU cluster</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</section>
+
+<!-- HBM DEEP DIVE -->
+<section id="hbm" style="background: var(--bg);">
+<div class="container">
+  <div class="section-head">
+    <span class="section-eyebrow">Core Technology</span>
+    <h2>High Bandwidth Memory (HBM): The Technology Behind Everything</h2>
+    <p>HBM is not just a faster DRAM — it is a fundamentally different architectural concept that stacks dies vertically and shortens the electrical path to the processor.</p>
+  </div>
+
+  <div class="two-col">
+    <div>
+      <h2 class="sub">What Makes HBM Different</h2>
+      <p>Traditional DRAM (like DDR5) sits on a PCB some distance from the processor. Signals must travel centimeters through PCB traces, through connectors, and through long wires — consuming power and limiting bandwidth.</p>
+      <p>HBM stacks multiple DRAM dies <strong>vertically</strong> — like floors in a building — connected by Through-Silicon Vias (TSVs): vertical electrical connections drilled through the silicon itself. This stack is then mounted directly on an interposer next to the processor die, bringing memory within millimeters of the compute logic.</p>
+      <p>The result is a memory bus <strong>1024 bits wide</strong> (vs. 64 bits for a single DDR5 channel) and electrical paths so short that bandwidth reaches over 1 terabyte per second while consuming dramatically less power per bit.</p>
+    </div>
+    <div class="diagram-wrap" style="margin: 0;">
+      <svg viewBox="0 0 340 400" xmlns="http://www.w3.org/2000/svg">
+        <!-- HBM Stack Cross Section -->
+        <!-- Interposer -->
+        <rect x="20" y="340" width="300" height="40" rx="4" fill="#0b1f3a"/>
+        <text x="170" y="364" text-anchor="middle" fill="white" font-size="10" font-weight="700">SILICON INTERPOSER</text>
+        <!-- Processor die -->
+        <rect x="20" y="290" width="130" height="44" rx="4" fill="#0b4ea2"/>
+        <text x="85" y="316" text-anchor="middle" fill="white" font-size="10" font-weight="700">PROCESSOR DIE</text>
+        <text x="85" y="327" text-anchor="middle" fill="#9cf" font-size="8">(GPU / AI Accelerator)</text>
+        <!-- HBM Stack -->
+        <text x="250" y="280" text-anchor="middle" fill="#0b4ea2" font-size="9" font-weight="800">HBM STACK</text>
+        <!-- DRAM dies (stacked) -->
+        <rect x="175" y="250" width="150" height="22" rx="3" fill="#007ab8" opacity="0.9"/>
+        <text x="250" y="264" text-anchor="middle" fill="white" font-size="8.5">DRAM Die 8 (Top)</text>
+        <rect x="175" y="225" width="150" height="22" rx="3" fill="#0088cc" opacity="0.88"/>
+        <text x="250" y="239" text-anchor="middle" fill="white" font-size="8.5">DRAM Die 7</text>
+        <rect x="175" y="200" width="150" height="22" rx="3" fill="#0099e0" opacity="0.86"/>
+        <text x="250" y="214" text-anchor="middle" fill="white" font-size="8.5">DRAM Die 6</text>
+        <rect x="175" y="175" width="150" height="22" rx="3" fill="#00aaf0" opacity="0.84"/>
+        <text x="250" y="189" text-anchor="middle" fill="white" font-size="8.5">DRAM Die 5</text>
+        <rect x="175" y="150" width="150" height="22" rx="3" fill="#00b8f5" opacity="0.82"/>
+        <text x="250" y="164" text-anchor="middle" fill="white" font-size="8.5">DRAM Die 4</text>
+        <rect x="175" y="125" width="150" height="22" rx="3" fill="#00c2f7" opacity="0.80"/>
+        <text x="250" y="139" text-anchor="middle" fill="white" font-size="8.5">DRAM Die 3</text>
+        <rect x="175" y="100" width="150" height="22" rx="3" fill="#00ccf8" opacity="0.78"/>
+        <text x="250" y="114" text-anchor="middle" fill="white" font-size="8.5">DRAM Die 2</text>
+        <rect x="175" y="75" width="150" height="22" rx="3" fill="#00d4f9" opacity="0.76"/>
+        <text x="250" y="89" text-anchor="middle" fill="white" font-size="8.5">DRAM Die 1</text>
+        <!-- Base die -->
+        <rect x="175" y="290" width="150" height="44" rx="4" fill="#004d80"/>
+        <text x="250" y="315" text-anchor="middle" fill="white" font-size="9" font-weight="700">BASE DIE (Logic)</text>
+        <text x="250" y="327" text-anchor="middle" fill="#7cf" font-size="7.5">PHY + I/O Buffers</text>
+        <!-- TSV lines through stack -->
+        <line x1="215" y1="75" x2="215" y2="340" stroke="#f5a623" stroke-width="1.5" stroke-dasharray="3,2"/>
+        <line x1="235" y1="75" x2="235" y2="340" stroke="#f5a623" stroke-width="1.5" stroke-dasharray="3,2"/>
+        <line x1="255" y1="75" x2="255" y2="340" stroke="#f5a623" stroke-width="1.5" stroke-dasharray="3,2"/>
+        <text x="215" y="68" text-anchor="middle" fill="#f5a623" font-size="8" font-weight="700">TSVs</text>
+        <!-- Labels -->
+        <text x="10" y="60" fill="#555" font-size="8">↑ 1024-bit</text>
+        <text x="10" y="70" fill="#555" font-size="8">  wide bus</text>
+        <!-- Microbumps -->
+        <circle cx="230" cy="338" r="2" fill="#f5a623"/>
+        <circle cx="245" cy="338" r="2" fill="#f5a623"/>
+        <circle cx="260" cy="338" r="2" fill="#f5a623"/>
+        <text x="248" y="375" text-anchor="middle" fill="#f5a623" font-size="7.5">Microbumps to Interposer</text>
+      </svg>
+      <p class="diagram-caption">HBM cross-section: DRAM dies stacked via TSVs, mounted on base logic die, connected to interposer via microbumps.</p>
+    </div>
+  </div>
+
+  <h2 class="sub">HBM Generations — Performance Timeline</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Generation</th><th>Bandwidth</th><th>Bus Width</th><th>Dies</th><th>Max Capacity</th><th>Status (2026)</th></tr></thead>
+      <tbody>
+        <tr><td><strong>HBM2E</strong></td><td>~460 GB/s</td><td>1024-bit</td><td>8-Hi</td><td>16 GB</td><td><span class="badge badge-orange">Legacy</span></td></tr>
+        <tr><td><strong>HBM3</strong></td><td>~819 GB/s</td><td>1024-bit</td><td>8-Hi</td><td>24 GB</td><td><span class="badge badge-blue">H100, MI300X</span></td></tr>
+        <tr><td><strong>HBM3E</strong></td><td>~1.18 TB/s</td><td>1024-bit</td><td>12-Hi</td><td>36–48 GB</td><td><span class="badge badge-green">Current Mainstream</span></td></tr>
+        <tr><td><strong>HBM4</strong></td><td>1.5+ TB/s</td><td>2048-bit</td><td>16-Hi</td><td>48 GB+</td><td><span class="badge badge-purple">Entering Production</span></td></tr>
+        <tr><td><strong>HBM4E</strong></td><td>2+ TB/s (target)</td><td>2048-bit</td><td>16-Hi+</td><td>64 GB+</td><td><span class="badge badge-orange">2027+ Roadmap</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class="sub">The "3-to-1 Rule" — Why HBM Tightens All Memory Supply</h2>
+  <p>A critical and counterintuitive dynamic in the 2025–2026 memory market: producing HBM actually reduces the total supply of conventional memory. Because HBM requires far more silicon area, more processing steps (TSV drilling, stacking, bonding), and achieves lower bit yield per wafer, each wafer converted to HBM production removes the capacity to manufacture roughly <strong>three equivalent commodity DRAM chips</strong>.</p>
+
+  <div class="diagram-wrap">
+    <svg viewBox="0 0 620 200" xmlns="http://www.w3.org/2000/svg">
+      <!-- Left: 1 wafer for HBM -->
+      <rect x="20" y="40" width="180" height="120" rx="8" fill="#0b4ea2" opacity="0.12" stroke="#0b4ea2" stroke-width="1.5"/>
+      <text x="110" y="28" text-anchor="middle" fill="#0b4ea2" font-size="10" font-weight="700">1 WAFER → HBM4</text>
+      <circle cx="110" cy="100" r="52" fill="#0b4ea2" opacity="0.15" stroke="#0b4ea2" stroke-width="1.5"/>
+      <text x="110" y="97" text-anchor="middle" fill="#0b4ea2" font-size="9" font-weight="700">~70 HBM4</text>
+      <text x="110" y="110" text-anchor="middle" fill="#0b4ea2" font-size="9" font-weight="700">stacks/wafer</text>
+
+      <!-- Arrow -->
+      <text x="220" y="105" text-anchor="middle" fill="#e8344a" font-size="22" font-weight="900">⟷</text>
+      <text x="220" y="125" text-anchor="middle" fill="#e8344a" font-size="8" font-weight="700">EQUIVALENT</text>
+
+      <!-- Right: 3 wafers for DDR5 -->
+      <text x="430" y="15" text-anchor="middle" fill="#1a7a3e" font-size="10" font-weight="700">3 WAFERS → DDR5 DIMM Dies</text>
+      <circle cx="310" cy="100" r="52" fill="#1db954" opacity="0.12" stroke="#1db954" stroke-width="1.5"/>
+      <text x="310" y="97" text-anchor="middle" fill="#1a7a3e" font-size="8" font-weight="700">Wafer 1</text>
+      <text x="310" y="110" text-anchor="middle" fill="#1a7a3e" font-size="8">DDR5 dies</text>
+      <circle cx="430" cy="100" r="52" fill="#1db954" opacity="0.12" stroke="#1db954" stroke-width="1.5"/>
+      <text x="430" y="97" text-anchor="middle" fill="#1a7a3e" font-size="8" font-weight="700">Wafer 2</text>
+      <text x="430" y="110" text-anchor="middle" fill="#1a7a3e" font-size="8">DDR5 dies</text>
+      <circle cx="550" cy="100" r="52" fill="#1db954" opacity="0.12" stroke="#1db954" stroke-width="1.5"/>
+      <text x="550" y="97" text-anchor="middle" fill="#1a7a3e" font-size="8" font-weight="700">Wafer 3</text>
+      <text x="550" y="110" text-anchor="middle" fill="#1a7a3e" font-size="8">DDR5 dies</text>
+    </svg>
+    <p class="diagram-caption">The 3-to-1 Rule: Converting one wafer to HBM production removes the capacity of approximately three DDR5 DRAM wafers from the commodity pool — tightening the entire market.</p>
+  </div>
+
+</div>
+</section>
+
+<!-- PROTOCOLS -->
+<section id="protocols" style="background: var(--surface2);">
+<div class="container">
+  <div class="section-head">
+    <span class="section-eyebrow">Standards & Interfaces</span>
+    <h2>Memory & Interconnect Protocol Ecosystem</h2>
+    <p>The modern memory protocol landscape spans JEDEC standards, chiplet interconnects, and coherent memory fabrics — each serving different performance and topology requirements.</p>
+  </div>
+
+  <img src="https://images.unsplash.com/photo-1535378917042-10a22c95931a?w=1100&q=80" alt="Server rack interconnects and cables representing high-speed protocols" class="img-banner">
+
+  <h2 class="sub">Bandwidth Comparison: Major Memory & Interconnect Protocols</h2>
+
+  <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 18px;">
+    <div class="proto-card">
+      <div class="proto-name">HBM3E</div>
+      <div class="proto-bw">1,180 GB/s <span>per stack</span></div>
+      <div class="proto-bar-wrap"><div class="proto-bar" style="width:100%"></div></div>
+      <div class="proto-meta">
+        <span class="badge badge-blue">1024-bit bus</span>
+        <span class="badge badge-purple">12-Hi stack</span>
+        <span class="badge badge-green">H200/B200</span>
+      </div>
+    </div>
+    <div class="proto-card">
+      <div class="proto-name">HBM4</div>
+      <div class="proto-bw">1,500+ GB/s <span>per stack</span></div>
+      <div class="proto-bar-wrap"><div class="proto-bar" style="width:100%"></div></div>
+      <div class="proto-meta">
+        <span class="badge badge-blue">2048-bit bus</span>
+        <span class="badge badge-purple">16-Hi stack</span>
+        <span class="badge badge-orange">Ramping 2026</span>
+      </div>
+    </div>
+    <div class="proto-card">
+      <div class="proto-name">GDDR7</div>
+      <div class="proto-bw">~1,792 GB/s <span>total (GPU)</span></div>
+      <div class="proto-bar-wrap"><div class="proto-bar" style="width:88%"></div></div>
+      <div class="proto-meta">
+        <span class="badge badge-blue">32 Gbps/pin</span>
+        <span class="badge badge-green">Gaming GPUs</span>
+      </div>
+    </div>
+    <div class="proto-card">
+      <div class="proto-name">DDR5</div>
+      <div class="proto-bw">~89 GB/s <span>per channel</span></div>
+      <div class="proto-bar-wrap"><div class="proto-bar" style="width:28%"></div></div>
+      <div class="proto-meta">
+        <span class="badge badge-blue">64-bit bus</span>
+        <span class="badge badge-green">Server DIMM</span>
+      </div>
+    </div>
+    <div class="proto-card">
+      <div class="proto-name">LPDDR5X</div>
+      <div class="proto-bw">~68 GB/s <span>per channel</span></div>
+      <div class="proto-bar-wrap"><div class="proto-bar" style="width:22%"></div></div>
+      <div class="proto-meta">
+        <span class="badge badge-blue">8533 MT/s</span>
+        <span class="badge badge-green">Mobile/Edge AI</span>
+      </div>
+    </div>
+    <div class="proto-card">
+      <div class="proto-name">CXL 3.0</div>
+      <div class="proto-bw">~256 GB/s <span>bidirectional</span></div>
+      <div class="proto-bar-wrap"><div class="proto-bar" style="width:42%"></div></div>
+      <div class="proto-meta">
+        <span class="badge badge-purple">Coherent</span>
+        <span class="badge badge-blue">Memory pooling</span>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="sub">Full Protocol Reference</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Protocol</th><th>Peak BW</th><th>Bus Width</th><th>Use Case</th><th>Key Feature</th><th>Standard</th></tr></thead>
+      <tbody>
+        <tr><td><strong>DDR5</strong></td><td>89 GB/s/ch</td><td>64-bit</td><td>Server, workstation, desktop</td><td>On-die ECC, Decision Feedback EQ</td><td>JEDEC JESD79-5</td></tr>
+        <tr><td><strong>DDR6</strong></td><td>192+ GB/s/ch</td><td>64-bit</td><td>Next-gen servers (2027+)</td><td>PAM4 signaling, doubled pins</td><td>JEDEC JESD79-6 (draft)</td></tr>
+        <tr><td><strong>LPDDR5X</strong></td><td>68 GB/s/ch</td><td>32-bit</td><td>Smartphones, mobile AI</td><td>Sub-1V operation, low leakage</td><td>JEDEC JESD209-5</td></tr>
+        <tr><td><strong>LPDDR6</strong></td><td>136+ GB/s/ch</td><td>32-bit</td><td>Next-gen mobile (2027+)</td><td>Improved power efficiency</td><td>JEDEC (upcoming)</td></tr>
+        <tr><td><strong>HBM3E</strong></td><td>1,180 GB/s</td><td>1024-bit</td><td>AI accelerators, HPC</td><td>3D stacking, TSV, CoWoS</td><td>JEDEC JESD238</td></tr>
+        <tr><td><strong>HBM4</strong></td><td>1,500+ GB/s</td><td>2048-bit</td><td>Next-gen AI GPUs</td><td>Wider bus, hybrid bonding</td><td>JEDEC JESD238B (2026)</td></tr>
+        <tr><td><strong>GDDR7</strong></td><td>1,792 GB/s (GPU)</td><td>Multiple channels</td><td>Gaming GPUs, inference GPUs</td><td>32 Gbps/pin, PAM4</td><td>JEDEC JESD232</td></tr>
+        <tr><td><strong>CXL 3.0</strong></td><td>~256 GB/s</td><td>PCIe-based</td><td>Memory pooling, disaggregation</td><td>Cache coherence, multi-head</td><td>CXL Consortium 3.0</td></tr>
+        <tr><td><strong>PCIe Gen 6</strong></td><td>256 GB/s (x16)</td><td>x16 lanes</td><td>CPU-GPU, CPU-SSD</td><td>PAM4, 64 GT/s/lane</td><td>PCI-SIG Gen 6.0</td></tr>
+        <tr><td><strong>UCIe 2.0</strong></td><td>~25 Tbps/mm²</td><td>Die-to-die</td><td>Chiplet interconnect</td><td>Open standard, sub-mm pitch</td><td>UCIe Consortium</td></tr>
+        <tr><td><strong>NVMe 2.0</strong></td><td>~14 GB/s</td><td>PCIe lanes</td><td>Data center SSD</td><td>ZNS, CMB, FDP</td><td>NVM Express Inc.</td></tr>
+        <tr><td><strong>UFS 4.0 / 5.0</strong></td><td>4.2–8+ GB/s</td><td>Serial lanes</td><td>Smartphone storage</td><td>Low power, M-PHY</td><td>JEDEC / MIPI</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class="sub">CXL: The Protocol That Could Reshape Memory Architecture</h2>
+  <div class="two-col" style="align-items: start;">
+    <div>
+      <p>Compute Express Link (CXL) is a cache-coherent interconnect built on top of PCIe Gen 5/6 physical layer. Unlike traditional memory which is tightly coupled to the CPU, CXL enables <strong>memory disaggregation</strong> — pooling memory across multiple processors and dynamically allocating it to workloads on demand.</p>
+      <p>In an AI data center, CXL 3.0 allows a memory pool of terabytes of DDR5 or LPDDR to be shared across many accelerator nodes, significantly improving utilization and reducing the total memory footprint required.</p>
+      <p>CXL also enables coherent attachment of AI accelerators: a GPU or NPU connected via CXL can access the host CPU's memory with full cache coherence, eliminating expensive data copies that previously wasted bandwidth and latency.</p>
+    </div>
+    <div class="diagram-wrap" style="margin: 0;">
+      <svg viewBox="0 0 320 300" xmlns="http://www.w3.org/2000/svg">
+        <text x="160" y="22" text-anchor="middle" fill="#0b4ea2" font-size="11" font-weight="800">CXL Memory Architecture</text>
+        <!-- CPU -->
+        <rect x="80" y="35" width="160" height="44" rx="6" fill="#0b4ea2"/>
+        <text x="160" y="58" text-anchor="middle" fill="white" font-size="10" font-weight="700">CPU</text>
+        <text x="160" y="71" text-anchor="middle" fill="#9cf" font-size="8">PCIe Gen 6 / CXL 3.0</text>
+        <!-- DDR5 -->
+        <rect x="20" y="130" width="120" height="36" rx="5" fill="#1db954" opacity="0.85"/>
+        <text x="80" y="153" text-anchor="middle" fill="white" font-size="9" font-weight="700">Local DDR5</text>
+        <!-- CXL Switch -->
+        <rect x="100" y="130" width="120" height="36" rx="5" fill="#7c3aed"/>
+        <text x="160" y="148" text-anchor="middle" fill="white" font-size="9" font-weight="700">CXL Switch</text>
+        <text x="160" y="159" text-anchor="middle" fill="#d4c1ff" font-size="7">Multi-head capable</text>
+        <!-- CXL Memory Pool -->
+        <rect x="30" y="220" width="110" height="40" rx="5" fill="#007ab8" opacity="0.9"/>
+        <text x="85" y="239" text-anchor="middle" fill="white" font-size="8.5" font-weight="700">CXL Memory Pool</text>
+        <text x="85" y="252" text-anchor="middle" fill="#9cf" font-size="7">DDR5 / HBM Expanded</text>
+        <!-- AI Accelerator -->
+        <rect x="185" y="220" width="105" height="40" rx="5" fill="#0b4ea2" opacity="0.85"/>
+        <text x="237" y="239" text-anchor="middle" fill="white" font-size="8.5" font-weight="700">AI Accelerator</text>
+        <text x="237" y="252" text-anchor="middle" fill="#9cf" font-size="7">Coherent attach</text>
+        <!-- Lines -->
+        <line x1="160" y1="79" x2="80" y2="130" stroke="#0b4ea2" stroke-width="1.5"/>
+        <line x1="160" y1="79" x2="160" y2="130" stroke="#7c3aed" stroke-width="1.5"/>
+        <line x1="160" y1="166" x2="85" y2="220" stroke="#007ab8" stroke-width="1.5"/>
+        <line x1="160" y1="166" x2="237" y2="220" stroke="#0b4ea2" stroke-width="1.5"/>
+      </svg>
+      <p class="diagram-caption">CXL enables coherent memory pooling and accelerator attachment over standard PCIe physical layer.</p>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<!-- SHORTAGES -->
+<section id="shortages" style="background: var(--bg);">
+<div class="container">
+  <div class="section-head">
+    <span class="section-eyebrow">Supply Chain</span>
+    <h2>Why Memory Shortages Happened in 2025–2026</h2>
+    <p>The shortage is not a single bottleneck — it is a cascade of interconnected supply constraints that compound each other across the entire value chain.</p>
+  </div>
+
+  <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1100&q=80" alt="Semiconductor manufacturing clean room with engineers" class="img-banner">
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-icon">🏭</div>
+      <h3>HBM is Capacity-Intensive</h3>
+      <p>HBM production requires specialized equipment for TSV drilling, die stacking, thermocompression bonding, and advanced packaging. These tools cannot be repurposed from standard DRAM production lines. New HBM capacity requires purpose-built facilities with 18–36 months lead time.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🔬</div>
+      <h3>TSV Bottleneck</h3>
+      <p>Through-Silicon Via formation is a slow, precision-intensive process. Each die requires thousands of vertical holes drilled and filled with conductive material. Yield loss during TSV formation compounds as stack height increases (12-Hi HBM3E, 16-Hi HBM4).</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">📦</div>
+      <h3>Advanced Packaging Scarcity</h3>
+      <p>CoWoS (Chip-on-Wafer-on-Substrate) packaging from TSMC has been the dominant platform for HBM+GPU integration. TSMC's CoWoS capacity became so constrained in 2024–2025 that it directly limited the number of H100/H200 GPUs NVIDIA could ship, regardless of GPU die availability.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🌏</div>
+      <h3>Three-Supplier Oligopoly</h3>
+      <p>Only SK Hynix, Samsung, and Micron produce HBM. SK Hynix alone holds 50–62% of HBM capacity. This concentration means any quality, yield, or production issue at a single supplier ripples through the entire industry. There is no alternative supplier to absorb the gap.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">💡</div>
+      <h3>EUV Lithography Limits</h3>
+      <p>HBM4 and advanced DRAM nodes require EUV lithography systems, which are produced exclusively by ASML. With each EUV system costing $150–200 million and delivery lead times of 12–18 months, memory fabs cannot rapidly scale EUV-enabled production lines.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🌐</div>
+      <h3>Geopolitical Constraints</h3>
+      <p>US export controls restrict the sale of advanced memory chips and semiconductor manufacturing equipment to certain markets. This reshapes supply chain flows and adds uncertainty to capacity planning, further limiting the speed at which new production can be deployed.</p>
+    </div>
+  </div>
+
+  <h2 class="sub">The HBM Market Structure (2026)</h2>
+  <div class="diagram-wrap">
+    <svg viewBox="0 0 500 200" xmlns="http://www.w3.org/2000/svg">
+      <text x="250" y="22" text-anchor="middle" fill="#0b4ea2" font-size="12" font-weight="800">Global HBM Market Share 2026</text>
+      <!-- SK Hynix bar -->
+      <rect x="40" y="40" width="320" height="38" rx="5" fill="#0b4ea2"/>
+      <text x="210" y="65" text-anchor="middle" fill="white" font-size="10" font-weight="700">SK Hynix — ~55% share</text>
+      <!-- Samsung bar -->
+      <rect x="40" y="90" width="160" height="38" rx="5" fill="#007ab8"/>
+      <text x="122" y="115" text-anchor="middle" fill="white" font-size="10" font-weight="700">Samsung — ~30%</text>
+      <!-- Micron bar -->
+      <rect x="40" y="140" width="80" height="38" rx="5" fill="#00c8e0"/>
+      <text x="80" y="164" text-anchor="middle" fill="white" font-size="9" font-weight="700">Micron ~15%</text>
+      <!-- Scale -->
+      <text x="40" y="192" fill="#888" font-size="8">0%</text>
+      <text x="360" y="192" fill="#888" font-size="8">100%</text>
+      <line x1="40" y1="188" x2="400" y2="188" stroke="#ddd" stroke-width="1"/>
+    </svg>
+    <p class="diagram-caption">Three companies control the entire global HBM supply. SK Hynix's early relationship with NVIDIA locked in the majority share through at least 2026–2027.</p>
+  </div>
+
+</div>
+</section>
+
+<!-- CHALLENGES -->
+<section id="challenges" style="background: var(--surface2);">
+<div class="container">
+  <div class="section-head">
+    <span class="section-eyebrow">Engineering</span>
+    <h2>Key Engineering Challenges in Advanced Memory</h2>
+    <p>Designing and integrating advanced memory systems involves some of the hardest problems in semiconductor engineering — spanning signal integrity, power, thermal, reliability, and yield.</p>
+  </div>
+
+  <div class="cs-grid">
+    <div class="cs-col">
+      <h3><span style="color:#e8344a;">⚠</span> Challenge</h3>
+      <ul>
+        <li><strong>Signal Integrity (SI):</strong> At DDR5 data rates (6400 MT/s+), signal reflections, crosstalk, and impedance discontinuities cause bit errors. Advanced equalization (DFE, FFE) and carefully calibrated termination are mandatory.</li>
+        <li><strong>Power Integrity (PI):</strong> Sudden current demands during burst transfers cause supply voltage droops. Memory controllers must model and compensate for PDN impedance across the entire frequency range.</li>
+        <li><strong>Thermal Management:</strong> An HBM stack in full operation can dissipate 10–20 watts within a few mm². In a multi-stack GPU with six HBM stacks, total memory thermal load exceeds 100 watts — requiring advanced cooling solutions.</li>
+        <li><strong>TSV Reliability:</strong> Through-silicon vias experience mechanical stress due to coefficient of thermal expansion mismatch between copper and silicon. Over thousands of thermal cycles, this stress can lead to void formation and reliability degradation.</li>
+        <li><strong>Row Hammer:</strong> Repeatedly accessing DRAM rows causes charge leakage in adjacent rows, potentially flipping bits. Mitigations (pTRR, RFM, on-die ECC) add latency and reduce effective bandwidth.</li>
+        <li><strong>ECC Complexity:</strong> As DRAM cells shrink, raw bit error rates increase. Error Correcting Code schemes must be strengthened — but stronger ECC increases overhead, latency, and the complexity of the controller.</li>
+        <li><strong>Retention & Refresh:</strong> DRAM cells must be refreshed thousands of times per second to prevent data loss. Increased refresh rates reduce bandwidth available for data transfers and increase power.</li>
+        <li><strong>Yield Loss in Stacking:</strong> Defects compound across HBM stack layers. One bad die in a 12-Hi or 16-Hi stack requires replacing the entire assembly. Yield management for stacked dies is fundamentally different from planar chips.</li>
+      </ul>
+    </div>
+    <div class="cs-col">
+      <h3><span style="color:#1db954;">✓</span> Solutions & Mitigations</h3>
+      <ul>
+        <li><strong>PAM4 Signaling + DFE:</strong> DDR5, DDR6, GDDR7 use advanced equalization to recover signals at multi-GT/s speeds. On-die termination (ODT) dynamically adjusts to minimize reflections.</li>
+        <li><strong>Integrated Voltage Regulators:</strong> Point-of-load voltage regulators (POL-VRs) placed directly on the package substrate reduce supply impedance and respond to load transients in nanoseconds.</li>
+        <li><strong>Liquid & Immersion Cooling:</strong> Advanced AI servers increasingly use direct liquid cooling (DLC) or immersion cooling to handle the combined thermal load of AI accelerators and HBM stacks at hundreds of watts.</li>
+        <li><strong>Hybrid Bonding:</strong> Replacing copper microbumps with direct copper-to-copper hybrid bonding reduces interconnect pitch to under 10 µm, improving density, reducing resistance, and eliminating mechanical stress from solder.</li>
+        <li><strong>Target Row Refresh (TRR) + Per-Row Activation (pTRR):</strong> HBM3E and DDR5 implement hardware mitigations for Row Hammer that track aggressor rows and proactively refresh their neighbors.</li>
+        <li><strong>SECDED + Chipkill ECC:</strong> Server DDR5 DIMMs implement Chipkill-level ECC that can recover from the complete failure of an entire DRAM device within the DIMM.</li>
+        <li><strong>Self-Refresh + Temperature-Compensated Refresh:</strong> DRAM monitors on-die temperature sensors and adjusts refresh interval dynamically, reducing power at lower temperatures while maintaining reliability at high temperatures.</li>
+        <li><strong>Known Good Die (KGD) Testing:</strong> Each die is fully tested before stacking so only functional dies are assembled. KGD programs add cost but are essential for economical yield in multi-die stacked packages.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2 class="sub">AI Data Center Memory Architecture</h2>
+  <div class="diagram-wrap">
+    <svg viewBox="0 0 680 340" xmlns="http://www.w3.org/2000/svg">
+      <text x="340" y="20" text-anchor="middle" fill="#0b4ea2" font-size="12" font-weight="800">AI Training Server — Memory Topology</text>
+      <!-- CPU -->
+      <rect x="270" y="35" width="140" height="42" rx="6" fill="#0b1f3a"/>
+      <text x="340" y="58" text-anchor="middle" fill="white" font-size="10" font-weight="700">HOST CPU (2-socket)</text>
+      <text x="340" y="70" text-anchor="middle" fill="#9cf" font-size="8">Xeon/EPYC — up to 512 GB DDR5</text>
+      <!-- DDR5 DIMMs -->
+      <rect x="60" y="35" width="160" height="42" rx="5" fill="#1db954" opacity="0.85"/>
+      <text x="140" y="58" text-anchor="middle" fill="white" font-size="9" font-weight="700">DDR5 DIMMs (16x)</text>
+      <text x="140" y="70" text-anchor="middle" fill="#d0fde3" font-size="8">256–512 GB total host RAM</text>
+      <!-- PCIe Gen 5 bus -->
+      <rect x="235" y="112" width="210" height="22" rx="4" fill="#7c3aed" opacity="0.7"/>
+      <text x="340" y="127" text-anchor="middle" fill="white" font-size="8.5" font-weight="700">PCIe Gen 5/6 — NVLink 4.0</text>
+      <!-- GPU 1 -->
+      <rect x="40" y="172" width="130" height="44" rx="6" fill="#0b4ea2"/>
+      <text x="105" y="192" text-anchor="middle" fill="white" font-size="9" font-weight="700">AI GPU #1</text>
+      <text x="105" y="205" text-anchor="middle" fill="#9cf" font-size="7.5">H200 / B200</text>
+      <!-- GPU 2 -->
+      <rect x="200" y="172" width="130" height="44" rx="6" fill="#0b4ea2"/>
+      <text x="265" y="192" text-anchor="middle" fill="white" font-size="9" font-weight="700">AI GPU #2</text>
+      <text x="265" y="205" text-anchor="middle" fill="#9cf" font-size="7.5">H200 / B200</text>
+      <!-- GPU 3 -->
+      <rect x="360" y="172" width="130" height="44" rx="6" fill="#0b4ea2"/>
+      <text x="425" y="192" text-anchor="middle" fill="white" font-size="9" font-weight="700">AI GPU #3</text>
+      <text x="425" y="205" text-anchor="middle" fill="#9cf" font-size="7.5">H200 / B200</text>
+      <!-- GPU 4 -->
+      <rect x="520" y="172" width="130" height="44" rx="6" fill="#0b4ea2"/>
+      <text x="585" y="192" text-anchor="middle" fill="white" font-size="9" font-weight="700">AI GPU #4</text>
+      <text x="585" y="205" text-anchor="middle" fill="#9cf" font-size="7.5">H200 / B200</text>
+      <!-- HBM stacks per GPU -->
+      <rect x="40" y="248" width="130" height="32" rx="4" fill="#00c8e0" opacity="0.85"/>
+      <text x="105" y="263" text-anchor="middle" fill="#001a2e" font-size="8.5" font-weight="700">6× HBM3E Stacks</text>
+      <text x="105" y="275" text-anchor="middle" fill="#003050" font-size="7.5">≈ 141 GB / 6 TB/s BW</text>
+      <rect x="200" y="248" width="130" height="32" rx="4" fill="#00c8e0" opacity="0.85"/>
+      <text x="265" y="263" text-anchor="middle" fill="#001a2e" font-size="8.5" font-weight="700">6× HBM3E Stacks</text>
+      <text x="265" y="275" text-anchor="middle" fill="#003050" font-size="7.5">≈ 141 GB / 6 TB/s BW</text>
+      <rect x="360" y="248" width="130" height="32" rx="4" fill="#00c8e0" opacity="0.85"/>
+      <text x="425" y="263" text-anchor="middle" fill="#001a2e" font-size="8.5" font-weight="700">6× HBM3E Stacks</text>
+      <text x="425" y="275" text-anchor="middle" fill="#003050" font-size="7.5">≈ 141 GB / 6 TB/s BW</text>
+      <rect x="520" y="248" width="130" height="32" rx="4" fill="#00c8e0" opacity="0.85"/>
+      <text x="585" y="263" text-anchor="middle" fill="#001a2e" font-size="8.5" font-weight="700">6× HBM3E Stacks</text>
+      <text x="585" y="275" text-anchor="middle" fill="#003050" font-size="7.5">≈ 141 GB / 6 TB/s BW</text>
+      <!-- NVMe -->
+      <rect x="235" y="310" width="210" height="22" rx="4" fill="#555" opacity="0.7"/>
+      <text x="340" y="325" text-anchor="middle" fill="white" font-size="8.5" font-weight="700">NVMe SSDs — Checkpoint Storage</text>
+      <!-- Connecting lines -->
+      <line x1="340" y1="77" x2="140" y2="77" stroke="#1db954" stroke-width="1.5" stroke-dasharray="4,2"/>
+      <line x1="340" y1="77" x2="340" y2="112" stroke="#7c3aed" stroke-width="1.5"/>
+      <line x1="340" y1="134" x2="105" y2="172" stroke="#0b4ea2" stroke-width="1.2"/>
+      <line x1="340" y1="134" x2="265" y2="172" stroke="#0b4ea2" stroke-width="1.2"/>
+      <line x1="340" y1="134" x2="425" y2="172" stroke="#0b4ea2" stroke-width="1.2"/>
+      <line x1="340" y1="134" x2="585" y2="172" stroke="#0b4ea2" stroke-width="1.2"/>
+      <line x1="105" y1="216" x2="105" y2="248" stroke="#00c8e0" stroke-width="1.5"/>
+      <line x1="265" y1="216" x2="265" y2="248" stroke="#00c8e0" stroke-width="1.5"/>
+      <line x1="425" y1="216" x2="425" y2="248" stroke="#00c8e0" stroke-width="1.5"/>
+      <line x1="585" y1="216" x2="585" y2="248" stroke="#00c8e0" stroke-width="1.5"/>
+    </svg>
+    <p class="diagram-caption">A 4-GPU AI training server: host CPU with DDR5, connected via PCIe Gen 5/6 to AI accelerators, each with 6 HBM3E stacks providing ~141 GB and ~6 TB/s bandwidth per GPU.</p>
+  </div>
+
+</div>
+</section>
+
+<!-- EVOLUTION TIMELINE -->
+<section id="evolution" style="background: var(--bg);">
+<div class="container">
+  <div class="section-head">
+    <span class="section-eyebrow">History</span>
+    <h2>Memory Technology Evolution</h2>
+    <p>From kilobytes of SRAM to terabytes of stacked HBM — five decades of continuous innovation in how computers store and access data.</p>
+  </div>
+
+  <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1100&q=80" alt="Historical computer memory boards and modern chips" class="img-banner">
+
+  <div class="two-col">
+    <div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <span class="timeline-year">1966–1970</span>
+          <h4>SRAM & DRAM Origins</h4>
+          <p>Static RAM (6-transistor cells) developed for processor registers and caches. Intel's 1103 DRAM (1970) was the first commercially successful dynamic RAM.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-year">1980s</span>
+          <h4>PC Memory Era</h4>
+          <p>Single Data Rate DRAM used in early PCs. FPM DRAM, EDO DRAM improved access times for burst transfers.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-year">1993</span>
+          <h4>SDRAM</h4>
+          <p>Synchronous DRAM synchronized to the system clock, enabling pipelined burst transfers. Became the standard for the next decade.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-year">2000</span>
+          <h4>DDR (Double Data Rate)</h4>
+          <p>DDR SDRAM transfers data on both rising and falling clock edges, doubling bandwidth without increasing clock frequency. Fundamental innovation.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-year">2003–2014</span>
+          <h4>DDR2 → DDR3 → DDR4</h4>
+          <p>Each generation roughly doubled bandwidth while reducing supply voltage: 1.8V (DDR2) → 1.5V (DDR3) → 1.2V (DDR4). DDR4 reached 3200 MT/s.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-year">2013</span>
+          <h4>HBM1 Specification</h4>
+          <p>JEDEC publishes the first High Bandwidth Memory specification. AMD uses HBM1 in the Fiji GPU (Radeon R9 Fury X) in 2015 — first commercial HBM deployment.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-year">2020</span>
+          <h4>DDR5 & LPDDR5 Era</h4>
+          <p>DDR5 doubles data rate to 6400 MT/s, adds on-die ECC, and improves power management. LPDDR5 brings similar improvements to mobile devices.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-year">2023–2024</span>
+          <h4>HBM3 & HBM3E</h4>
+          <p>HBM3 ships in NVIDIA H100. HBM3E (12-Hi stacking) achieves 1.18 TB/s per stack, deployed in H200 and AMD MI300X. The AI memory race accelerates.</p>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-year">2026</span>
+          <h4>HBM4 Production Ramp</h4>
+          <p>HBM4 enters mass production with a 2048-bit bus and 1.5+ TB/s bandwidth. Hybrid bonding begins replacing microbumps. DDR6 specification finalized.</p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h2 class="sub" style="margin-top:0;">Memory Categories Today</h2>
+      <div class="table-wrap" style="margin: 0 0 20px;">
+        <table>
+          <thead><tr><th>Type</th><th>Primary Use</th><th>Key Property</th></tr></thead>
+          <tbody>
+            <tr><td><strong>SRAM</strong></td><td>CPU/GPU caches</td><td>Fastest, no refresh, expensive</td></tr>
+            <tr><td><strong>DRAM/DDR5</strong></td><td>Server/PC main memory</td><td>Dense, needs refresh</td></tr>
+            <tr><td><strong>LPDDR5X</strong></td><td>Mobile AI devices</td><td>Low power, wide bus</td></tr>
+            <tr><td><strong>HBM3E</strong></td><td>AI accelerators</td><td>Extreme bandwidth, 3D stack</td></tr>
+            <tr><td><strong>GDDR7</strong></td><td>Gaming/inference GPUs</td><td>High BW, graphics optimized</td></tr>
+            <tr><td><strong>NAND Flash</strong></td><td>SSD storage</td><td>Non-volatile, high density</td></tr>
+            <tr><td><strong>NOR Flash</strong></td><td>Firmware/code storage</td><td>Random-access, small</td></tr>
+            <tr><td><strong>MRAM</strong></td><td>Embedded (automotive, IoT)</td><td>Non-volatile SRAM speed</td></tr>
+            <tr><td><strong>ReRAM / PCM</strong></td><td>Emerging storage-class</td><td>High density, non-volatile</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="highlight-box">
+        <strong>Why MRAM matters for automotive:</strong> Magnetoresistive RAM combines SRAM-like access speed with non-volatile data retention. In ADAS systems where power-off data integrity is critical, MRAM is increasingly replacing NOR Flash as embedded code storage.
+      </div>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<!-- FUTURE TECHNOLOGIES -->
+<section id="future" style="background: var(--surface2);">
+<div class="container">
+  <div class="section-head">
+    <span class="section-eyebrow">Roadmap</span>
+    <h2>The Future of Memory: 2027–2035</h2>
+    <p>The next decade will see memory evolve from a separate component into an increasingly integrated part of compute — bringing processing closer to where data lives.</p>
+  </div>
+
+  <img src="https://images.unsplash.com/photo-1639322537228-f710d846310a?w=1100&q=80" alt="Futuristic semiconductor chip with blue glowing connections" class="img-banner">
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-icon">💡</div>
+      <h3>DDR6 (2027+)</h3>
+      <p>DDR6 will use PAM4 signaling to achieve over 12,800 MT/s per channel — approximately twice DDR5 peak speed — on the same 64-bit bus width. JEDEC specification work is ongoing, with first silicon expected 2027.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">📱</div>
+      <h3>LPDDR6 (2027+)</h3>
+      <p>LPDDR6 will bring similar bandwidth improvements to mobile with sub-0.5V operation for the most power-sensitive applications. On-device AI will require this level of memory performance for next-generation AI phones.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🔷</div>
+      <h3>HBM4E & HBM5 (2027–2029)</h3>
+      <p>HBM4E is expected to reach 2+ TB/s per stack. HBM5 is likely to bring full hybrid bonding (die-to-die direct copper bonding at sub-5 µm pitch) and potentially Logic-in-Memory capabilities.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🌐</div>
+      <h3>CXL Memory Fabric (2026–2030)</h3>
+      <p>CXL 3.x will enable fabric-attached memory pools shared across racks of servers. AI workloads will dynamically allocate terabytes of disaggregated memory over low-latency coherent interconnects.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🔬</div>
+      <h3>Processing-in-Memory (PIM)</h3>
+      <p>PIM embeds simple compute units directly inside DRAM arrays — performing addition, multiplication, and activation functions without moving data to the processor. Samsung's HBM-PIM and SK Hynix's AiM demonstrate this approach.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">💎</div>
+      <h3>Photonic Memory Interconnects</h3>
+      <p>Silicon photonics interconnects between processors and memory modules could eventually exceed the bandwidth limits of electrical interconnects, operating at terabits per second over optical waveguides on-package.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🧱</div>
+      <h3>3D Chiplet Integration</h3>
+      <p>UCIe 2.0 and advanced packaging will allow mixing memory dies, compute dies, and I/O dies from different foundries and vendors in a single package — enabling custom memory architectures optimized per workload.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">⚡</div>
+      <h3>Superconducting Memory (Research)</h3>
+      <p>For quantum computing and ultra-high-performance classical computing, superconducting memory operating at cryogenic temperatures is under research at IBM, Google, and academic institutions — still many years from commercial deployment.</p>
+    </div>
+  </div>
+
+  <h2 class="sub">Memory Roadmap: Bandwidth Trajectory</h2>
+  <div class="diagram-wrap">
+    <svg viewBox="0 0 660 260" xmlns="http://www.w3.org/2000/svg">
+      <!-- Grid lines -->
+      <line x1="80" y1="30" x2="80" y2="210" stroke="#e0e8f0" stroke-width="1"/>
+      <line x1="80" y1="210" x2="620" y2="210" stroke="#e0e8f0" stroke-width="1"/>
+      <!-- Y axis labels -->
+      <text x="70" y="215" text-anchor="end" fill="#888" font-size="8">0</text>
+      <text x="70" y="165" text-anchor="end" fill="#888" font-size="8">500 GB/s</text>
+      <text x="70" y="115" text-anchor="end" fill="#888" font-size="8">1 TB/s</text>
+      <text x="70" y="65" text-anchor="end" fill="#888" font-size="8">2 TB/s</text>
+      <text x="70" y="40" text-anchor="end" fill="#888" font-size="8">3 TB/s</text>
+      <!-- X axis labels -->
+      <text x="115" y="228" text-anchor="middle" fill="#888" font-size="8">2019</text>
+      <text x="200" y="228" text-anchor="middle" fill="#888" font-size="8">2021</text>
+      <text x="285" y="228" text-anchor="middle" fill="#888" font-size="8">2023</text>
+      <text x="370" y="228" text-anchor="middle" fill="#888" font-size="8">2025</text>
+      <text x="455" y="228" text-anchor="middle" fill="#888" font-size="8">2027</text>
+      <text x="540" y="228" text-anchor="middle" fill="#888" font-size="8">2029</text>
+      <!-- HBM line -->
+      <!-- HBM2 2019: 460GB/s = y: 210-((460/3000)*(180)) = 210-27.6=182 -->
+      <!-- HBM2E 2020: 460 GB/s -->
+      <!-- HBM3 2023: 819 GB/s = 210-49 = 161 -->
+      <!-- HBM3E 2024: 1180 GB/s = 210-70.8 = 139 -->
+      <!-- HBM4 2026: 1500 = 210-90 = 120 -->
+      <!-- HBM4E 2028: 2000 = 210-120 = 90 -->
+      <!-- HBM5 2029: 2800 = 210-168 = 42 -->
+      <polyline points="115,183 200,183 285,161 370,139 455,120 540,90 600,42"
+        fill="none" stroke="#0b4ea2" stroke-width="2.5" stroke-linejoin="round"/>
+      <circle cx="115" cy="183" r="4" fill="#0b4ea2"/>
+      <circle cx="285" cy="161" r="4" fill="#0b4ea2"/>
+      <circle cx="370" cy="139" r="4" fill="#0b4ea2"/>
+      <circle cx="455" cy="120" r="4" fill="#0b4ea2"/>
+      <circle cx="540" cy="90" r="4" fill="#0b4ea2" stroke-dasharray="3"/>
+      <circle cx="600" cy="42" r="4" fill="#0b4ea2" stroke-dasharray="3"/>
+      <!-- Labels on points -->
+      <text x="115" y="176" text-anchor="middle" fill="#0b4ea2" font-size="7" font-weight="700">HBM2E</text>
+      <text x="285" y="154" text-anchor="middle" fill="#0b4ea2" font-size="7" font-weight="700">HBM3</text>
+      <text x="370" y="132" text-anchor="middle" fill="#0b4ea2" font-size="7" font-weight="700">HBM3E</text>
+      <text x="455" y="113" text-anchor="middle" fill="#0b4ea2" font-size="7" font-weight="700">HBM4</text>
+      <text x="540" y="83" text-anchor="middle" fill="#7a7a0b" font-size="7" font-weight="700">HBM4E*</text>
+      <text x="600" y="35" text-anchor="middle" fill="#7a7a0b" font-size="7" font-weight="700">HBM5*</text>
+      <!-- DDR line -->
+      <!-- DDR4 2019: 51GB/s = 210-3 = 207 -->
+      <!-- DDR5 2021: 89GB/s = 210-5.3 = 204 -->
+      <!-- DDR5 peak 2025: 128GB/s = 210-7.7 = 202 -->
+      <!-- DDR6 2027: 192 = 210-11.5 = 198 -->
+      <polyline points="115,207 200,204 370,202 455,202 540,198 600,194"
+        fill="none" stroke="#1db954" stroke-width="2" stroke-linejoin="round" stroke-dasharray="4,2"/>
+      <circle cx="115" cy="207" r="3" fill="#1db954"/>
+      <circle cx="200" cy="204" r="3" fill="#1db954"/>
+      <circle cx="370" cy="202" r="3" fill="#1db954"/>
+      <circle cx="540" cy="198" r="3" fill="#1db954"/>
+      <!-- Legend -->
+      <line x1="420" y1="30" x2="450" y2="30" stroke="#0b4ea2" stroke-width="2.5"/>
+      <text x="455" y="34" fill="#0b4ea2" font-size="8" font-weight="700">HBM (per stack)</text>
+      <line x1="420" y1="46" x2="450" y2="46" stroke="#1db954" stroke-width="2" stroke-dasharray="4,2"/>
+      <text x="455" y="50" fill="#1db954" font-size="8" font-weight="700">DDR (per channel)</text>
+      <text x="480" y="62" fill="#888" font-size="7">* projected</text>
+      <text x="340" y="15" text-anchor="middle" fill="#0b4ea2" font-size="11" font-weight="800">Memory Bandwidth Roadmap (GB/s)</text>
+    </svg>
+    <p class="diagram-caption">HBM bandwidth doubles roughly every 2 years, far outpacing DDR channel bandwidth growth. By 2029 HBM5 is projected to reach ~2.8 TB/s per stack.</p>
+  </div>
+
+</div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" style="background: var(--bg);">
+<div class="container">
+  <div class="section-head">
+    <span class="section-eyebrow">Knowledge Base</span>
+    <h2>Frequently Asked Questions</h2>
+    <p>Key questions engineers, students, and technologists ask about the 2025–2026 memory landscape.</p>
+  </div>
+
+  <div style="max-width: 820px; margin: 0 auto;">
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFAQ(this)">What is the difference between HBM and DDR5? <span class="faq-arrow">▼</span></div>
+      <div class="faq-a">DDR5 is a planar DRAM module on a PCB, connecting to the CPU via a 64-bit bus at up to 6400 MT/s — delivering ~89 GB/s per channel. HBM3E is a 3D-stacked DRAM package placed directly on a silicon interposer alongside the processor, using a 1024-bit bus and achieving over 1 TB/s per stack. HBM is roughly 12–15× faster per stack but costs 5–6× more per gigabyte. DDR5 serves general-purpose computing; HBM is reserved for AI accelerators and HPC where bandwidth is the primary constraint.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFAQ(this)">Why is HBM so expensive compared to DDR5? <span class="faq-arrow">▼</span></div>
+      <div class="faq-a">HBM production involves multiple processes that are far more complex than standard DRAM: drilling thousands of through-silicon vias in each die, stacking 8–16 dies with sub-micron alignment, bonding them with thermocompression at high temperature, and integrating the stack onto a silicon interposer using microbumps. Each step has yield risks that compound across the stack height. A single 36 GB HBM3E stack costs approximately $300 (roughly $8–10/GB) versus DDR5 at $2–3/GB. Only three companies in the world can produce HBM at any meaningful volume.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFAQ(this)">What is CXL and why does it matter for AI? <span class="faq-arrow">▼</span></div>
+      <div class="faq-a">Compute Express Link (CXL) is a cache-coherent interconnect built on the PCIe physical layer. It matters for AI because it enables memory disaggregation: instead of each server having its own fixed pool of RAM, a CXL fabric allows memory to be pooled across multiple servers and dynamically allocated to the workloads that need it most. For AI, this means more efficient utilization of expensive HBM and DDR5, enabling larger models to run on fewer servers, and allowing accelerators to access host memory with full cache coherence — eliminating the data copy operations that waste bandwidth and time.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFAQ(this)">What is Row Hammer and why is it a problem? <span class="faq-arrow">▼</span></div>
+      <div class="faq-a">Row Hammer is a reliability vulnerability in DRAM. As DRAM cells shrink, they are packed more densely and individual cells become electrically closer to their neighbors. When a memory row is accessed very frequently (hammered), the electrical disturbance can cause charge to leak from physically adjacent rows — potentially flipping bits in those rows without ever reading or writing them directly. This can be exploited as a security attack to escalate privileges or corrupt data. Mitigations include Target Row Refresh (TRR), per-row activation tracking (pTRR), on-die ECC (adding error correction within the DRAM chip itself), and the JEDEC Refresh Management (RFM) command added in DDR5.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFAQ(this)">Will HBM ever replace DDR in mainstream systems? <span class="faq-arrow">▼</span></div>
+      <div class="faq-a">Not in the foreseeable future. HBM is constrained by its production complexity, three-supplier monopoly, and fundamentally different integration model (it requires co-packaging with the processor on an interposer). DDR5 and its successors (DDR6) remain far more cost-effective for general-purpose computing where multi-terabyte memory capacity at reasonable price is required. The two technologies serve complementary markets: HBM for bandwidth-critical accelerators, DDR for capacity-critical servers and workstations. The more likely future is deeper integration of CXL-attached memory pools alongside on-package HBM for AI systems, rather than HBM replacing DDR entirely.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFAQ(this)">What is the difference between LPDDR5X and DDR5? <span class="faq-arrow">▼</span></div>
+      <div class="faq-a">Both are JEDEC standards for high-speed DRAM, but they target different markets. DDR5 is designed for socketed server and desktop DIMM slots — high capacity (up to 512 GB per DIMM), dual-rank organization, and full ECC. LPDDR5X (Low Power DDR5X) is designed for mobile devices and embedded systems — it uses a narrower 32-bit or 64-bit bus, operates at lower voltage (below 1.1V vs 1.1V for DDR5), is soldered directly to the board (not socketed), and optimizes for power efficiency over raw bandwidth. LPDDR5X at 8533 MT/s offers up to ~68 GB/s per channel, suitable for smartphone AI inference, autonomous driving SoCs, and thin laptops.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFAQ(this)">What is Processing-in-Memory (PIM) and when will it matter? <span class="faq-arrow">▼</span></div>
+      <div class="faq-a">PIM (also called Near-Memory Computing or Compute-in-Memory) places arithmetic logic units directly inside or immediately adjacent to DRAM arrays. The fundamental insight is that moving data from memory to a processor is expensive in both energy and time. If the data never leaves the memory array — because the computation happens there — the memory bandwidth wall ceases to limit performance. Samsung's HBM-PIM product and SK Hynix's AiM (Accelerator in Memory) already demonstrate this for specific AI workloads. Broad commercial adoption is expected in the 2027–2030 timeframe, particularly for LLM attention operations and embedding lookups that are highly memory-bound.</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- CAREER -->
+<section id="career" style="background: var(--surface2);">
+<div class="container">
+  <div class="section-head">
+    <span class="section-eyebrow">Engineering Careers</span>
+    <h2>Careers in Memory & Protocol IP Design</h2>
+    <p>Memory controller and protocol IP engineering are among the highest-value specializations in the global ASIC job market — and demand is accelerating with the AI supercycle.</p>
+  </div>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-icon">🔧</div>
+      <h3>Memory Controller RTL Engineer</h3>
+      <p>Designs the digital logic that arbitrates, schedules, and optimizes DRAM access patterns. Must understand DDR5/LPDDR5X protocol timing, refresh scheduling, rank interleaving, and Power-Down entry/exit. Highest demand in AI chip startups and hyperscaler ASICs.</p>
+      <ul class="mt-8">
+        <li>SystemVerilog, UVM</li>
+        <li>JEDEC DDR5/LPDDR5X spec</li>
+        <li>Timing closure</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-icon">🔌</div>
+      <h3>PHY / Mixed-Signal Engineer</h3>
+      <p>Designs or integrates the analog/digital Physical Layer (PHY) that implements the electrical interface to DRAM. Must understand PLL design, DLL, signal equalization, calibration algorithms, and power delivery.</p>
+      <ul class="mt-8">
+        <li>SPICE / circuit simulation</li>
+        <li>SI/PI analysis</li>
+        <li>Calibration algorithms</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-icon">✅</div>
+      <h3>Verification IP (VIP) Engineer</h3>
+      <p>Builds UVM-based verification environments that model the behavior of memory devices and protocol endpoints — enabling design teams to verify memory controllers and interconnect IP without physical hardware.</p>
+      <ul class="mt-8">
+        <li>UVM architecture</li>
+        <li>Protocol modeling</li>
+        <li>Coverage-driven DV</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-icon">🔗</div>
+      <h3>PCIe / CXL IP Engineer</h3>
+      <p>Develops RTL and verification for PCIe Gen 5/6, CXL, or UCIe — the interconnects that link AI accelerators to memory, storage, and each other. Critical for chiplet-based AI systems.</p>
+      <ul class="mt-8">
+        <li>PCIe specification</li>
+        <li>TLP / DLLP protocols</li>
+        <li>CXL coherency</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-icon">🤖</div>
+      <h3>AI Memory Architect</h3>
+      <p>A newer role at the intersection of AI system design and memory engineering — optimizing the memory subsystem for LLM inference kernels, KV cache management, tensor memory layouts, and memory-bandwidth-bound operation.</p>
+      <ul class="mt-8">
+        <li>AI workload profiling</li>
+        <li>HBM architecture</li>
+        <li>CUDA / HW co-design</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-icon">🧩</div>
+      <h3>RISC-V Memory Subsystem Engineer</h3>
+      <p>Designs RISC-V-based SoCs integrating custom memory controllers, cache hierarchies, and protocol bridges. Strong demand in India's semiconductor ecosystem through programs like DLI/ChipIN.</p>
+      <ul class="mt-8">
+        <li>RISC-V ISA</li>
+        <li>Cache coherency (MOESI)</li>
+        <li>AMBA AXI4</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<!-- REFERENCES -->
+<section id="references" style="background: var(--bg);">
+<div class="container">
+  <div class="section-head">
+    <span class="section-eyebrow">Standards & Sources</span>
+    <h2>Public Standards & References</h2>
+    <p>This article draws on publicly available technical specifications and industry analysis.</p>
+  </div>
+  <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
+    <div class="card"><h3>JEDEC</h3><p>Publisher of DDR5, LPDDR5X, HBM, GDDR7, UFS standards. <strong>jedec.org</strong></p></div>
+    <div class="card"><h3>CXL Consortium</h3><p>Defines CXL 1.0 / 2.0 / 3.0 specifications for cache-coherent interconnects. <strong>computeexpresslink.org</strong></p></div>
+    <div class="card"><h3>UCIe Consortium</h3><p>Universal Chiplet Interconnect Express — open die-to-die interface standard. <strong>uciexpress.org</strong></p></div>
+    <div class="card"><h3>PCI-SIG</h3><p>PCIe Gen 5 / Gen 6 specifications and compliance standards. <strong>pcisig.com</strong></p></div>
+    <div class="card"><h3>NVM Express</h3><p>NVMe 2.0 and ZNS specifications for storage interface. <strong>nvmexpress.org</strong></p></div>
+    <div class="card"><h3>IDC</h3><p>Semiconductor market size estimates (April 2026 forecast referenced for revenue figures). <strong>idc.com</strong></p></div>
+    <div class="card"><h3>MIPI Alliance</h3><p>LPDDR and mobile interface specifications including MIPI CSI-2, DSI. <strong>mipi.org</strong></p></div>
+    <div class="card"><h3>RISC-V International</h3><p>Open-source RISC-V ISA specification. <strong>riscv.org</strong></p></div>
+  </div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<!-- SRAM VS DRAM -->
+<section id="sram-vs-dram" style="background: var(--bg);">
+<div class="container">
+  <div class="section-head">
+    <span class="section-eyebrow">Cache Architecture</span>
+    <h2>SRAM Caches vs DRAM/HBM: A Critical Distinction</h2>
+    <p>L1, L2, and L3 caches inside GPUs and CPUs are <em>not</em> DRAM or HBM. They are on-chip SRAM structures — and they operate under an entirely different design paradigm.</p>
+  </div>
+
+  <img src="https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=1100&q=80" alt="GPU die close-up showing cache SRAM arrays" class="img-banner">
+
+  <div class="two-col">
+    <div>
+      <h2 class="sub">What Is SRAM?</h2>
+      <p>Static RAM (SRAM) uses a 6-transistor (6T) bitcell — two cross-coupled inverters and two access transistors — to store one bit of data without needing a refresh cycle. This makes it dramatically faster than DRAM (which stores charge on a capacitor and must be refreshed thousands of times per second), but also far more area-intensive and expensive per bit.</p>
+      <p>Every L1, L2, and L3 cache in every modern CPU and GPU is built from SRAM bitcells supplied by the foundry process design kit (PDK) and assembled into cache macros using EDA memory compilers from Synopsys, Cadence, or Siemens.</p>
+      <div class="highlight-box">
+        <strong>Key insight:</strong> In an NVIDIA H100 or AMD MI300X, the L1 and L2 caches are SRAM blocks <em>inside</em> the GPU die. The HBM3 stacks are external DRAM attached via a wide interface on a silicon interposer. These are fundamentally different technologies, built differently, governed differently.
+      </div>
+    </div>
+    <div class="diagram-wrap" style="margin: 0;">
+      <svg viewBox="0 0 320 380" xmlns="http://www.w3.org/2000/svg">
+        <text x="160" y="20" text-anchor="middle" fill="#0b4ea2" font-size="11" font-weight="800">GPU Die — Memory Layers</text>
+        <!-- GPU die outline -->
+        <rect x="20" y="30" width="280" height="330" rx="8" fill="none" stroke="#0b4ea2" stroke-width="2" stroke-dasharray="6,3"/>
+        <text x="160" y="50" text-anchor="middle" fill="#0b4ea2" font-size="8" opacity="0.6">GPU DIE (e.g., NVIDIA GH100)</text>
+        <!-- Registers -->
+        <rect x="40" y="58" width="240" height="34" rx="5" fill="#0b4ea2"/>
+        <text x="160" y="74" text-anchor="middle" fill="white" font-size="9" font-weight="700">REGISTERS</text>
+        <text x="160" y="86" text-anchor="middle" fill="#9cf" font-size="7.5">Flip-flops, inside each SM / execution unit</text>
+        <!-- L1 -->
+        <rect x="40" y="100" width="240" height="38" rx="5" fill="#1a6fd4"/>
+        <text x="160" y="116" text-anchor="middle" fill="white" font-size="9" font-weight="700">L1 CACHE — SRAM (per SM)</text>
+        <text x="160" y="129" text-anchor="middle" fill="#cde" font-size="7.5">Proprietary · Foundry bitcells · EDA compiler</text>
+        <!-- L2 -->
+        <rect x="40" y="146" width="240" height="38" rx="5" fill="#007ab8"/>
+        <text x="160" y="162" text-anchor="middle" fill="white" font-size="9" font-weight="700">L2 CACHE — SRAM (shared)</text>
+        <text x="160" y="175" text-anchor="middle" fill="#cde" font-size="7.5">Proprietary · TSMC/Samsung PDK cells</text>
+        <!-- Shared memory -->
+        <rect x="40" y="192" width="240" height="34" rx="5" fill="#005e90"/>
+        <text x="160" y="210" text-anchor="middle" fill="white" font-size="9" font-weight="700">SHARED MEMORY / SCRATCHPAD</text>
+        <text x="160" y="221" text-anchor="middle" fill="#cde" font-size="7.5">SRAM · Programmer-managed · Proprietary</text>
+        <!-- Interface block -->
+        <rect x="40" y="238" width="240" height="34" rx="5" fill="#00446a"/>
+        <text x="160" y="255" text-anchor="middle" fill="white" font-size="9" font-weight="700">HBM3E CONTROLLER + PHY</text>
+        <text x="160" y="267" text-anchor="middle" fill="#9cf" font-size="7.5">JEDEC JESD238 standard interface</text>
+        <!-- Die boundary indicator -->
+        <line x1="20" y1="285" x2="300" y2="285" stroke="#e8344a" stroke-width="1.5" stroke-dasharray="5,3"/>
+        <text x="160" y="296" text-anchor="middle" fill="#e8344a" font-size="7.5" font-weight="700">— DIE BOUNDARY —</text>
+        <!-- HBM external -->
+        <rect x="40" y="302" width="240" height="40" rx="5" fill="#00c8e0" opacity="0.85"/>
+        <text x="160" y="320" text-anchor="middle" fill="#001a2e" font-size="9" font-weight="700">HBM3E STACKS (external DRAM)</text>
+        <text x="160" y="333" text-anchor="middle" fill="#003050" font-size="7.5">JEDEC standard · SK Hynix / Samsung / Micron</text>
+        <!-- Labels -->
+        <text x="8" y="80" fill="#1db954" font-size="7" text-anchor="middle">SRAM</text>
+        <text x="8" y="120" fill="#1db954" font-size="7" text-anchor="middle">SRAM</text>
+        <text x="8" y="165" fill="#1db954" font-size="7" text-anchor="middle">SRAM</text>
+        <text x="8" y="207" fill="#1db954" font-size="7" text-anchor="middle">SRAM</text>
+        <text x="8" y="322" fill="#00c8e0" font-size="7" text-anchor="middle">DRAM</text>
+      </svg>
+      <p class="diagram-caption">Inside an NVIDIA H100 GPU: L1/L2/Shared Memory are on-die SRAM (proprietary). HBM3E is external DRAM governed by JEDEC JESD238.</p>
+    </div>
+  </div>
+
+  <h2 class="sub">Why SRAM Has No External Standards Body</h2>
+  <p>DRAM/HBM/GDDR must be interoperable across vendors — a Samsung HBM3E stack must work with an NVIDIA controller and a Micron stack. That interoperability requirement is what makes JEDEC standards essential for DRAM.</p>
+  <p>SRAM caches have no such requirement. They are permanently embedded inside a single chip die, designed by one company, manufactured at one foundry, and never expected to connect to another vendor's cache. There is no interoperability problem to solve — and therefore no consortium has ever standardized cache architectures.</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Property</th><th>SRAM (Cache)</th><th>DRAM / HBM / GDDR</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Location</strong></td><td>On-chip, inside CPU/GPU die</td><td>Off-chip, separate package or stack</td></tr>
+        <tr><td><strong>Technology</strong></td><td>6T or 8T SRAM bitcell</td><td>1T1C DRAM capacitor cell</td></tr>
+        <tr><td><strong>Refresh needed?</strong></td><td>No — data held by transistors</td><td>Yes — capacitors leak charge</td></tr>
+        <tr><td><strong>Speed</strong></td><td>1–5 ns (L1), 5–30 ns (L2/L3)</td><td>100–500 ns (DRAM); ~100 ns (HBM)</td></tr>
+        <tr><td><strong>Density</strong></td><td>Low (6× area vs DRAM per bit)</td><td>Very high (billions of bits per mm²)</td></tr>
+        <tr><td><strong>Who defines it?</strong></td><td>Chip company + foundry PDK</td><td>JEDEC standards consortium</td></tr>
+        <tr><td><strong>Standardized?</strong></td><td><span class="badge badge-red">No — proprietary</span></td><td><span class="badge badge-green">Yes — JEDEC JESD specs</span></td></tr>
+        <tr><td><strong>Examples</strong></td><td>H100 L1/L2 caches, Apple M4 L3</td><td>DDR5, HBM3E, LPDDR5X, GDDR7</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class="sub">Who Influences SRAM Cache Design</h2>
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-icon">🏭</div>
+      <h3>Semiconductor Foundries</h3>
+      <p>TSMC, Samsung, Intel Foundry, and GlobalFoundries supply the physical SRAM bitcell libraries embedded in their Process Design Kits (PDKs). The foundry determines the minimum bitcell area, read/write stability margins, and power characteristics at each process node (5nm, 3nm, 2nm).</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🛠️</div>
+      <h3>EDA Vendors</h3>
+      <p>Synopsys, Cadence, and Siemens EDA provide memory compilers — software tools that generate custom SRAM macros of any specified size, aspect ratio, word width, and number of ports. The chip designer specifies parameters; the compiler generates RTL, GDSII, timing models, and power models.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">💡</div>
+      <h3>Chip Companies</h3>
+      <p>NVIDIA, AMD, Intel, Qualcomm, Arm, and Apple make all the architectural decisions: L1/L2/L3 sizes, number of cache ways (associativity), replacement policies (LRU, pseudo-LRU, random), cache coherence protocols (MESI, MOESI, CHI), and how caches integrate with pipeline stages and prefetchers.</p>
+    </div>
+  </div>
+
+  <h2 class="sub">Cache Design Parameters — Where IP Differentiation Happens</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Parameter</th><th>Options</th><th>Impact</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Cache Size</strong></td><td>32 KB – 128 MB per level</td><td>Hit rate, area, power</td></tr>
+        <tr><td><strong>Associativity</strong></td><td>Direct-mapped, 4-way, 8-way, fully associative</td><td>Conflict miss rate vs access time</td></tr>
+        <tr><td><strong>Replacement Policy</strong></td><td>LRU, pseudo-LRU, RRIP, random</td><td>Hit rate under real workloads</td></tr>
+        <tr><td><strong>Write Policy</strong></td><td>Write-back, write-through</td><td>Memory traffic, coherence overhead</td></tr>
+        <tr><td><strong>Coherence Protocol</strong></td><td>MESI, MOESI, MESIF, ARM CHI</td><td>Multi-core correctness and performance</td></tr>
+        <tr><td><strong>Prefetching</strong></td><td>Stream prefetch, stride, ML-driven</td><td>Effective bandwidth utilization</td></tr>
+        <tr><td><strong>ECC</strong></td><td>SECDED, Chipkill (for LLC)</td><td>Reliability, silicon area overhead</td></tr>
+        <tr><td><strong>Banked vs Unified</strong></td><td>Multiple independent banks</td><td>Parallelism, access conflicts</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+</section>
+
+<!-- PROPRIETARY VS STANDARDIZED -->
+<section id="prop-vs-std" style="background: var(--surface2);">
+<div class="container">
+  <div class="section-head">
+    <span class="section-eyebrow">Architecture</span>
+    <h2>Proprietary vs Standardized: The Two Worlds Inside Every Chip</h2>
+    <p>NVIDIA, AMD, Intel, Qualcomm, and Arm all build entirely different internal architectures — yet their chips all speak the same memory and interconnect languages. Here's why.</p>
+  </div>
+
+  <p>One of the most important conceptual frameworks for any semiconductor engineer or IP vendor to understand is the split between what chip companies design privately and what they inherit from open consortium standards. These two domains coexist in every modern chip — and knowing the boundary tells you exactly where to focus your IP development.</p>
+
+  <div class="diagram-wrap">
+    <svg viewBox="0 0 680 340" xmlns="http://www.w3.org/2000/svg">
+      <text x="340" y="22" text-anchor="middle" fill="#0b4ea2" font-size="12" font-weight="800">Proprietary vs Standardized Domains in GPU/CPU/NPU</text>
+      <!-- Left: Proprietary -->
+      <rect x="20" y="35" width="290" height="285" rx="10" fill="#0b4ea2" opacity="0.08" stroke="#0b4ea2" stroke-width="2"/>
+      <text x="165" y="58" text-anchor="middle" fill="#0b4ea2" font-size="10" font-weight="800">🔒 PROPRIETARY (Company-defined)</text>
+      <rect x="40" y="68" width="250" height="32" rx="5" fill="#0b4ea2" opacity="0.15"/>
+      <text x="165" y="89" text-anchor="middle" fill="#0b4ea2" font-size="9" font-weight="700">GPU Shader / SM Architecture</text>
+      <rect x="40" y="106" width="250" height="32" rx="5" fill="#0b4ea2" opacity="0.15"/>
+      <text x="165" y="127" text-anchor="middle" fill="#0b4ea2" font-size="9" font-weight="700">CPU Pipeline, Branch Predictor, OOO Engine</text>
+      <rect x="40" y="144" width="250" height="32" rx="5" fill="#0b4ea2" opacity="0.15"/>
+      <text x="165" y="165" text-anchor="middle" fill="#0b4ea2" font-size="9" font-weight="700">NPU / TPU Tensor Engine</text>
+      <rect x="40" y="182" width="250" height="32" rx="5" fill="#0b4ea2" opacity="0.15"/>
+      <text x="165" y="203" text-anchor="middle" fill="#0b4ea2" font-size="9" font-weight="700">L1/L2/L3 SRAM Cache Hierarchy</text>
+      <rect x="40" y="220" width="250" height="32" rx="5" fill="#0b4ea2" opacity="0.15"/>
+      <text x="165" y="241" text-anchor="middle" fill="#0b4ea2" font-size="9" font-weight="700">Instruction Set Architecture (proprietary ISA)</text>
+      <rect x="40" y="258" width="250" height="40" rx="5" fill="#0b4ea2" opacity="0.15"/>
+      <text x="165" y="276" text-anchor="middle" fill="#0b4ea2" font-size="9" font-weight="700">Scheduler, Prefetcher, Power Gating</text>
+      <text x="165" y="290" text-anchor="middle" fill="#0b4ea2" font-size="8">Logic = NVIDIA / AMD / Intel / Arm / Google only</text>
+      <!-- Center arrow -->
+      <text x="340" y="188" text-anchor="middle" fill="#e8344a" font-size="22" font-weight="900">⟷</text>
+      <text x="340" y="205" text-anchor="middle" fill="#e8344a" font-size="8" font-weight="700">CHIP</text>
+      <text x="340" y="215" text-anchor="middle" fill="#e8344a" font-size="8" font-weight="700">BOUNDARY</text>
+      <!-- Right: Standardized -->
+      <rect x="370" y="35" width="290" height="285" rx="10" fill="#1db954" opacity="0.07" stroke="#1db954" stroke-width="2"/>
+      <text x="515" y="58" text-anchor="middle" fill="#1a7a3e" font-size="10" font-weight="800">✅ STANDARDIZED (Consortium-defined)</text>
+      <rect x="390" y="68" width="250" height="32" rx="5" fill="#1db954" opacity="0.15"/>
+      <text x="515" y="89" text-anchor="middle" fill="#1a7a3e" font-size="9" font-weight="700">DDR5 / LPDDR5X / HBM3E — JEDEC</text>
+      <rect x="390" y="106" width="250" height="32" rx="5" fill="#1db954" opacity="0.15"/>
+      <text x="515" y="127" text-anchor="middle" fill="#1a7a3e" font-size="9" font-weight="700">PCIe Gen 5/6 — PCI-SIG</text>
+      <rect x="390" y="144" width="250" height="32" rx="5" fill="#1db954" opacity="0.15"/>
+      <text x="515" y="165" text-anchor="middle" fill="#1a7a3e" font-size="9" font-weight="700">USB4 / USB-C — USB-IF</text>
+      <rect x="390" y="182" width="250" height="32" rx="5" fill="#1db954" opacity="0.15"/>
+      <text x="515" y="203" text-anchor="middle" fill="#1a7a3e" font-size="9" font-weight="700">UCIe Chiplet Interconnect — UCIe Consortium</text>
+      <rect x="390" y="220" width="250" height="32" rx="5" fill="#1db954" opacity="0.15"/>
+      <text x="515" y="241" text-anchor="middle" fill="#1a7a3e" font-size="9" font-weight="700">Ethernet 400G/800G — IEEE 802.3</text>
+      <rect x="390" y="258" width="250" height="40" rx="5" fill="#1db954" opacity="0.15"/>
+      <text x="515" y="276" text-anchor="middle" fill="#1a7a3e" font-size="9" font-weight="700">MIPI CSI-2 / DSI — MIPI Alliance</text>
+      <text x="515" y="290" text-anchor="middle" fill="#1a7a3e" font-size="8">Interface = open standard, any vendor can implement</text>
+    </svg>
+    <p class="diagram-caption">Every chip is a blend: proprietary compute logic + standardized external interfaces. IP/VIP vendors target the right side — where JEDEC, PCI-SIG, UCIe, and IEEE define the rules.</p>
+  </div>
+
+  <h2 class="sub">Why This Split Exists</h2>
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-icon">🔒</div>
+      <h3>Compute Logic Stays Proprietary</h3>
+      <p>NVIDIA's SM architecture, AMD's CDNA compute units, Apple's Neural Engine, and Google's TPU Matrix Multiply Units are competitive weapons. Companies invest billions to differentiate on internal microarchitecture — execution throughput, power efficiency, scheduling intelligence. No consortium can or should standardize these.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🌐</div>
+      <h3>Interfaces Must Be Standardized</h3>
+      <p>A server board must accommodate DIMMs from Samsung, SK Hynix, or Micron interchangeably. A GPU must plug into any PCIe slot regardless of motherboard vendor. This interoperability is only possible because JEDEC, PCI-SIG, and USB-IF define the electrical and protocol rules that every implementer must follow.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🎯</div>
+      <h3>What This Means for IP Vendors</h3>
+      <p>As an IP or VIP seller, you cannot sell a replacement for NVIDIA's SM core. But you <em>can</em> sell a DDR5 controller, an HBM PHY, a PCIe Gen 6 verification IP, or a UCIe die-to-die interface block — because these are defined by open standards that any chip team must implement, regardless of their proprietary compute architecture.</p>
+    </div>
+  </div>
+
+  <h2 class="sub">How This Looks Inside Real Chips</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Chip</th><th>Proprietary Internal Logic</th><th>Standardized Interfaces Used</th></tr></thead>
+      <tbody>
+        <tr><td><strong>NVIDIA H100</strong></td><td>CUDA SMs, Transformer Engine, NVLink 4.0</td><td>HBM3 (JEDEC), PCIe Gen 5 (PCI-SIG)</td></tr>
+        <tr><td><strong>AMD MI300X</strong></td><td>CDNA3 compute dies, Unified Memory</td><td>HBM3 (JEDEC), PCIe Gen 5, UCIe chiplets</td></tr>
+        <tr><td><strong>Intel Gaudi 3</strong></td><td>Matrix Multiply Units, MME</td><td>HBM2E (JEDEC), PCIe Gen 5 (PCI-SIG)</td></tr>
+        <tr><td><strong>Qualcomm Snapdragon X Elite</strong></td><td>Oryon CPU, Hexagon NPU</td><td>LPDDR5X (JEDEC), USB4 (USB-IF), MIPI CSI-2/DSI</td></tr>
+        <tr><td><strong>Apple M4</strong></td><td>Firestorm/Icestorm cores, Neural Engine</td><td>LPDDR5X (JEDEC), USB4 (USB-IF), PCIe (PCI-SIG)</td></tr>
+        <tr><td><strong>Google TPU v7</strong></td><td>Systolic array, HBM controller (custom)</td><td>HBM3E (JEDEC), PCIe/ICI interconnect</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+</section>
+
+<!-- STANDARDS BODIES -->
+<section id="standards-bodies" style="background: var(--bg);">
+<div class="container">
+  <div class="section-head">
+    <span class="section-eyebrow">Industry Ecosystem</span>
+    <h2>Standards Bodies Every Semiconductor Engineer Must Know</h2>
+    <p>HBM is JEDEC's standard. PCIe is PCI-SIG's. USB is USB-IF's. Knowing who publishes what — and who are the members — is foundational knowledge for chip design and IP development.</p>
+  </div>
+
+  <div class="highlight-box">
+    <strong>Common misconception:</strong> "NVIDIA invented HBM." — In fact, HBM is a <strong>JEDEC standard</strong> (JESD238B.01 for HBM3, published April 2025). NVIDIA, AMD, SK Hynix, Samsung, and Micron are all JEDEC <em>members</em> — they contribute to working groups and then implement the spec in their products. NVIDIA was a heavy adopter and influencer of HBM, but JEDEC publishes and owns the specification.
+  </div>
+
+  <h2 class="sub">Complete Standards Body Reference</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Standards Body</th><th>Technology Domain</th><th>Key Specifications</th><th>Notable Members</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>JEDEC</strong><br><span style="font-size:0.78rem;color:var(--text-muted)">jedec.org</span></td>
+          <td>DRAM, Flash, Packaging</td>
+          <td>DDR5 (JESD79-5), LPDDR5X, HBM3 (JESD238B.01), GDDR7, UFS 4.0</td>
+          <td>Samsung, SK Hynix, Micron, NVIDIA, AMD, Intel, Qualcomm, Google</td>
+        </tr>
+        <tr>
+          <td><strong>PCI-SIG</strong><br><span style="font-size:0.78rem;color:var(--text-muted)">pcisig.com</span></td>
+          <td>PCIe Interconnect</td>
+          <td>PCIe 5.0, PCIe 6.0, PCIe 7.0</td>
+          <td>Intel, AMD, NVIDIA, Arm, Qualcomm, Broadcom, Marvell</td>
+        </tr>
+        <tr>
+          <td><strong>UCIe Consortium</strong><br><span style="font-size:0.78rem;color:var(--text-muted)">uciexpress.org</span></td>
+          <td>Chiplet Interconnect</td>
+          <td>UCIe 1.0, UCIe 1.1, UCIe 2.0</td>
+          <td>Intel, AMD, NVIDIA, TSMC, Samsung, Arm, Qualcomm, ASML</td>
+        </tr>
+        <tr>
+          <td><strong>USB-IF</strong><br><span style="font-size:0.78rem;color:var(--text-muted)">usb.org</span></td>
+          <td>USB / USB-C</td>
+          <td>USB4, USB 3.2, USB-C, USB Power Delivery</td>
+          <td>Apple, Intel, Qualcomm, Google, Microsoft, Texas Instruments</td>
+        </tr>
+        <tr>
+          <td><strong>MIPI Alliance</strong><br><span style="font-size:0.78rem;color:var(--text-muted)">mipi.org</span></td>
+          <td>Mobile Interfaces</td>
+          <td>MIPI CSI-2 (camera), DSI (display), D-PHY, C-PHY, I3C</td>
+          <td>Qualcomm, MediaTek, Samsung, Sony, ARM, Apple</td>
+        </tr>
+        <tr>
+          <td><strong>IEEE 802</strong><br><span style="font-size:0.78rem;color:var(--text-muted)">ieee.org</span></td>
+          <td>Networking / Ethernet</td>
+          <td>Ethernet 802.3 (10G/100G/400G/800G), Wi-Fi 802.11be (Wi-Fi 7)</td>
+          <td>Broadcom, Marvell, Cisco, Intel, NVIDIA (Mellanox), Juniper</td>
+        </tr>
+        <tr>
+          <td><strong>NVM Express Consortium</strong><br><span style="font-size:0.78rem;color:var(--text-muted)">nvmexpress.org</span></td>
+          <td>Storage Interfaces</td>
+          <td>NVMe 2.0, ZNS (Zoned Namespace), CMB, FDP</td>
+          <td>Samsung, Western Digital, Seagate, Intel, Micron, KIOXIA</td>
+        </tr>
+        <tr>
+          <td><strong>HDMI Forum</strong><br><span style="font-size:0.78rem;color:var(--text-muted)">hdmi.org</span></td>
+          <td>Display / AV</td>
+          <td>HDMI 2.1, HDMI 2.1a (48 Gbps)</td>
+          <td>Sony, Panasonic, Toshiba, Silicon Optix</td>
+        </tr>
+        <tr>
+          <td><strong>VESA</strong><br><span style="font-size:0.78rem;color:var(--text-muted)">vesa.org</span></td>
+          <td>Display / DisplayPort</td>
+          <td>DisplayPort 2.1 (80 Gbps), eDP, DSC</td>
+          <td>AMD, NVIDIA, Intel, Dell, Samsung, LG, Apple</td>
+        </tr>
+        <tr>
+          <td><strong>Accellera / IEEE</strong><br><span style="font-size:0.78rem;color:var(--text-muted)">accellera.org</span></td>
+          <td>EDA / Verification Standards</td>
+          <td>SystemVerilog (IEEE 1800), UVM, JTAG (IEEE 1149.1), IJTAG (IEEE 1687), PSS</td>
+          <td>Synopsys, Cadence, Siemens EDA, Arm, Intel, NVIDIA, AMD</td>
+        </tr>
+        <tr>
+          <td><strong>MLCommons</strong><br><span style="font-size:0.78rem;color:var(--text-muted)">mlcommons.org</span></td>
+          <td>AI/ML Hardware Benchmarks</td>
+          <td>MLPerf Training, MLPerf Inference, MLPerf Tiny</td>
+          <td>Google, NVIDIA, AMD, Intel, Qualcomm, Microsoft, Meta</td>
+        </tr>
+        <tr>
+          <td><strong>OCP (Open Compute)</strong><br><span style="font-size:0.78rem;color:var(--text-muted)">opencompute.org</span></td>
+          <td>Open Accelerator Hardware</td>
+          <td>OAI (Open Accelerator Infrastructure), OCP-TAP</td>
+          <td>Meta, Microsoft, Google, Intel, AMD, NVIDIA</td>
+        </tr>
+        <tr>
+          <td><strong>RISC-V International</strong><br><span style="font-size:0.78rem;color:var(--text-muted)">riscv.org</span></td>
+          <td>Open ISA</td>
+          <td>RV32/RV64, Vector Extension, Hypervisor Extension</td>
+          <td>SiFive, Western Digital, NVIDIA, Google, Qualcomm, Arm (observer)</td>
+        </tr>
+        <tr>
+          <td><strong>AUTOSAR / ISO</strong></td>
+          <td>Automotive / Functional Safety</td>
+          <td>ISO 26262 (functional safety), AUTOSAR Classic/Adaptive</td>
+          <td>Bosch, NXP, Renesas, Continental, BMW, Toyota</td>
+        </tr>
+        <tr>
+          <td><strong>Wi-Fi Alliance / Bluetooth SIG</strong></td>
+          <td>Wireless</td>
+          <td>Wi-Fi 7 (802.11be), Bluetooth 5.4</td>
+          <td>Qualcomm, MediaTek, Broadcom, Apple, Samsung, Intel</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class="sub">Membership Priority for IP/VIP Vendors</h2>
+  <p>For a semiconductor IP or Verification IP company, not every consortium is equally important on day one. Here is a practical priority ranking based on market impact and relevance to AI/memory IP development:</p>
+
+  <div class="card-grid">
+    <div class="card" style="border-top: 3px solid #e8344a;">
+      <div class="card-icon">🥇</div>
+      <h3>Tier 1 — Critical</h3>
+      <ul>
+        <li><strong>JEDEC</strong> — DDR5, LPDDR5X, HBM3/4. If your IP touches memory, this is non-negotiable.</li>
+        <li><strong>PCI-SIG</strong> — PCIe Gen 5/6 controllers and PHYs. Essential for AI accelerator interconnects.</li>
+        <li><strong>Accellera / IEEE</strong> — UVM, SystemVerilog. Required for any VIP work.</li>
+      </ul>
+    </div>
+    <div class="card" style="border-top: 3px solid var(--gold);">
+      <div class="card-icon">🥈</div>
+      <h3>Tier 2 — High Value</h3>
+      <ul>
+        <li><strong>UCIe Consortium</strong> — Chiplet die-to-die IP, growing fast with AMD/Intel/TSMC adoption.</li>
+        <li><strong>MIPI Alliance</strong> — Mobile camera/display IP, key for smartphone and automotive SoCs.</li>
+        <li><strong>NVM Express</strong> — NVMe controller IP for AI data center SSD subsystems.</li>
+      </ul>
+    </div>
+    <div class="card" style="border-top: 3px solid var(--green);">
+      <div class="card-icon">🥉</div>
+      <h3>Tier 3 — Strategic</h3>
+      <ul>
+        <li><strong>RISC-V International</strong> — Free to join as a community member; positions you well for India DLI/ChipIN.</li>
+        <li><strong>MLCommons / OCP</strong> — For AI accelerator IP validation and data center credibility.</li>
+        <li><strong>USB-IF</strong> — If your product roadmap includes USB4 / Thunderbolt PHY or controller IP.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="warning-box">
+    <strong>💡 Practical Note:</strong> Full voting membership in JEDEC, PCI-SIG, or UCIe requires annual fees (ranging from $3,000 to $30,000+ per year). For early-stage IP startups, it is acceptable to bootstrap using the publicly available spec excerpts and open-source reference implementations, while pursuing formal membership as revenue grows. However, alignment with these specs from day one is mandatory — non-compliant IP will not sell regardless of membership status.
+  </div>
+
+</div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">YAROK<span>14</span></div>
+    <p class="footer-tagline">Engineering the Future of Intelligent Semiconductor Systems</p>
+    <div class="footer-cols">
+      <div class="footer-col">
+        <h4>About Yarok14</h4>
+        <ul>
+          <li>Semiconductor IP Company</li>
+          <li>RTL & Verification IP</li>
+          <li>RISC-V Platforms</li>
+          <li>ASIC Consulting</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Technologies</h4>
+        <ul>
+          <li>HBM3E / HBM4</li>
+          <li>DDR5 / LPDDR5X</li>
+          <li>PCIe Gen 5/6</li>
+          <li>CXL / UCIe</li>
+          <li>UVM Verification</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Standards</h4>
+        <ul>
+          <li>JEDEC JESD79-5 (DDR5)</li>
+          <li>JEDEC JESD238 (HBM)</li>
+          <li>CXL 3.0</li>
+          <li>PCIe Gen 6</li>
+          <li>UCIe 2.0</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li>jedec.org</li>
+          <li>computeexpresslink.org</li>
+          <li>uciexpress.org</li>
+          <li>pcisig.com</li>
+          <li>riscv.org</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 YAROK14 Technologies | All technical content based on public semiconductor industry information and JEDEC/consortium specifications. No confidential or proprietary information disclosed.</p>
+    </div>
+  </div>
+</footer>
+
+<button id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+  // Progress bar
+  window.addEventListener('scroll', () => {
+    const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+    document.getElementById('progress-bar').style.width = scrolled + '%';
+    const btn = document.getElementById('back-top');
+    btn.classList.toggle('visible', window.scrollY > 400);
+  });
+
+  // Dark mode
+  function toggleTheme() {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    document.documentElement.setAttribute('data-theme', isDark ? '' : 'dark');
+    document.querySelector('.theme-btn').textContent = isDark ? '🌙 Dark' : '☀️ Light';
+  }
+
+  // FAQ toggle
+  function toggleFAQ(el) {
+    el.closest('.faq-item').classList.toggle('open');
+  }
+</script>
+</body>
+</html>
