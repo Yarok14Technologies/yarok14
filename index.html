@@ -1,44 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- ================= SEO TITLE ================= -->
-  <title>Yarok14 Technologies | ASIC Design, AI Hardware & FPGA Engineering Company</title>
-
-  <!-- ================= PRIMARY SEO ================= -->
-  <meta name="description"
-    content="Yarok14 Technologies is a semiconductor and AI hardware engineering company specializing in ASIC design, RTL verification, FPGA prototyping, physical design (RTL-to-GDSII), DFT engineering, embedded systems, and industrial AI solutions. Partner with us for secure, high-performance silicon and intelligent hardware development.">
-
-  <meta name="keywords"
-    content="ASIC design company, FPGA design services, RTL design, UVM verification, physical design services, DFT engineering, AI hardware company, semiconductor startup, embedded systems engineering, IoT hardware development, biomethane optimization system, RTL to GDSII, tapeout support, VLSI design services">
-
+  <title>Yarok14 Technologies | ASIC Design, AI Hardware & FPGA Engineering</title>
+  <meta name="description" content="Yarok14 Technologies — semiconductor and AI hardware engineering. ASIC design, RTL verification, FPGA prototyping, physical design (RTL-to-GDSII), DFT, embedded systems, and industrial AI.">
+  <meta name="keywords" content="ASIC design company, FPGA design services, RTL design, UVM verification, physical design, DFT engineering, AI hardware, semiconductor startup, embedded systems, IoT, RTL-to-GDSII">
   <meta name="robots" content="index, follow">
   <meta name="author" content="Yarok14 Technologies">
-  <meta name="geo.region" content="IN">
-  <meta name="geo.placename" content="India">
-
-  <!-- ================= CANONICAL ================= -->
   <link rel="canonical" href="https://yarok14.com/">
-
-  <!-- ================= PWA MANIFEST ================= -->
   <link rel="manifest" href="/manifest.json">
+  <link rel="icon" href="assets/images/Yarok14-Stamp.jpg">
 
-  <!-- ================= OPEN GRAPH ================= -->
   <meta property="og:title" content="Yarok14 Technologies | ASIC, AI Hardware & Semiconductor Engineering">
-  <meta property="og:description"
-    content="Advanced ASIC design, FPGA prototyping, RTL verification, DFT engineering, AI hardware development, and industrial embedded systems — delivering secure, NDA-driven global semiconductor solutions.">
+  <meta property="og:description" content="Advanced ASIC design, FPGA prototyping, RTL verification, DFT, AI hardware, and embedded systems.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://yarok14.com">
   <meta property="og:image" content="https://yarok14.com/assets/images/Yarok14-Stamp.jpg">
 
-  <!-- ================= FAVICON ================= -->
-  <link rel="icon" href="assets/images/Yarok14-Stamp.jpg">
   <link rel="stylesheet" href="assets/css/styles.css">
 
-  <!-- ================= STRUCTURED DATA ================= -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -55,323 +36,401 @@
   }
   </script>
 </head>
-
 <body>
 
-  <!-- ================= NAVBAR ================= -->
- <section class="navbar">
+<!-- NAVBAR -->
+<nav class="navbar">
   <div class="nav-container">
-    <div class="nav-links">
+    <a href="index.html" class="nav-brand">YAROK<span>14</span> <span style="color:var(--muted);font-size:0.7rem;font-weight:400;letter-spacing:1px;margin-left:6px;">TECHNOLOGIES</span></a>
+    <button class="nav-mobile-toggle" onclick="toggleNav()">☰</button>
+    <div class="nav-links" id="navLinks">
       <a href="#services">Services</a>
       <a href="#products">Products</a>
-      <a href="#clients">Clients</a>
+      <a href="insights.html">Insights</a>
       <a href="#about">About</a>
-      <a href="#contact">Contact</a>
+      <a href="careers.html">Careers</a>
+      <a href="#contact" class="nav-cta">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO BANNER -->
+<div class="hero-wrap">
+  <section style="width:100%; overflow:hidden; background:#000;">
+    <img
+      id="yarokHero"
+      src="assets/images/YAROK 14 logo cover Page(4).png"
+      alt="Yarok14 Technologies"
+      class="hero-img-banner"
+    >
+  </section>
+
+  <!-- SECONDARY HERO -->
+  <section class="hero-secondary">
+    <div class="eyebrow">// Semiconductor · AI · Embedded Systems</div>
+    <h1>Silicon Intelligence.<br>From RTL to Tape-Out.</h1>
+    <p>
+      Advanced ASIC design, FPGA prototyping, RTL verification, physical design, DFT engineering,
+      AI hardware acceleration, and industrial embedded systems — delivered under strict NDA
+      with precision and IP protection.
+    </p>
+    <div class="hero-cta-row">
+      <a href="#contact" class="btn-primary">Start a Project</a>
+      <a href="#services" class="btn-secondary">Explore Services</a>
+    </div>
+  </section>
+</div>
+
+<!-- PCB DIVIDER -->
+<div style="padding: 0 7%; background: var(--bg);">
+  <div class="pcb-divider"><div class="pcb-node"></div></div>
+</div>
+
+<!-- STATS -->
+<section class="section" style="padding: 72px 7%;">
+  <div class="stats-row">
+    <div class="stat-item">
+      <span class="stat-num">16nm+</span>
+      <span class="stat-label">Sub-node FinFET Experience</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">15+</span>
+      <span class="stat-label">Engineering Services</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">8</span>
+      <span class="stat-label">Product Platforms</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">NDA</span>
+      <span class="stat-label">All Projects Secured</span>
     </div>
   </div>
 </section>
 
-  <!-- ================= HERO ================= -->
-<section style="width:100%; overflow:hidden;">
-  <img
-    id="yarokHero"
-    src="assets/images/YAROK 14 logo cover Page(4).png"
-    alt="Yarok14 Technologies"
-    style="width:100%; height:auto; display:block;"
-  >
+<!-- SERVICES -->
+<section id="services" class="section light">
+  <div class="section-header">
+    <div class="eyebrow">// Engineering Capabilities</div>
+    <h2>Our Engineering <span class="accent">Services</span></h2>
+    <p>Full-spectrum semiconductor and AI engineering — from RTL specification to silicon validation and beyond.</p>
+  </div>
+
+  <div class="grid grid-3">
+    <div class="card">
+      <div class="card-icon">⚡</div>
+      <h3>ASIC & FPGA Design</h3>
+      <p>Custom RTL design, hardware–software co-design, FPGA validation, and silicon architecture from spec to synthesizable netlist.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🏗</div>
+      <h3>Physical Design (RTL-to-GDSII)</h3>
+      <p>Synthesis, floorplanning, CTS, routing, STA, IR/EM analysis, and full tape-out support for advanced nodes.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">✅</div>
+      <h3>Verification & Formal</h3>
+      <p>UVM testbenches, assertions, coverage closure, regression automation, and formal verification to closure.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🔬</div>
+      <h3>Design for Test (DFT)</h3>
+      <p>Scan insertion, MBIST, ATPG, JTAG integration, yield improvement strategies, and silicon debug support.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🧠</div>
+      <h3>AI & Machine Learning Systems</h3>
+      <p>Edge AI deployment, MLOps pipelines, hardware acceleration, model optimization, and intelligent automation.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🔌</div>
+      <h3>Embedded & IoT Systems</h3>
+      <p>Firmware development, board bring-up, industrial control systems, and secure IoT infrastructure design.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">💻</div>
+      <h3>Full-Stack Software Development</h3>
+      <p>Modern web and mobile applications using React, Angular, Flutter, Node.js, Python, Java, APIs, and enterprise platforms.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">📊</div>
+      <h3>Data Science & Analytics</h3>
+      <p>Predictive modeling, ML, data mining, forecasting, and data-driven decision support systems.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">☁️</div>
+      <h3>Cloud & DevOps</h3>
+      <p>CI/CD pipelines, Kubernetes orchestration, containerization, and scalable cloud-native architecture at any scale.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🛡</div>
+      <h3>Cybersecurity & Secure Systems</h3>
+      <p>Application security, secure architecture design, vulnerability assessment, threat modeling, and compliance.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">📈</div>
+      <h3>Business Intelligence (BI)</h3>
+      <p>Interactive dashboards, KPI monitoring, executive reporting, ETL pipelines, and enterprise BI solutions.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🔄</div>
+      <h3>Digital Transformation</h3>
+      <p>Enterprise software modernization, workflow automation, ERP/CRM integration, and process optimization.</p>
+    </div>
+  </div>
+
+  <!-- Service tags -->
+  <div class="service-tag-grid" style="margin-top:48px;">
+    <div class="service-tag"><span class="dot"></span>RTL Design</div>
+    <div class="service-tag"><span class="dot"></span>UVM Verification</div>
+    <div class="service-tag"><span class="dot"></span>Physical Design</div>
+    <div class="service-tag"><span class="dot"></span>Scan Insertion</div>
+    <div class="service-tag"><span class="dot"></span>MBIST</div>
+    <div class="service-tag"><span class="dot"></span>ATPG</div>
+    <div class="service-tag"><span class="dot"></span>FPGA Prototyping</div>
+    <div class="service-tag"><span class="dot"></span>Edge AI</div>
+    <div class="service-tag"><span class="dot"></span>MLOps</div>
+    <div class="service-tag"><span class="dot"></span>FinFET &lt;16nm</div>
+    <div class="service-tag"><span class="dot"></span>RISC-V</div>
+    <div class="service-tag"><span class="dot"></span>STA Analysis</div>
+    <div class="service-tag"><span class="dot"></span>Formal Verification</div>
+    <div class="service-tag"><span class="dot"></span>GDSII Tapeout</div>
+  </div>
 </section>
 
+<!-- PRODUCTS -->
+<section id="products" class="section">
+  <div class="section-header">
+    <div class="eyebrow">// Product Portfolio</div>
+    <h2>Technology <span class="accent">Products</span></h2>
+    <p>Proprietary platforms spanning silicon IP, AI inference, and intelligent industrial systems.</p>
+  </div>
+
+  <div class="grid grid-2">
+    <div class="card">
+      <div class="card-icon">🤖</div>
+      <h3>Automated Front-End VLSI Design AI Tool</h3>
+      <p>AI-driven RAG-based platform that converts high-level functional specifications into synthesizable, PPA-optimized RTL (Verilog/VHDL) with closed-loop verification and iterative refinement.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🌱</div>
+      <h3>IoT-Based Biomethane Optimization System</h3>
+      <p>Intelligent mixed-signal hardware platform integrating industrial sensors, embedded control, and AI analytics for renewable energy process optimization.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">⚙️</div>
+      <h3>Yarok-14 Microprocessor Unit (MuP)</h3>
+      <p>Custom RISC-based mixed-signal microprocessor designed for industrial automation, precision sensing, and FPGA-to-ASIC scalability.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🚀</div>
+      <h3>AI Edge Acceleration Platform</h3>
+      <p>FPGA-optimized inference engine enabling low-latency, real-time AI deployment for industrial, robotics, and embedded edge systems.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🔐</div>
+      <h3>Secure Soft & Hard IP Portfolio</h3>
+      <p>Silicon-ready IP catalog — synthesizable RTL (Soft IP), layout-hardened blocks (Hard IP), and hardware security modules for advanced-node ASIC integration.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🏭</div>
+      <h3>Industry-Specific Intelligent IP Solutions</h3>
+      <p>Mission-critical semiconductor and embedded IP platforms for robotics, defense, agriculture, automotive, drones, and high-reliability industrial applications.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🧩</div>
+      <h3>Enterprise LLM & RAG Platform</h3>
+      <p>Secure domain-specific LLM platform integrating Retrieval-Augmented Generation, knowledge graphs, and private data sources for enterprise search and decision support.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">✨</div>
+      <h3>Generative AI Automation Suite</h3>
+      <p>End-to-end GenAI solution for intelligent content generation, workflow automation, AI agents, multimodal processing, and business process optimization.</p>
+    </div>
+  </div>
+</section>
+
+<!-- IT/OT ARCHITECTURE HIGHLIGHT -->
+<section class="section alt">
+  <div class="section-header">
+    <div class="eyebrow">// System Architecture</div>
+    <h2>AI-Powered <span class="accent">Factory Stack</span></h2>
+    <p>Our IT/OT integration framework connects every layer of the semiconductor manufacturing stack — from equipment to enterprise AI.</p>
+  </div>
+
+  <div style="max-width:700px; margin: 0 auto;">
+    <div class="arch-block">
+      <div class="arch-title">// SEMICONDUCTOR FACTORY ARCHITECTURE — YAROK14 FRAMEWORK</div>
+      <div class="arch-layer highlight">AI &amp; Analytics Layer — LLMs · ML Models · Digital Twin · RAG</div>
+      <div class="arch-arrow">↓</div>
+      <div class="arch-layer">Enterprise Systems — ERP · PLM · Engineering Databases · Cloud</div>
+      <div class="arch-arrow">↓</div>
+      <div class="arch-layer">Manufacturing Systems — MES · Equipment Management · SPC · APC</div>
+      <div class="arch-arrow">↓</div>
+      <div class="arch-layer">Industrial Communication — OPC UA · SECS/GEM · PLC · SCADA</div>
+      <div class="arch-arrow">↓</div>
+      <div class="arch-layer">Equipment Layer — Lithography · Etch · Deposition · CMP · Inspection</div>
+    </div>
+    <p style="text-align:center; margin-top:20px;">
+      <a href="insights/it-ot-integration.html" class="read-more" style="justify-content:center;">Read the full IT/OT Integration deep dive</a>
+    </p>
+  </div>
+</section>
+
+<!-- CLIENTS -->
+<section id="clients" class="trust-section">
+  <div class="eyebrow">// Engagements</div>
+  <div class="trust-card">
+    <p>
+      We collaborate with semiconductor startups, fabless design houses, AI hardware innovators,
+      and industrial automation teams worldwide. Every engagement begins with a mutual NDA,
+      secure engineering workflows, and a commitment to protecting your IP at every milestone.
+    </p>
+    <div class="nda-badge">🔒 NDA_PROTECTED · IP_SECURE · GLOBAL_DELIVERY</div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="about-section">
+  <div class="about-inner">
+    <div class="about-text">
+      <div class="eyebrow">// About</div>
+      <h2>Engineering the Edge of Silicon</h2>
+      <p>Yarok14 Technologies is a semiconductor and AI engineering company specializing in advanced-node ASIC design, verification, and production-ready AI systems. Our team brings experience across sub-16nm FinFET process nodes and advanced low-power technologies.</p>
+      <p>From architecture definition to tape-out and silicon validation, we handle every stage of the hardware lifecycle — delivering secure, high-performance silicon to engineering teams across the globe.</p>
+      <p>We combine RTL/IP expertise, industrial automation knowledge, and cutting-edge AI capabilities to build resilient, intelligent hardware for the next decade of computing.</p>
+      <div style="margin-top: 28px; display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="#contact" class="btn-primary">Work with Us</a>
+        <a href="insights.html" class="btn-secondary">Read Our Insights</a>
+      </div>
+    </div>
+    <div class="about-specs">
+      <div class="spec-row">
+        <span class="spec-key">SPECIALIZATION</span>
+        <span class="spec-val">ASIC · FPGA · AI HW</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">PROCESS_NODE</span>
+        <span class="spec-val">Sub-16nm FinFET</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">VERIFICATION</span>
+        <span class="spec-val">UVM · SystemVerilog · Formal</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">PHYSICAL_DESIGN</span>
+        <span class="spec-val">RTL-to-GDSII · STA · DFT</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">AI_STACK</span>
+        <span class="spec-val">Edge · MLOps · LLM · RAG</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">ENGAGEMENT</span>
+        <span class="spec-val">NDA-Protected · Global</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">INDUSTRIAL</span>
+        <span class="spec-val">OT/IT · Biomethane · IoT</span>
+      </div>
+      <div class="spec-row">
+        <span class="spec-key">STANDARDS</span>
+        <span class="spec-val">JEDEC · PCIe · RISC-V · UVM</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-section">
+  <div class="eyebrow">// Get in Touch</div>
+  <h2>Let's Build Something Powerful</h2>
+  <p>Accelerate tape-outs, improve verification coverage, optimize AI pipelines, or prototype faster on FPGA. Our engineers are ready.</p>
+  <div class="contact-grid">
+    <div class="contact-card">
+      <h3>// EMAIL</h3>
+      <a href="mailto:info@yarok14.com">info@yarok14.com</a>
+    </div>
+    <div class="contact-card">
+      <h3>// WHATSAPP</h3>
+      <a href="https://wa.me/916282001701" target="_blank" rel="noopener">Start a Conversation →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-brand-col">
+      <h3>YAROK<span>14</span></h3>
+      <p>Semiconductor and AI hardware engineering company delivering ASIC design, RTL verification, FPGA prototyping, and industrial AI solutions globally.</p>
+      <div class="footer-social" style="margin-top: 24px; justify-content: flex-start;">
+        <a href="https://www.linkedin.com/company/yarok14" target="_blank"><img src="assets/images/linkedin.png" alt="LinkedIn"></a>
+        <a href="https://github.com/Yarok14Technologies" target="_blank"><img src="assets/images/github.png" alt="GitHub"></a>
+        <a href="https://www.youtube.com/channel/UCWmCcm1UlDJJfz0aB9B_a0A" target="_blank"><img src="assets/images/youtube.png" alt="YouTube"></a>
+        <a href="https://www.instagram.com/yarok14.technology" target="_blank"><img src="assets/images/instagram.png" alt="Instagram"></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#services">ASIC & FPGA Design</a></li>
+        <li><a href="#services">Physical Design</a></li>
+        <li><a href="#services">RTL Verification</a></li>
+        <li><a href="#services">DFT Engineering</a></li>
+        <li><a href="#services">AI & ML Systems</a></li>
+        <li><a href="#services">Embedded & IoT</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Products</h4>
+      <ul>
+        <li><a href="#products">VLSI AI Tool</a></li>
+        <li><a href="#products">Yarok-14 MuP</a></li>
+        <li><a href="#products">AI Edge Platform</a></li>
+        <li><a href="#products">IP Portfolio</a></li>
+        <li><a href="#products">Enterprise LLM</a></li>
+        <li><a href="#products">Biomethane System</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="insights.html">Insights</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="https://www.linkedin.com/company/yarok14" target="_blank">LinkedIn</a></li>
+        <li><a href="https://github.com/Yarok14Technologies" target="_blank">GitHub</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-divider"></div>
+  <div class="footer-bottom">
+    <p>© 2026 Yarok14 Technologies. All Rights Reserved.</p>
+    <p class="text-mono" style="font-size:0.75rem; color: var(--faint);">ASIC · AI Hardware · Embedded Systems · Biomethane Optimization</p>
+  </div>
+</footer>
+
 <script>
+  // Hero image rotation
   const heroImages = [
     "assets/images/YAROK 14 logo cover Page.png",
     "assets/images/YAROK 14 logo cover Page German.png",
     "assets/images/YAROK 14 logo cover Page Hebrew.png",
     "assets/images/YAROK 14 logo cover Page Taiwan.png"
   ];
-
   let currentImage = 0;
   const hero = document.getElementById("yarokHero");
-
   setInterval(() => {
     currentImage = (currentImage + 1) % heroImages.length;
     hero.src = heroImages[currentImage];
-  }, 5000); // 5 seconds
+  }, 5000);
+
+  // Mobile nav toggle
+  function toggleNav() {
+    document.getElementById('navLinks').classList.toggle('open');
+  }
 </script>
-
-    <!-- ================= SECOND HERO ================= -->
-    <section class="hero-secondary">
-      <div class="hero-secondary-content">
-        <h1>Advanced ASIC, AI & Semiconductor Engineering Services</h1>
-        <p>
-          Advanced ASIC design, FPGA prototyping, RTL verification, DFT engineering,
-          AI hardware development, and industrial embedded systems — delivering secure,
-          NDA-driven global semiconductor solutions.
-        </p>
-      </div>
-    </section>
-
-    <!-- ================= MAIN ================= -->
-    <main>
-
-      <!-- SERVICES -->
-      <section id="services" class="section light">
-        <h2>Our Engineering Services</h2>
-        <div class="grid">
-          <div class="card">
-            <h3>ASIC & FPGA Design</h3>
-            <p>Custom RTL design, hardware–software co-design, FPGA validation, and silicon architecture development.
-            </p>
-          </div>
-
-          <div class="card">
-            <h3>Physical Design (RTL-to-GDSII)</h3>
-            <p>Synthesis, floorplanning, CTS, routing, STA, IR/EM analysis, and full tape-out support.</p>
-          </div>
-
-          <div class="card">
-            <h3>Verification & Formal</h3>
-            <p>UVM testbenches, assertions, coverage closure, regression automation, and formal verification.</p>
-          </div>
-
-          <div class="card">
-            <h3>Design for Test (DFT)</h3>
-            <p>Scan insertion, MBIST, ATPG, JTAG integration, yield improvement, and silicon debug strategies.</p>
-          </div>
-
-          <div class="card">
-            <h3>AI & Machine Learning Systems</h3>
-            <p>Edge AI deployment, MLOps pipelines, hardware acceleration, and intelligent automation systems.</p>
-          </div>
-
-          <div class="card">
-            <h3>Embedded & IoT Systems</h3>
-            <p>Firmware development, board bring-up, industrial control systems, and secure IoT infrastructure.</p>
-          </div>
-
-          <div class="card">
-            <h3>Full-Stack Software Development</h3>
-            <p>Modern web and mobile application development using React, Angular, Flutter, Node.js, Python, Java,
-              databases, APIs, authentication, and enterprise software solutions.</p>
-          </div>
-
-          <div class="card">
-            <h3>System Design & Architecture</h3>
-            <p>Scalable system architecture, microservices, distributed systems, API design, performance optimization,
-              cloud integration, and end-to-end solution engineering.</p>
-          </div>
-
-          <div class="card">
-            <h3>Data Science & Advanced Analytics</h3>
-            <p>Predictive modeling, statistical analysis, machine learning, data mining, forecasting, optimization, and
-              data-driven decision support.</p>
-          </div>
-
-          <div class="card">
-            <h3>Business Intelligence (BI)</h3>
-            <p>Interactive dashboards, KPI monitoring, executive reporting, data visualization, ETL pipelines, and
-              enterprise business intelligence solutions.</p>
-          </div>
-
-          <div class="card">
-            <h3>Data Engineering & Analytics Platforms</h3>
-            <p>Data warehousing, data lakes, real-time data processing, big data pipelines, cloud analytics, and
-              scalable data infrastructure.</p>
-          </div>
-
-          <div class="card">
-            <h3>Business Analytics & Decision Systems</h3>
-            <p>Market analysis, operational analytics, customer insights, performance measurement, strategic planning,
-              and decision-support systems.</p>
-          </div>
-
-          <div class="card">
-            <h3>Cybersecurity & Secure Systems</h3>
-            <p>Application security, secure architecture, vulnerability assessment, threat modeling, penetration
-              testing, and security compliance solutions.</p>
-          </div>
-
-          <div class="card">
-            <h3>Digital Transformation & Enterprise Solutions</h3>
-            <p>Enterprise software modernization, workflow automation, ERP/CRM integration, process optimization, and
-              technology transformation initiatives.</p>
-          </div>
-
-          <div class="card">
-            <h3>Research, Innovation & Product Development</h3>
-            <p>Technology feasibility studies, prototype development, proof-of-concept creation, R&D engineering,
-              product strategy, and innovation consulting.</p>
-          </div>
-
-          <div class="card">
-            <h3>Cloud & DevOps</h3>
-            <p>CI/CD pipelines, Kubernetes orchestration, containerization, and scalable cloud-native architecture.</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- ================= PRODUCTS ================= -->
-      <section id="products" class="section">
-        <h2>Products</h2>
-
-        <div class="grid">
-
-          <!-- 1. Automated VLSI AI Tool -->
-          <div class="card">
-            <h3>Automated Front-End VLSI Design AI Tool</h3>
-            <p>
-              AI-driven RAG-based platform that converts high-level functional
-              specifications into synthesizable, PPA-optimized RTL (Verilog/VHDL)
-              with closed-loop verification and iterative refinement.
-            </p>
-          </div>
-
-          <!-- 2. Biomethane System -->
-          <div class="card">
-            <h3>IoT-Based Biomethane Optimization System</h3>
-            <p>
-              Intelligent mixed-signal hardware platform integrating industrial
-              sensors, embedded control, and AI analytics for renewable energy optimization.
-            </p>
-          </div>
-
-          <!-- 3. Yarok-14 MuP -->
-          <div class="card">
-            <h3>Yarok-14 Microprocessor Unit (MuP)</h3>
-            <p>
-              Custom RISC-based mixed-signal microprocessor designed for
-              industrial automation, precision sensing, and FPGA-to-ASIC scalability.
-            </p>
-          </div>
-
-          <!-- 4. AI Edge Platform -->
-          <div class="card">
-            <h3>AI Edge Acceleration Platform</h3>
-            <p>
-              FPGA-optimized inference engine enabling low-latency, real-time
-              AI deployment for industrial, robotics, and embedded systems.
-            </p>
-          </div>
-
-          <!-- 5. Soft & Hard IP Portfolio -->
-          <div class="card">
-            <h3>Secure Soft & Hard IP Portfolio</h3>
-            <p>
-              Silicon-ready IP catalog including synthesizable RTL (Soft IP),
-              layout-hardened blocks (Hard IP), and hardware security modules
-              for advanced-node ASIC integration.
-            </p>
-          </div>
-
-          <!-- 6. Industry IP Solutions -->
-          <div class="card">
-            <h3>Industry-Specific Intelligent IP Solutions</h3>
-            <p>
-              Mission-critical semiconductor and embedded IP platforms
-              tailored for robotics, defense, agriculture, automotive,
-              drones, and high-reliability industrial applications.
-            </p>
-          </div>
-
-          <!-- 7. Enterprise LLM Platform -->
-          <div class="card">
-            <h3>Enterprise LLM & RAG Platform</h3>
-            <p>
-              Secure domain-specific Large Language Model (LLM) platform integrating
-              Retrieval-Augmented Generation (RAG), knowledge graphs, and private
-              data sources for enterprise search, automation, and decision support.
-            </p>
-          </div>
-
-          <!-- 8. Generative AI Automation Suite -->
-          <div class="card">
-            <h3>Generative AI Automation Suite</h3>
-            <p>
-              End-to-end GenAI solution for intelligent content generation,
-              workflow automation, AI agents, multimodal processing, and
-              business process optimization across industries.
-            </p>
-          </div>
-
-        </div>
-      </section>
-      <!-- CLIENTS -->
-      <section id="clients" class="section light">
-        <h2>Trusted by Global Engineering Teams</h2>
-        <div class="card">
-          <p>
-            We collaborate with semiconductor startups, fabless design houses, AI hardware innovators,
-            and industrial automation teams worldwide. All projects are executed under strict NDAs
-            with secure engineering workflows and IP protection.
-          </p>
-        </div>
-      </section>
-
-      <!-- ABOUT -->
-      <section id="about" class="section about-section">
-        <h2>About Yarok14 Technologies</h2>
-        <p>Yarok14 Technologies is a semiconductor and AI/ML engineering company specializing in advanced-node ASIC
-          design and verification...</p>
-        <p>Our team has experience supporting sub-16nm FinFET and advanced low-power process technologies...</p>
-        <p>We collaborate with global engineering teams to deliver secure, high-performance silicon...</p>
-        <p>From architecture definition to tape-out and silicon validation...</p>
-      </section>
-
-      <!-- CONTACT -->
-      <section id="contact" class="contact-section">
-        <h2>Let’s Build Something Powerful Together</h2>
-        <p>Accelerate tapeouts, improve verification coverage, optimize AI pipelines, or prototype faster on FPGA.</p>
-        <div class="contact-grid">
-          <div class="contact-card">
-            <h3>Email</h3>
-            <a href="mailto:info@yarok14.com"><b>info@yarok14.com</b></a>
-          </div>
-
-
-          <div class="contact-card">
-            <h3>WhatsApp</h3>
-            <a href="https://wa.me/916282001701" target="_blank" rel="noopener noreferrer">
-              <b>Start a Conversation</b>
-            </a>
-          </div>
-        </div>
-
-      </section>
-
-    </main>
-
-    <!-- ================= FOOTER ================= -->
-    <footer class="footer">
-      <div class="footer-brand">
-        <h3>Yarok14 Technologies</h3>
-        <p>ASIC • AI Hardware • Embedded Systems • Biomethane Optimization</p>
-      </div>
-
-      <div class="footer-social">
-        <a href="https://www.linkedin.com/company/yarok14" target="_blank">
-          <img src="assets/images/linkedin.png" alt="LinkedIn">
-        </a>
-        <a href="https://github.com/Yarok14Technologies" target="_blank">
-          <img src="assets/images/github.png" alt="GitHub">
-        </a>
-        <a href="https://www.youtube.com/channel/UCWmCcm1UlDJJfz0aB9B_a0A" target="_blank">
-          <img src="assets/images/youtube.png" alt="YouTube">
-        </a>
-        <a href="https://www.instagram.com/yarok14.technology" target="_blank">
-          <img src="assets/images/instagram.png" alt="Instagram">
-        </a>
-        <a href="careers.html" class="footer-link">
-          <img src="assets/images/Career-icon.png" alt="Careers">
-          <span>Careers</span>
-        </a>
-
-
-      </div>
-
-      <div class="footer-bottom">
-        © 2026 Yarok14 Technologies. All Rights Reserved.
-      </div>
-    </footer>
-
 </body>
-
 </html>
