@@ -9,6 +9,7 @@
   <link rel="canonical" href="https://yarok14.com/insights.html">
   <link rel="icon" href="assets/images/Yarok14-Stamp.jpg">
   <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="assets/js/main.js"></script>
 
   <meta property="og:title" content="Insights | Yarok14 Technologies">
   <meta property="og:description" content="Technical articles and case studies on ASIC, AI hardware, and semiconductor engineering.">
@@ -244,18 +245,6 @@
   </div>
 </footer>
 
-<script>
-  function toggleNav() {
-    document.getElementById('navLinks').classList.toggle('open');
-  }
-
-  // Filter buttons (visual only for now)
-  document.querySelectorAll('.filter-btn').forEach(btn => {
-    btn.addEventListener('click', function() {
-      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-      this.classList.add('active');
-    });
-  });
-</script>
+<!-- toggleNav() and filterPosts() are in assets/js/main.js -->
 </body>
 </html>

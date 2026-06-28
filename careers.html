@@ -26,6 +26,7 @@
 
   <link rel="manifest" href="/manifest.json">
   <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="assets/js/main.js"></script>
   <link rel="icon" href="assets/images/Yarok14-Stamp.jpg">
 </head>
 
@@ -56,26 +57,25 @@
 </section>
 
 <script>
-  const heroImages = [
-    "assets/images/YAROK 14 Hero Image English.jpg",
-    "assets/images/YAROK 14 Hero Image German.jpg",
-    "assets/images/YAROK 14 Hero Image Hebrew.jpg",
-    "assets/images/YAROK 14 Hero Image Taiwan.jpg"
-  ];
-
-  let currentImage = 0;
-  const hero = document.getElementById("yarokHeroImage");
-
-  setInterval(() => {
-    hero.style.opacity = "0";
-
-    setTimeout(() => {
-      currentImage = (currentImage + 1) % heroImages.length;
-      hero.src = heroImages[currentImage];
-      hero.style.opacity = "1";
-    }, 400);
-
-  }, 3000);
+  (function() {
+    var heroImages = [
+      "assets/images/YAROK 14 Hero Image English.jpg",
+      "assets/images/YAROK 14 Hero Image German.jpg",
+      "assets/images/YAROK 14 Hero Image Hebrew.jpg",
+      "assets/images/YAROK 14 Hero Image Taiwan.jpg"
+    ];
+    var currentImage = 0;
+    var hero = document.getElementById("yarokHeroImage");
+    if (!hero) return;
+    setInterval(function() {
+      hero.style.opacity = "0";
+      setTimeout(function() {
+        currentImage = (currentImage + 1) % heroImages.length;
+        hero.src = heroImages[currentImage];
+        hero.style.opacity = "1";
+      }, 400);
+    }, 3000);
+  })();
 </script>
 
   <section class="section">

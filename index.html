@@ -19,6 +19,7 @@
   <meta property="og:image" content="https://yarok14.com/assets/images/Yarok14-Stamp.jpg">
 
   <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="assets/js/main.js"></script>
 
   <script type="application/ld+json">
   {
@@ -413,24 +414,26 @@
 </footer>
 
 <script>
-  // Hero image rotation
-  const heroImages = [
-    "assets/images/YAROK 14 logo cover Page.png",
-    "assets/images/YAROK 14 logo cover Page German.png",
-    "assets/images/YAROK 14 logo cover Page Hebrew.png",
-    "assets/images/YAROK 14 logo cover Page Taiwan.png"
-  ];
-  let currentImage = 0;
-  const hero = document.getElementById("yarokHero");
-  setInterval(() => {
-    currentImage = (currentImage + 1) % heroImages.length;
-    hero.src = heroImages[currentImage];
-  }, 5000);
-
-  // Mobile nav toggle
-  function toggleNav() {
-    document.getElementById('navLinks').classList.toggle('open');
-  }
+  // Hero image rotation — page-specific image list
+  (function() {
+    var heroImages = [
+      "assets/images/YAROK 14 logo cover Page.png",
+      "assets/images/YAROK 14 logo cover Page German.png",
+      "assets/images/YAROK 14 logo cover Page Hebrew.png",
+      "assets/images/YAROK 14 logo cover Page Taiwan.png"
+    ];
+    var currentImage = 0;
+    var hero = document.getElementById("yarokHero");
+    if (!hero) return;
+    setInterval(function() {
+      hero.style.opacity = "0";
+      setTimeout(function() {
+        currentImage = (currentImage + 1) % heroImages.length;
+        hero.src = heroImages[currentImage];
+        hero.style.opacity = "1";
+      }, 400);
+    }, 5000);
+  })();
 </script>
 </body>
 </html>
