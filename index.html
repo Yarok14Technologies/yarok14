@@ -19,7 +19,7 @@
   <meta property="og:image" content="https://yarok14.com/assets/images/Yarok14-Stamp.jpg">
 
   <link rel="stylesheet" href="assets/css/styles.css">
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js" defer></script>
 
   <script type="application/ld+json">
   {
@@ -36,6 +36,27 @@
     ]
   }
   </script>
+<script>
+  // Safe mobile navigation fallback.
+  // main.js may provide toggleNav(); this only defines it when absent.
+  if (typeof window.toggleNav !== "function") {
+    window.toggleNav = function () {
+      var nav = document.getElementById("navLinks");
+      var button = document.getElementById("navToggle");
+
+      if (!nav) {
+        return;
+      }
+
+      nav.classList.toggle("active");
+
+      if (button) {
+        var expanded = nav.classList.contains("active");
+        button.setAttribute("aria-expanded", expanded ? "true" : "false");
+      }
+    };
+  }
+</script>
 </head>
 <body>
 
@@ -43,7 +64,7 @@
 <nav class="navbar">
   <div class="nav-container">
     <a href="index.html" class="nav-brand">YAROK<span>14</span> <span style="color:var(--muted);font-size:0.7rem;font-weight:400;letter-spacing:1px;margin-left:6px;">TECHNOLOGIES</span></a>
-    <button class="nav-mobile-toggle" onclick="toggleNav()">☰</button>
+    <button type="button" class="nav-mobile-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navLinks">☰</button>
     <div class="nav-links" id="navLinks">
       <a href="#services">Services</a>
       <a href="#products">Products</a>
@@ -63,6 +84,8 @@
       src="assets/images/YAROK 14 logo cover Page(4).png"
       alt="Yarok14 Technologies"
       class="hero-img-banner"
+      loading="eager"
+      decoding="async"
     >
   </section>
 
@@ -366,10 +389,10 @@
       <h3>YAROK<span>14</span></h3>
       <p>Semiconductor and AI hardware engineering company delivering ASIC design, RTL verification, FPGA prototyping, and industrial AI solutions globally.</p>
       <div class="footer-social" style="margin-top: 24px; justify-content: flex-start;">
-        <a href="https://www.linkedin.com/company/yarok14" target="_blank"><img src="assets/images/linkedin.png" alt="LinkedIn"></a>
-        <a href="https://github.com/Yarok14Technologies" target="_blank"><img src="assets/images/github.png" alt="GitHub"></a>
-        <a href="https://www.youtube.com/channel/UCWmCcm1UlDJJfz0aB9B_a0A" target="_blank"><img src="assets/images/youtube.png" alt="YouTube"></a>
-        <a href="https://www.instagram.com/yarok14.technology" target="_blank"><img src="assets/images/instagram.png" alt="Instagram"></a>
+        <a href="https://www.linkedin.com/company/yarok14" target="_blank" rel="noopener noreferrer"><img src="assets/images/linkedin.png" alt="LinkedIn"></a>
+        <a href="https://github.com/Yarok14Technologies" target="_blank" rel="noopener noreferrer"><img src="assets/images/github.png" alt="GitHub"></a>
+        <a href="https://www.youtube.com/channel/UCWmCcm1UlDJJfz0aB9B_a0A" target="_blank" rel="noopener noreferrer"><img src="assets/images/youtube.png" alt="YouTube"></a>
+        <a href="https://www.instagram.com/yarok14.technology" target="_blank" rel="noopener noreferrer"><img src="assets/images/instagram.png" alt="Instagram"></a>
       </div>
     </div>
     <div class="footer-col">
@@ -401,8 +424,8 @@
         <li><a href="insights.html">Insights</a></li>
         <li><a href="careers.html">Careers</a></li>
         <li><a href="#contact">Contact</a></li>
-        <li><a href="https://www.linkedin.com/company/yarok14" target="_blank">LinkedIn</a></li>
-        <li><a href="https://github.com/Yarok14Technologies" target="_blank">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/company/yarok14" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><a href="https://github.com/Yarok14Technologies" target="_blank" rel="noopener noreferrer">GitHub</a></li>
       </ul>
     </div>
   </div>
@@ -415,7 +438,9 @@
 
 <script>
   // Hero image rotation — page-specific image list
-  (function() {
+  (function () {
+    "use strict";
+
     var heroImages = [
       "assets/images/YAROK 14 logo cover Page.png",
       "assets/images/YAROK 14 logo cover Page German.png",
@@ -423,17 +448,51 @@
       "assets/images/YAROK 14 logo cover Page Taiwan.png",
       "assets/images/YAROK 14 logo cover Page Arabic.png"
     ];
+
     var currentImage = 0;
     var hero = document.getElementById("yarokHero");
-    if (!hero) return;
-    setInterval(function() {
-      hero.style.opacity = "0";
-      setTimeout(function() {
-        currentImage = (currentImage + 1) % heroImages.length;
-        hero.src = heroImages[currentImage];
-        hero.style.opacity = "1";
-      }, 400);
-    }, 5000);
+
+    if (!hero || heroImages.length === 0) {
+      return;
+    }
+
+    // Keep the initial hero image visible if the first rotating asset
+    // cannot be loaded.
+    function preloadImage(src, onSuccess, onFailure) {
+      var image = new Image();
+
+      image.onload = function () {
+        onSuccess();
+      };
+
+      image.onerror = function () {
+        if (typeof onFailure === "function") {
+          onFailure();
+        }
+      };
+
+      image.src = src;
+    }
+
+    function showNextHeroImage() {
+      var nextIndex = (currentImage + 1) % heroImages.length;
+      var nextSrc = heroImages[nextIndex];
+
+      preloadImage(
+        nextSrc,
+        function () {
+          hero.style.opacity = "0";
+
+          window.setTimeout(function () {
+            hero.src = nextSrc;
+            hero.style.opacity = "1";
+            currentImage = nextIndex;
+          }, 400);
+        }
+      );
+    }
+
+    window.setInterval(showNextHeroImage, 5000);
   })();
 </script>
 </body>
